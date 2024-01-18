@@ -24,7 +24,7 @@ public class AnimController : MonoBehaviour
                 {
                     _animatior.SetBool("Attack", false);
                 }
-                if (_animatior.GetCurrentAnimatorStateInfo(0).IsName("Armature|Attack"))
+                if (_animatior.GetCurrentAnimatorStateInfo(0).IsName("Armature|Attack") && CharacterInput.LeftMouseButton)
                 {
                     _spellController.LeftHandAttack = true;
                 }
@@ -40,7 +40,7 @@ public class AnimController : MonoBehaviour
                 {
                     _animatior.SetBool("Attack", false);
                 }
-                if (_animatior.GetCurrentAnimatorStateInfo(0).IsName("Armature|Attack"))
+                if (_animatior.GetCurrentAnimatorStateInfo(0).IsName("Armature|Attack") && CharacterInput.RightMouseButton)
                 {
                     _spellController.RightHandAttack = true;
                 }

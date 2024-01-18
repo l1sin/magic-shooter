@@ -1635,6 +1635,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035568628389511143, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035568628389511143, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 80311006}
@@ -1643,6 +1648,11 @@ PrefabInstance:
       propertyPath: _fpsCamera
       value: 
       objectReference: {fileID: 1832285929}
+    - target: {fileID: 1088356629220762515, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1088356629220762515, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
       propertyPath: _camera
@@ -1785,6 +1795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4572025395785446571, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572025395785446571, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 80311006}
@@ -1793,6 +1808,11 @@ PrefabInstance:
       propertyPath: _fpsCamera
       value: 
       objectReference: {fileID: 1832285929}
+    - target: {fileID: 4803776468711764717, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4803776468711764717, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
       propertyPath: _camera
@@ -1820,6 +1840,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5632380326865203504, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632380326865203504, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 80311006}
@@ -1837,6 +1862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691362387818399939, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
+      propertyPath: _hand
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5691362387818399939, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
@@ -1870,6 +1900,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000073688995678909, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000073688995678909, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 80311006}
@@ -1890,6 +1925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077870073069992857, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077870073069992857, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 80311006}
@@ -1907,6 +1947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978952736110234877, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
+      propertyPath: _hand
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6978952736110234877, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
@@ -1932,6 +1977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196684525087629703, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
+      propertyPath: _hand
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7196684525087629703, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
@@ -2010,6 +2060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7786053377147452071, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
+      propertyPath: _hand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786053377147452071, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 80311006}
@@ -2032,6 +2087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106620200558523275, guid: 7baef5d9d661fdc49b65dcc0e25add08,
+        type: 3}
+      propertyPath: _hand
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106620200558523275, guid: 7baef5d9d661fdc49b65dcc0e25add08,
         type: 3}
@@ -2943,7 +3003,7 @@ GameObject:
   - component: {fileID: 1598326661}
   - component: {fileID: 1598326660}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CrossHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -38,6 +38,7 @@ public class SpellController : MonoBehaviour
         {
             _currentSpellIndexLeft = spellIndex;
             _currentSpellLeft = SpellsLeft[spellIndex];
+            _currentSpellLeft.CanShoot = true;
             foreach (GameObject g in SpellObjectsLeft)
             {
                 g.SetActive(false);
@@ -49,6 +50,7 @@ public class SpellController : MonoBehaviour
         {
             _currentSpellIndexRight = spellIndex;
             _currentSpellRight = SpellsRight[spellIndex];
+            _currentSpellRight.CanShoot = true;
             foreach (GameObject g in SpellObjectsRight)
             {
                 g.SetActive(false);
