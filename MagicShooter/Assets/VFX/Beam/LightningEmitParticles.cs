@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GaussEmitParticles : MonoBehaviour
+public class LightningEmitParticles : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _maxLifeTime = 1;

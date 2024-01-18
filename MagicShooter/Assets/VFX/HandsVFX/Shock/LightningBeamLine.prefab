@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2285099886644751085}
   - component: {fileID: 206720949414135382}
   m_Layer: 0
-  m_Name: GaussBeamLine
+  m_Name: LightningBeamLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 53c915e3ff96f1748969d807e8979200, type: 2}
+  - {fileID: 2100000, guid: 836476c0e18add447af801257fccfdf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

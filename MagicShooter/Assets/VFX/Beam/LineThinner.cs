@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LineThicker : MonoBehaviour
+public class LineThinner : MonoBehaviour
 {
     [SerializeField] private LineRenderer _line;
     [SerializeField] private float _thinningPerSec;

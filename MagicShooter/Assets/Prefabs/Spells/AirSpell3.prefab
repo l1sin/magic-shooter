@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4834639837223164167}
   - {fileID: 4467854923759120863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,25 +47,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
+  _fpsCamera: {fileID: 0}
+  _cameraShake: 1
+  _shakeAmount: 2
   _damage: 0
   _level: 0
   _exp: 0
+  _reloadTime: 1
+  _canShoot: 1
   _projectile: {fileID: 0}
   _shotType: 0
-  _isAttacking: 0
+  IsAttacking: 0
   _targets:
     serializedVersion: 2
     m_Bits: 0
   _muzzle: {fileID: 2787285279814989034}
   _tracer: {fileID: 539303030880150381, guid: 4fee00bc738278e4b8788cf9f0309df4, type: 3}
   _impact: {fileID: 7305614234217482715, guid: 643f16df974ba3840a98910f86cb3f33, type: 3}
+  _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
+    type: 2}
+  _shotSound: {fileID: 8300000, guid: 9482d40baa3670b49bf5127d8ef097af, type: 3}
 --- !u!1001 &2360347331732755663
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4467854923759120863}
+    m_TransformParent: {fileID: 2021799760151875208}
     m_Modifications:
     - target: {fileID: 3593140643226880591, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}
@@ -94,17 +103,17 @@ PrefabInstance:
     - target: {fileID: 7194980020985220552, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7194980020985220552, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7194980020985220552, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7194980020985220552, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}
@@ -203,11 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9035511915390774195, guid: e7ddb94139072bc42aa5c60baf9f156b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4834639837223164167}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ddb94139072bc42aa5c60baf9f156b, type: 3}
 --- !u!4 &4467854923759120863 stripped

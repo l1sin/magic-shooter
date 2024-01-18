@@ -13,7 +13,6 @@ public class SpellButton : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        //_button.onClick.AddListener(SetSpell);
         _leftClick.AddListener(SetSpellLeft);
         _rightClick.AddListener(SetSpellRight);
     }

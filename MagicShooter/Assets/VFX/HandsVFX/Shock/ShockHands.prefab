@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5340657961811927918}
   - component: {fileID: 5098253195864798818}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 9135160257705822327}
   - component: {fileID: 3518018488504002221}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

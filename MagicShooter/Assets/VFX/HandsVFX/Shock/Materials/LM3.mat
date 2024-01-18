@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GaussBeamMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 608acece8bd164643b620b452f1cb4c0,
+  m_Name: LM3
+  m_Shader: {fileID: -6465566751694194690, guid: 04d2f7c50816aa045b61c9d2cf4ef4e6,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: 4d89528644368e145b79ff6d168c59ae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75bc090ca4be920499f65283e9c89519, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
@@ -49,10 +49,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0, g: 8.540913, b: 16, a: 1}
+    - _Color: {r: 0, g: 0.79462254, b: 159.27022, a: 1}
     - _MainSpeed: {r: -0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6854827148651184554
+--- !u!114 &6458263551719453622
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

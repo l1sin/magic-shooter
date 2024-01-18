@@ -506,6 +506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AirSpell3
       objectReference: {fileID: 0}
+    - target: {fileID: 5189511183917698434, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -608,6 +613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireSpell1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862685766511683939, guid: bb21a1fb2e925ae49aab3433384c3d07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2935226977700096867, guid: bb21a1fb2e925ae49aab3433384c3d07,
         type: 3}

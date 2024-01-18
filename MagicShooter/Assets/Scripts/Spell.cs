@@ -1,28 +1,36 @@
+using Sounds;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Spell : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
+    [SerializeField] private FPSCamera _fpsCamera;
+    [SerializeField] private bool _cameraShake;
+    [SerializeField] private float _shakeAmount;
 
     [SerializeField] private float _damage;
     [SerializeField] private float _level;
     [SerializeField] private float _exp;
     [SerializeField] private float _reloadTime;
-    [SerializeField] private bool _canShoot;
+    [SerializeField] private bool _canShoot = true;
 
     [SerializeField] private GameObject _projectile;
 
     [SerializeField] private ShotType _shotType;
 
-    [SerializeField] private bool _isAttacking;
-    private static float s_maxShootingDistance;
-    private static float s_destroyEffectTime;
+    [SerializeField] public bool IsAttacking = false;
+    private static float s_maxShootingDistance = 100f;
+    private static float s_destroyEffectTime = 5f;
     [SerializeField] private LayerMask _targets;
 
     [SerializeField] private ParticleSystem _muzzle;
     [SerializeField] private GameObject _tracer;
     [SerializeField] private GameObject _impact;
+
+    [SerializeField] private AudioMixerGroup _audioMixerGroup;
+    [SerializeField] private AudioClip _shotSound;
 
     private enum ShotType
     {
@@ -31,19 +39,25 @@ public class Spell : MonoBehaviour
         Beam
     }
 
+    private void Start()
+    {
+        _canShoot = true;
+        IsAttacking = false;
+    }
+
     private void Update()
     {
-        if (_isAttacking && _canShoot && !UIContorller.InMenu)
+        if (IsAttacking && _canShoot && !UIContorller.InMenu)
         {
             switch (_shotType)
             {
                 case ShotType.HitScan:
 
+                    Shoot();
+
                     RaycastHit hitInfo;
                     if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, s_maxShootingDistance, _targets))
-                    {
-                        StartCoroutine(Reload());
-                        _muzzle.Play();
+                    {     
                         BeamHit(_tracer, hitInfo);
                         SpawnImpact(hitInfo);
                         MakeDamage(hitInfo);
@@ -56,6 +70,14 @@ public class Spell : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void Shoot()
+    {
+        if (_cameraShake) _fpsCamera.Shake(_shakeAmount);
+        SoundManager.Instance.PlaySound(_shotSound, _audioMixerGroup);
+        _muzzle.Play();
+        StartCoroutine(Reload());
     }
 
     private IEnumerator Reload()

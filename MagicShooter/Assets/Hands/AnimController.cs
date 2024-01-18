@@ -24,6 +24,11 @@ public class AnimController : MonoBehaviour
                 {
                     _animatior.SetBool("Attack", false);
                 }
+                if (_animatior.GetCurrentAnimatorStateInfo(0).IsName("Armature|Attack"))
+                {
+                    _spellController.LeftHandAttack = true;
+                }
+                else _spellController.LeftHandAttack = false;
                 break;
 
             case Hand.Right:
@@ -35,6 +40,11 @@ public class AnimController : MonoBehaviour
                 {
                     _animatior.SetBool("Attack", false);
                 }
+                if (_animatior.GetCurrentAnimatorStateInfo(0).IsName("Armature|Attack"))
+                {
+                    _spellController.RightHandAttack = true;
+                }
+                else _spellController.RightHandAttack = false;
                 break;
 
             default: break;

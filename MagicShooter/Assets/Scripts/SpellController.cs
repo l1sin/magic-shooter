@@ -15,12 +15,21 @@ public class SpellController : MonoBehaviour
     [SerializeField] private List<GameObject> SpellObjectsLeft;
     [SerializeField] private List<GameObject> SpellObjectsRight;
 
+    public bool LeftHandAttack;
+    public bool RightHandAttack;
+
     private void Start()
     {
         _currentSpellIndexLeft = 0;
         _currentSpellIndexRight = 0;
         SetSpell(_currentSpellIndexLeft, 0);
         SetSpell(_currentSpellIndexRight, 1);
+    }
+
+    public void Update()
+    {
+        _currentSpellLeft.IsAttacking = LeftHandAttack;
+        _currentSpellRight.IsAttacking = RightHandAttack;
     }
 
     public void SetSpell(int spellIndex, int hand)
