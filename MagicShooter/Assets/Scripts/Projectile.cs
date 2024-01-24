@@ -11,11 +11,13 @@ public class Projectile : MonoBehaviour
     public LayerMask Targets;
     public GameObject Impact;
     public AudioMixerGroup AudioMixerGroup;
+    public float ImpactVolume = 1;
 
     [Header("Private values")]
     [SerializeField] private ParticleSystem[] _particleSystems;
     [SerializeField] private AudioClip _destroySFX;
     [SerializeField] private float _collisionRadius;
+    
 
     private void Update()
     {
@@ -49,10 +51,13 @@ public class Projectile : MonoBehaviour
 
     private void PlayAudio()
     {
-        AudioSource audio = SoundManager.Instance.PlaySound(_destroySFX, AudioMixerGroup);
-        audio.spatialBlend = 1;
-        audio.minDistance = 10;
-        audio.gameObject.transform.position = transform.position;
+        if (_destroySFX != null)
+        {
+            AudioSource audio = SoundManager.Instance.PlaySound(_destroySFX, AudioMixerGroup, ImpactVolume);
+            audio.spatialBlend = 1;
+            audio.minDistance = 10;
+            audio.gameObject.transform.position = transform.position;
+        }
     }
 
     private void MakeDamage()

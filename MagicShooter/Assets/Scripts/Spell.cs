@@ -26,8 +26,7 @@ public class Spell : MonoBehaviour
     [SerializeField] private ParticleSystem _muzzle;
     [SerializeField] private GameObject _tracer;
     [SerializeField] private GameObject _impact;
-
-    [SerializeField] private AudioMixerGroup _audioMixerGroup;
+  
     [SerializeField] private AudioClip _shotSound;
 
     [SerializeField] private GameObject _beamObject;
@@ -39,6 +38,11 @@ public class Spell : MonoBehaviour
 
     [SerializeField] private float _speed;
     [SerializeField] private float _lifeTime;
+
+    [Header("Audio")]
+    [SerializeField] private AudioMixerGroup _audioMixerGroup;
+    [SerializeField] private float _impactVolume = 1;
+    [SerializeField] private float _muzzleVolume = 1;
 
     private enum Hand
     {
@@ -161,12 +165,13 @@ public class Spell : MonoBehaviour
         projectile.Targets = _targets;
         projectile.Impact = _impact;
         projectile.AudioMixerGroup = _audioMixerGroup;
-}
+        projectile.ImpactVolume = _impactVolume;
+    }
 
     private void Shoot()
     {
         _fpsCamera.Shake(_shakeAmount);
-        SoundManager.Instance.PlaySound(_shotSound, _audioMixerGroup);
+        SoundManager.Instance.PlaySound(_shotSound, _audioMixerGroup, _muzzleVolume);
         _muzzle.Play();
         StartCoroutine(Reload());
     }
