@@ -15,8 +15,6 @@ public class Spell : MonoBehaviour
     [SerializeField] private float _reloadTime;
     [SerializeField] public bool CanShoot = true;
 
-    [SerializeField] private GameObject _projectile;
-
     [SerializeField] private ShotType _shotType;
     [SerializeField] private Hand _hand;
 
@@ -35,6 +33,12 @@ public class Spell : MonoBehaviour
     [SerializeField] private GameObject _beamObject;
     [SerializeField] private GameObject _beamImpact;
     [SerializeField] private GameObject _beamAudio;
+
+    [Header("Projectile")]
+    [SerializeField] private GameObject _projectile;
+
+    [SerializeField] private float _speed;
+    [SerializeField] private float _lifeTime;
 
     private enum Hand
     {
@@ -67,7 +71,11 @@ public class Spell : MonoBehaviour
 
                     break;
 
-                case ShotType.Projectile: break;
+                case ShotType.Projectile:
+
+                    ProjectileShot();
+
+                    break;
 
                 case ShotType.Beam:
 
@@ -125,6 +133,35 @@ public class Spell : MonoBehaviour
             BeamMiss();
         }
     }
+
+    private void ProjectileShot()
+    {
+        Shoot();
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, s_maxShootingDistance, _targets))
+        {
+            SpawnProjectile(hitInfo.point);
+        }
+        else
+        {
+            SpawnProjectile(_camera.transform.position + _camera.transform.forward * s_maxShootingDistance);
+        }
+    }
+
+    private void SpawnProjectile(Vector3 point)
+    {
+        GameObject projectileObj = Instantiate(_projectile, transform.position, Quaternion.identity);
+        projectileObj.transform.LookAt(point);
+        Projectile projectile = projectileObj.GetComponent<Projectile>();
+
+        projectile.Speed = _speed;
+        projectile.Damage = _damage;
+        projectile.LifeTime = _lifeTime;
+        projectile.Targets = _targets;
+        projectile.Impact = _impact;
+        projectile.AudioMixerGroup = _audioMixerGroup;
+}
 
     private void Shoot()
     {

@@ -3471,6 +3471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _virtualCamera: {fileID: 1832285928}
   _shakeResetSpeed: 5
+  _minShake: 0
   _player: {fileID: 1886766404}
   _mouseSensitivityX: 1
   _mouseSensitivityY: 1
