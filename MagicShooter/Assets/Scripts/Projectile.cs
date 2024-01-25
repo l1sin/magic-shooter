@@ -1,4 +1,5 @@
 using Sounds;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -17,17 +18,53 @@ public class Projectile : MonoBehaviour
     [SerializeField] private ParticleSystem[] _particleSystems;
     [SerializeField] private AudioClip _destroySFX;
     [SerializeField] private float _collisionRadius;
-    
+    [SerializeField] private float _explosionRadius;
+    [SerializeField] private ProjectileType _type;
 
+    private enum ProjectileType
+    {
+        HitTarget,
+        ExplodeOnHit
+    }
+    
     private void Update()
     {
-        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+        Vector3 translation = Vector3.forward * Speed * Time.deltaTime;
+        transform.Translate(translation);
+
         LifeTime -= Time.deltaTime;
         if (LifeTime <= 0) DestroyProjectile();
-        if (Physics.OverlapSphere(transform.position, _collisionRadius, Targets).Length > 0)
+
+        Collider[] collisions = Physics.OverlapSphere(transform.position, _collisionRadius, Targets);
+        if (collisions.Length > 0)
         {
-            DestroyProjectile();
-            MakeDamage();
+            MakeImpact(collisions);
+        }
+    }
+
+    private void MakeImpact(Collider[] collisions)
+    {
+        switch (_type)
+        {
+            case ProjectileType.HitTarget:
+
+                collisions[0].TryGetComponent(out IDamageable damageable);
+                if (damageable != null) MakeDamage(damageable);
+                PlayAudio();
+                DestroyProjectile();
+
+                break;
+
+            case ProjectileType.ExplodeOnHit:
+
+                ExplosionDamage();
+                PlayAudio();
+                DestroyProjectile();
+
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -60,10 +97,26 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void MakeDamage()
+    private void MakeDamage(IDamageable damageable)
     {
-        PlayAudio();
-        DestroyProjectile();
+        damageable.GetDamage(Damage);
+    }
+
+    private void ExplosionDamage()
+    {
+        Collider[] collisions = Physics.OverlapSphere(transform.position, _explosionRadius, Targets);
+        HashSet<IDamageable> damageables = new HashSet<IDamageable>();
+        foreach (Collider col in collisions)
+        {
+            damageables.Add(col.GetComponentInParent<IDamageable>());
+        }
+        foreach (IDamageable damageable in damageables)
+        {
+            if (damageable != null)
+            {
+                damageable.GetDamage(Damage);
+            }
+        }
     }
 
     private void SpawnImpact()
@@ -75,5 +128,6 @@ public class Projectile : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, _collisionRadius);
+        Gizmos.DrawRay(transform.position, Vector3.forward * Speed * Time.deltaTime);
     }
 }

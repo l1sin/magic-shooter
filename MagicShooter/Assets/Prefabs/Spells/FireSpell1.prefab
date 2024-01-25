@@ -63,8 +63,6 @@ MonoBehaviour:
   _muzzle: {fileID: 7512969752494991509}
   _tracer: {fileID: 0}
   _impact: {fileID: 4123924508808903331, guid: 2e37ce9d46842cf428d60e8cf39e60d8, type: 3}
-  _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
-    type: 2}
   _shotSound: {fileID: 8300000, guid: 3357b48f637d62c49880d4693a7d4237, type: 3}
   _beamObject: {fileID: 0}
   _beamImpact: {fileID: 0}
@@ -73,6 +71,10 @@ MonoBehaviour:
     type: 3}
   _speed: 30
   _lifeTime: 3
+  _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
+    type: 2}
+  _impactVolume: 0.5
+  _muzzleVolume: 0.5
 --- !u!1001 &3209908853559775922
 PrefabInstance:
   m_ObjectHideFlags: 0

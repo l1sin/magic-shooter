@@ -50,14 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _fpsCamera: {fileID: 0}
-  _cameraShake: 0
   _shakeAmount: 0.3
   _damage: 0
   _level: 0
   _exp: 0
   _reloadTime: 0
-  _canShoot: 1
-  _projectile: {fileID: 0}
+  CanShoot: 1
   _shotType: 2
   _hand: 0
   IsAttacking: 0
@@ -67,11 +65,16 @@ MonoBehaviour:
   _muzzle: {fileID: 0}
   _tracer: {fileID: 0}
   _impact: {fileID: 0}
-  _audioMixerGroup: {fileID: 0}
   _shotSound: {fileID: 0}
   _beamObject: {fileID: 6850612893140686420}
   _beamImpact: {fileID: 6853094173844511344}
   _beamAudio: {fileID: 382249427279397887}
+  _projectile: {fileID: 0}
+  _speed: 0
+  _lifeTime: 0
+  _audioMixerGroup: {fileID: 0}
+  _impactVolume: 1
+  _muzzleVolume: 1
 --- !u!1001 &3425251419331798485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceBeamLine
       objectReference: {fileID: 0}
+    - target: {fileID: 539303030880150381, guid: 7d05c645b1ca8ee4f829021513c4bdbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1156495223547548152, guid: 7d05c645b1ca8ee4f829021513c4bdbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -270,6 +278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IceBeamImpactParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440866859817301321, guid: 334000fd5e23d664087de6199582d46d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7157737411074547493, guid: 334000fd5e23d664087de6199582d46d,
         type: 3}
