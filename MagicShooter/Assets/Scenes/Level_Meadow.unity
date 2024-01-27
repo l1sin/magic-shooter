@@ -311,32 +311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3442381362600078493, guid: e156aea41dfef644389a26001ce8c4a3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6999998
-      objectReference: {fileID: 0}
     - target: {fileID: 3770651747565544862, guid: e156aea41dfef644389a26001ce8c4a3,
         type: 3}
       propertyPath: m_Name
       value: ---LEVEL---
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428379408699228522, guid: e156aea41dfef644389a26001ce8c4a3,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8aa68fecb5ad7954982cfbecdd67fd39,
-        type: 3}
-    - target: {fileID: 5147319332327288261, guid: e156aea41dfef644389a26001ce8c4a3,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8aa68fecb5ad7954982cfbecdd67fd39,
-        type: 3}
-    - target: {fileID: 6194308343956462579, guid: e156aea41dfef644389a26001ce8c4a3,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

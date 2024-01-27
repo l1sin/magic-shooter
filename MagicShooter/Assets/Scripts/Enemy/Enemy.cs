@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] public EnemySpawner EnemySpawner;
     [SerializeField] public Transform FollowTarget;
+    [SerializeField] public float DropChance;
     [SerializeField] protected Animator _animator;
     [SerializeField] protected NavMeshAgent _agent;
     [SerializeField] protected float _speedCoef;
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected Transform _attackCollider;
     [SerializeField] protected float _attackRadius;
     [SerializeField] protected LayerMask _attackLayerMask;
+    [SerializeField] protected LayerMask _ground;
     [SerializeField] protected float _damage;
     [SerializeField] protected bool _inAttackRange;
 
@@ -28,6 +30,8 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected float _healthBuff;
     [SerializeField] protected float _damageBuff;
     [SerializeField] protected float _speedBuff;
+
+    [SerializeField] protected GameObject[] _drops;
 
     [SerializeField] protected AudioClip _deathSound;
     [SerializeField] protected AudioClip _meatExplosion;
@@ -78,7 +82,18 @@ public class Enemy : MonoBehaviour, IDamageable
     public void Die()
     {
         EnemySpawner.IncrementDead();
-        
+        DropItem();
+    }
+
+    public void DropItem()
+    {
+        if (Random.Range(0f, 1f) <= DropChance)
+        {
+            int itemIndex = Random.Range(0, _drops.Length);
+            Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 100, transform.position.z), Vector3.down * 200, out RaycastHit hitInfo, 300, _ground);
+            Vector3 spawnPosition = hitInfo.point;
+            Instantiate(_drops[itemIndex], spawnPosition + Vector3.up, Quaternion.identity);
+        }
     }
 
     public void DeathSound(AudioClip clip)

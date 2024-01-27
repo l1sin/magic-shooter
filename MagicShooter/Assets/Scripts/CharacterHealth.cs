@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float _healthCurrent;
-    [SerializeField] private float _healthMax;
+    [SerializeField] public float HealthCurrent;
+    [SerializeField] public float HealthMax;
     [SerializeField] private float _healthBuff;
     [SerializeField] private bool _isDead;
     [SerializeField] private Image _hpBar;
@@ -17,7 +17,7 @@ public class CharacterHealth : MonoBehaviour, IDamageable
     public void Start()
     {
         //_healthMax *= Mathf.Pow(_healthBuff, SaveManager.Instance.CurrentProgress.UpgradeLevels[8]);
-        _healthCurrent = _healthMax;
+        HealthCurrent = HealthMax;
         UpdateHealthBar();
     }
     
@@ -32,17 +32,24 @@ public class CharacterHealth : MonoBehaviour, IDamageable
         {
             SoundManager.Instance.PlaySound(_hurt, _audioMixerGroup);
             HitsTaken++;
-            _healthCurrent -= damage;
+            HealthCurrent -= damage;
             UpdateHealthBar();
-            if (_healthCurrent <= 0)
+            if (HealthCurrent <= 0)
             {
                 Die();
             }
         }
     }
 
+    public void Cure(float curePercent)
+    {
+        HealthCurrent += HealthMax * curePercent;
+        if (HealthCurrent > HealthMax) HealthCurrent = HealthMax;
+        UpdateHealthBar();
+    }
+
     private void UpdateHealthBar()
     {
-        _hpBar.fillAmount = _healthCurrent / _healthMax;
+        _hpBar.fillAmount = HealthCurrent / HealthMax;
     }
 }

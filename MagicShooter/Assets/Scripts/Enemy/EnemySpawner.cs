@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Color[] _tierColors;
 
     [SerializeField] private int _level;
+    [SerializeField] private float _dropChance;
 
     [SerializeField] private int _allEnemiesCount;
     [SerializeField] public int DeadEnemies;
@@ -87,6 +88,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.SetTier(tier, _tierColors[tier]);
             enemy.FollowTarget = _character;
             enemy.EnemySpawner = this;
+            enemy.DropChance = _dropChance;
             _spawnedEnemies++;
         }
     }

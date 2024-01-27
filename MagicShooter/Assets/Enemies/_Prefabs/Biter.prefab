@@ -682,6 +682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySpawner: {fileID: 0}
   FollowTarget: {fileID: 0}
+  DropChance: 0
   _animator: {fileID: 8187297094611825182}
   _agent: {fileID: 1151820316779313562}
   _speedCoef: 2.7
@@ -694,6 +695,9 @@ MonoBehaviour:
   _attackLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  _ground:
+    serializedVersion: 2
+    m_Bits: 64
   _damage: 3
   _inAttackRange: 0
   _healthCurrent: 0
@@ -704,6 +708,9 @@ MonoBehaviour:
   _healthBuff: 3
   _damageBuff: 2.5
   _speedBuff: 1.1
+  _drops:
+  - {fileID: 1438279772347664899, guid: 8ec28c70f65cec640a659314b899a8be, type: 3}
+  - {fileID: 4658963222401955512, guid: 388989e3e3b366144a22ae600a9e1f8f, type: 3}
   _deathSound: {fileID: 8300000, guid: 9c513748b612e134b84860566b12f104, type: 3}
   _meatExplosion: {fileID: 8300000, guid: 5ece57bcbcaeaf647b86c04d26271d18, type: 3}
   _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
