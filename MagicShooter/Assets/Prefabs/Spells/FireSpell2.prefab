@@ -49,7 +49,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _fpsCamera: {fileID: 0}
   _shakeAmount: 1.5
-  _damage: 1
+  _damage: 10
   _level: 0
   _exp: 0
   _reloadTime: 1

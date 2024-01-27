@@ -48,7 +48,7 @@ public class Projectile : MonoBehaviour
         {
             case ProjectileType.HitTarget:
 
-                collisions[0].TryGetComponent(out IDamageable damageable);
+                IDamageable damageable = collisions[0].GetComponentInParent<IDamageable>();
                 if (damageable != null) MakeDamage(damageable);
                 PlayAudio();
                 DestroyProjectile();

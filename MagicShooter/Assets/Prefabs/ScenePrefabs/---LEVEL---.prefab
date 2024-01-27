@@ -116,6 +116,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---MAP---
       objectReference: {fileID: 0}
+    - target: {fileID: 4241868616963749680, guid: cb5070fdea50772478eb0bb02fa2cedc,
+        type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 2678815567405225206}
     - target: {fileID: 4309628104656761729, guid: cb5070fdea50772478eb0bb02fa2cedc,
         type: 3}
       propertyPath: _spellController
@@ -167,6 +172,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4428379408699228522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4330333072629434646, guid: cb5070fdea50772478eb0bb02fa2cedc,
+    type: 3}
+  m_PrefabInstance: {fileID: 102647521953187964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3589566175166042733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +192,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3144285789663827059}
     m_Modifications:
+    - target: {fileID: 1339418581768716235, guid: c40c78e60ff3bd84abdb503ceea5da24,
+        type: 3}
+      propertyPath: _hpBar
+      value: 
+      objectReference: {fileID: 4428379408699228522}
     - target: {fileID: 1512545351678953115, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
       propertyPath: m_LocalPosition.x

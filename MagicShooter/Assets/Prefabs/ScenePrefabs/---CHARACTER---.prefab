@@ -558,7 +558,8 @@ GameObject:
   - component: {fileID: 1558831032630874721}
   - component: {fileID: 834166352084109741}
   - component: {fileID: 3318324821559858146}
-  m_Layer: 0
+  - component: {fileID: 1339418581768716235}
+  m_Layer: 7
   m_Name: ---CHARACTER---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,6 +750,27 @@ MonoBehaviour:
   - {fileID: 6312702333127993975}
   LeftHandAttack: 0
   RightHandAttack: 0
+--- !u!114 &1339418581768716235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933733167643697979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0680d689318264b45bd6233f79680746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthCurrent: 0
+  _healthMax: 100
+  _healthBuff: 0
+  _isDead: 0
+  _hpBar: {fileID: 0}
+  _hurt: {fileID: 8300000, guid: 4315b9cac101fd84d88e9d898e6742ef, type: 3}
+  _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
+    type: 2}
+  HitsTaken: 0
 --- !u!1 &8646118898315653676
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +830,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
-    NearClipPlane: 0.3
+    NearClipPlane: 0.1
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0

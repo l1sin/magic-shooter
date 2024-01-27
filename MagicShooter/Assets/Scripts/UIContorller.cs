@@ -1,16 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIContorller : MonoBehaviour
 {
-    [SerializeField] private SpellController _spellController;
-
     [SerializeField] private GameObject _spellMenu;
     [SerializeField] private float _pauseTimeScale = 0.2f;
-
-    [SerializeField] private List<Button> LeftSpellButtons;
-    [SerializeField] private List<Button> RightSpellButtons;
 
     public static bool InMenu;
 

@@ -130,7 +130,7 @@ public class Spell : MonoBehaviour
         if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hitInfo, s_maxShootingDistance, _targets))
         {
             BeamHit(hitInfo);
-            MakeDamage(hitInfo);
+            MakeDamageDT(hitInfo);
         }
         else
         {
@@ -183,19 +183,25 @@ public class Spell : MonoBehaviour
         CanShoot = true;
     }
 
-    protected virtual void SpawnImpact(RaycastHit raycastHit)
+    private void SpawnImpact(RaycastHit raycastHit)
     {
         GameObject particles = Instantiate(_impact, raycastHit.point, Quaternion.LookRotation(raycastHit.normal));
         Destroy(particles, s_destroyEffectTime);
     }
 
-    protected virtual void MakeDamage(RaycastHit raycastHit)
+    private void MakeDamage(RaycastHit raycastHit)
     {
         IDamageable damageable = raycastHit.transform.GetComponentInParent<IDamageable>();
         if (damageable != null) damageable.GetDamage(_damage);
     }
 
-    protected void TracerHit(GameObject beam, RaycastHit raycastHit)
+    private void MakeDamageDT(RaycastHit raycastHit)
+    {
+        IDamageable damageable = raycastHit.transform.GetComponentInParent<IDamageable>();
+        if (damageable != null) damageable.GetDamage(_damage * Time.deltaTime);
+    }
+
+    private void TracerHit(GameObject beam, RaycastHit raycastHit)
     {
         GameObject beamObj = Instantiate(beam, _muzzle.transform.position, Quaternion.identity);
         beamObj.transform.LookAt(raycastHit.point);
@@ -203,7 +209,7 @@ public class Spell : MonoBehaviour
         Destroy(beamObj, s_destroyEffectTime);
     }
 
-    protected void BeamOn()
+    private void BeamOn()
     {
         _fpsCamera.SetShake(_shakeAmount);
         _beamObject.SetActive(true);
@@ -212,14 +218,14 @@ public class Spell : MonoBehaviour
     }
 
 
-    protected void BeamOff()
+    private void BeamOff()
     {
         _beamObject.SetActive(false);
         _beamImpact.SetActive(false);
         _beamAudio.SetActive(false);
     }
 
-    protected void BeamHit(RaycastHit raycastHit)
+    private void BeamHit(RaycastHit raycastHit)
     {
         _beamObject.transform.LookAt(raycastHit.point);
         if (_hand == Hand.Left) _beamObject.transform.localScale = new Vector3(-1, -1, -raycastHit.distance);
@@ -227,7 +233,7 @@ public class Spell : MonoBehaviour
         _beamImpact.transform.position = raycastHit.point;
     }
 
-    protected void BeamMiss()
+    private void BeamMiss()
     {
         _beamObject.transform.LookAt(_camera.transform.position + _camera.transform.forward * s_maxShootingDistance);
         if (_hand == Hand.Left) _beamObject.transform.localScale = new Vector3(-1, -1, -s_maxShootingDistance);
@@ -235,7 +241,7 @@ public class Spell : MonoBehaviour
         _beamImpact.SetActive(false);
     }
 
-    protected void TracerMiss(GameObject beam)
+    private void TracerMiss(GameObject beam)
     {
         GameObject beamObj = Instantiate(beam, _muzzle.transform.position, Quaternion.identity);
         beamObj.transform.LookAt(_camera.transform.position + _camera.transform.forward * s_maxShootingDistance);

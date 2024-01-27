@@ -48,15 +48,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _fpsCamera: {fileID: 0}
-  _cameraShake: 1
   _shakeAmount: 2
-  _damage: 0
+  _damage: 10
   _level: 0
   _exp: 0
   _reloadTime: 1
-  _canShoot: 1
-  _projectile: {fileID: 0}
+  CanShoot: 1
   _shotType: 0
+  _hand: 0
   IsAttacking: 0
   _targets:
     serializedVersion: 2
@@ -64,9 +63,17 @@ MonoBehaviour:
   _muzzle: {fileID: 2787285279814989034}
   _tracer: {fileID: 539303030880150381, guid: 4fee00bc738278e4b8788cf9f0309df4, type: 3}
   _impact: {fileID: 7305614234217482715, guid: 643f16df974ba3840a98910f86cb3f33, type: 3}
+  _shotSound: {fileID: 8300000, guid: 9482d40baa3670b49bf5127d8ef097af, type: 3}
+  _beamObject: {fileID: 0}
+  _beamImpact: {fileID: 0}
+  _beamAudio: {fileID: 0}
+  _projectile: {fileID: 0}
+  _speed: 0
+  _lifeTime: 0
   _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
     type: 2}
-  _shotSound: {fileID: 8300000, guid: 9482d40baa3670b49bf5127d8ef097af, type: 3}
+  _impactVolume: 1
+  _muzzleVolume: 1
 --- !u!1001 &2360347331732755663
 PrefabInstance:
   m_ObjectHideFlags: 0
