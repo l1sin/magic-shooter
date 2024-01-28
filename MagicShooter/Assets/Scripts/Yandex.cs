@@ -6,7 +6,6 @@ public class Yandex : MonoBehaviour
     public static Yandex Instance;
     public const string Path = "idbfs/MagicShooterSaveDirectory";
     public Localization DefaultLanguage;
-    public bool Init;
     public string Domen;
     public enum Localization
     {
@@ -90,7 +89,6 @@ public class Yandex : MonoBehaviour
 
     public void StartInit()
     {
-        Init = false;
         string lang = GetLanguage();
         Domen = GetDomen();
         SaveManager.Instance.LoadLanguage(lang);

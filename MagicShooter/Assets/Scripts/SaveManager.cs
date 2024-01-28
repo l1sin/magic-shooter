@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +8,7 @@ public class SaveManager : MonoBehaviour
     public string[,] Dictionary;
     public string[] Localization;
     public int MainMenuSceneIndex;
+    public KeyCode SaveKey;
     private void OnEnable()
     {
         if (Instance != null && Instance != this)
@@ -22,6 +21,12 @@ public class SaveManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(SaveKey)) SaveData(CurrentProgress);
+    }
+
     public void LoadDataLocal()
     {
         Progress progress;

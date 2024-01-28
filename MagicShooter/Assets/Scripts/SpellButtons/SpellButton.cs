@@ -1,35 +1,25 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SpellButtonMenu : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private int _spellIndex;
-    [SerializeField] private Image _image;
-    [SerializeField] private Color _tintColor;
-    private bool _leftHold;
-    private bool _rightHold;
-    private float _transitionTime;
+    [SerializeField] protected int _spellIndex;
+    [SerializeField] protected Image _image;
+    [SerializeField] protected Color _tintColor;
+    protected bool _leftHold;
+    protected bool _rightHold;
     UnityEvent _leftClick = new UnityEvent();
     UnityEvent _rightClick = new UnityEvent();
-
-
-    private void Start()
+    protected void Start()
     {
-        _leftClick.AddListener(SetSpellLeft);
-        _rightClick.AddListener(SetSpellRight);
+        _leftClick.AddListener(OnLeftClick);
+        _rightClick.AddListener(OnRightClick);
     }
 
-    private void SetSpellLeft()
-    {
-        MenuController.Instance.SetDefaultSpells(_spellIndex, 0);
-    }
-    private void SetSpellRight()
-    {
-        MenuController.Instance.SetDefaultSpells(_spellIndex, 1);
-    }
+    protected virtual void OnLeftClick() { }
+    protected virtual void OnRightClick() { }
 
     public void OnPointerUp(PointerEventData eventData)
     {

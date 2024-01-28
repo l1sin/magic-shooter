@@ -48,10 +48,12 @@ MonoBehaviour:
   CurrentProgress:
     Money: 0
     Level: 0
-    Kills: 0
-    UpgradeLevels: 01000000000000000000000000000000000000000000000000000000000000000000000000000000
+    DefaultSpellIndexLeft: 0
+    DefaultSpellIndexRight: 0
+    SelectedMap: 0
   Localization: []
   MainMenuSceneIndex: 1
+  SaveKey: 270
 --- !u!114 &1124018327134895801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,5 +67,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultLanguage: 0
-  Init: 0
   Domen: 

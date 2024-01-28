@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class SelectBG : MonoBehaviour
+public class MapSelector : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private Terrain _terrain;
@@ -18,12 +18,13 @@ public class SelectBG : MonoBehaviour
         public Material _Skybox;
     }
 
-    public void SelectBackGround(int i)
+    public void SelectMap(int i)
     {
         _camera.transform.position = Presets[i]._CameraTransform.position;
         _camera.transform.rotation = Presets[i]._CameraTransform.rotation;
         _terrain.terrainData = Presets[i]._TerrainData;
         _volume.profile = Presets[i]._VolumeProfile;
         RenderSettings.skybox = Presets[i]._Skybox;
+        SaveManager.Instance.CurrentProgress.SelectedMap = i;
     }
 }
