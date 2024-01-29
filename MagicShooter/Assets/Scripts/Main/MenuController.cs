@@ -1,13 +1,22 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
     public static MenuController Instance;
+
+    [Header("Map")]
     [SerializeField] private MapSelector _mapSelector;
+
+    [Header("Spells")]
     [SerializeField] private Image[] DefaultSpellLeftImage;
     [SerializeField] private Image[] DefaultSpellRightImage;
     [SerializeField] private Sprite[] SpellSprites;
+
+    [Header("Texts")]
+    [SerializeField] private TextMeshProUGUI _characterLevelText;
+    [SerializeField] private TextMeshProUGUI _levelText;
 
     private void OnEnable()
     {
@@ -25,6 +34,17 @@ public class MenuController : MonoBehaviour
     {
         LoadDefaultSpells();
         LoadMap();
+        SetLevelText();
+    }
+
+    public void SetLevelText()
+    {
+        _levelText.text = $"Level {SaveManager.Instance.CurrentProgress.Level + 1}";
+    }
+
+    public void SetCharacterLevelText()
+    {
+        _characterLevelText.text = $"Character Level {SaveManager.Instance.CurrentProgress.CharacterLevel + 1}";
     }
 
     public void LoadMap()

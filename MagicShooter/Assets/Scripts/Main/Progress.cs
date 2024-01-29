@@ -5,6 +5,7 @@ public class Progress
 {
     public int Money;
     public int Level;
+    public int CharacterLevel;
     public int DefaultSpellIndexLeft;
     public int DefaultSpellIndexRight;
     public int SelectedMap;
