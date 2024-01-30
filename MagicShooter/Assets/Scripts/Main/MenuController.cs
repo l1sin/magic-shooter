@@ -6,6 +6,9 @@ public class MenuController : MonoBehaviour
 {
     public static MenuController Instance;
 
+    [Header("Data")]
+    public int Money;
+
     [Header("Map")]
     [SerializeField] private MapSelector _mapSelector;
 
@@ -17,6 +20,7 @@ public class MenuController : MonoBehaviour
     [Header("Texts")]
     [SerializeField] private TextMeshProUGUI _characterLevelText;
     [SerializeField] private TextMeshProUGUI _levelText;
+    [SerializeField] private TextMeshProUGUI[] _moneyText;
 
     private void OnEnable()
     {
@@ -35,6 +39,27 @@ public class MenuController : MonoBehaviour
         LoadDefaultSpells();
         LoadMap();
         SetLevelText();
+        LoadMoney();
+    }
+
+    public void LoadMoney()
+    {
+        Money = SaveManager.Instance.CurrentProgress.Money;
+        UpdataMoneyTexts();
+    }
+
+    public void SpendMoney(int spendAmount)
+    {
+        Money -= spendAmount;
+        UpdataMoneyTexts();
+    }
+
+    public void UpdataMoneyTexts()
+    {
+        foreach (TextMeshProUGUI t in _moneyText)
+        {
+            t.text = Money.ToString();
+        }
     }
 
     public void SetLevelText()

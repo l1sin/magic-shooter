@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: AdvancedFire
   m_EditorClassIdentifier: 
   Name: AdvancedFire
-  Description: Description
-  Bonuses: []
-  Requirements: []
+  Description: Foundation of advanced fire magic
+  Bonuses:
+  - Type: 4
+    Math: 1
+    Value: 3
+  Requirements:
+  - UpgradeIndex: 16

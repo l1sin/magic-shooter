@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +24,10 @@ public class UpgradeButton : MonoBehaviour
         if (_upgradeType == UpgradeType.Spell)
         {
             UpgradeController.Instance.SetMagic(_upgradeIndex, _image.sprite);
+        }
+        else if (_upgradeType == UpgradeType.Skill)
+        {
+            UpgradeController.Instance.SetSkill(_upgradeIndex, _image.sprite);
         }
     }
 }

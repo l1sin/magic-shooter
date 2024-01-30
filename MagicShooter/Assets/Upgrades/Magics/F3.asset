@@ -15,7 +15,8 @@ MonoBehaviour:
   Name: Fire Beam
   Description: Description
   Bonuses: []
-  Requirements: []
+  Requirements:
+  - UpgradeIndex: 17
   ShotType: 2
   Element: 0
   Damage: 1

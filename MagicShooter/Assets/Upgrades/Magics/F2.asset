@@ -15,7 +15,8 @@ MonoBehaviour:
   Name: Inferno
   Description: Description
   Bonuses: []
-  Requirements: []
+  Requirements:
+  - UpgradeIndex: 17
   ShotType: 1
   Element: 0
   Damage: 1

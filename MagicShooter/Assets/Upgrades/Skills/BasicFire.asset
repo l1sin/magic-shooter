@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: BasicFire
   m_EditorClassIdentifier: 
   Name: BasicFire
-  Description: Description
-  Bonuses: []
+  Description: Foundation of basic fire magic
+  Bonuses:
+  - Type: 4
+    Math: 1
+    Value: 2
   Requirements: []

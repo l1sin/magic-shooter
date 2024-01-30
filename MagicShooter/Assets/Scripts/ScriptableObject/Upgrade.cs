@@ -33,11 +33,11 @@ public class Upgrade : ScriptableObject
             Percent
         }
 
-        public string ThisToString()
+        public string ThisToString(int level)
         {
             string pc = string.Empty;
             if (Math == BonusMath.Percent) pc = "%";
-            return $"+{Value}{pc} {Type}";
+            return $"+{Value * level}{pc} {Type}";
         }
     }
 
@@ -45,12 +45,12 @@ public class Upgrade : ScriptableObject
     public struct Requirement
     {
         public int UpgradeIndex;
-        public int UpgradeLevel;
+        //public int UpgradeLevel;
 
-        public bool CheckRequirement(ref int[] upgrades)
-        {
-            if (upgrades[UpgradeIndex] >= UpgradeLevel) return true;
-            else return false;
-        }
+        //public bool CheckRequirement(ref int[] upgrades)
+        //{
+        //    if (upgrades[UpgradeIndex] >= UpgradeLevel) return true;
+        //    else return false;
+        //}
     }
 }
