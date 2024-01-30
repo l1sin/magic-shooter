@@ -9,13 +9,17 @@ public class Progress
     public int DefaultSpellIndexLeft;
     public int DefaultSpellIndexRight;
     public int SelectedMap;
+    public int[] Upgrades;
+    public float[] Experience;
 
     public Progress()
     {
         Money = 0;
         Level = 0;
+        CharacterLevel = 0;
         DefaultSpellIndexLeft = 0;
         DefaultSpellIndexRight = 0;
         SelectedMap = 0;
+        Upgrades = new int[24];
     }
 }

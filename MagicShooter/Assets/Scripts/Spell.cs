@@ -50,11 +50,19 @@ public class Spell : MonoBehaviour
         Right
     }
 
-    private enum ShotType
+    public enum ShotType
     {
         HitScan,
         Projectile,
         Beam
+    }
+
+    public enum Element
+    {
+        Fire,
+        Earth,
+        Water,
+        Air
     }
 
     private void Start()
