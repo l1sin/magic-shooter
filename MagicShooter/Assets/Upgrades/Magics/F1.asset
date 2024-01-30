@@ -15,11 +15,14 @@ MonoBehaviour:
   Name: Fireball
   Description: Description
   Bonuses:
+  - Type: 4
+    Math: 1
+    Value: 1
   - Type: 0
-    Math: 0
+    Math: 1
     Value: 1
   Requirements:
-  - UpgradeIndex: 3
+  - UpgradeIndex: 16
     UpgradeLevel: 1
   ShotType: 1
   Element: 0

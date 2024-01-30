@@ -70,19 +70,20 @@ public class UpgradeController : MonoBehaviour
             mr.text = "";
         }
 
+        for (int i = 0; i < Magics[index].Requirements.Length; i++)
+        {
+            string req = $"{AllUpgradesList[Magics[index].Requirements[i].UpgradeIndex].Name} {Magics[index].Requirements[i].UpgradeLevel}";
+            MagicRequirements[i].text = req;
+        }
+
         if (Levels[index] <= 0)
         {
-            for (int i = 0; i < Magics[index].Requirements.Length; i++)
-            {
-                string req = $"{AllUpgradesList[Magics[index].Requirements[i].UpgradeIndex].Name} {Magics[index].Requirements[i].UpgradeLevel}";
-                MagicRequirements[i].text = req;
-            }
             SpellsLocked.SetActive(true);
             SpellsUnlocked.SetActive(false);
         }
         else
         {
-            for (int i = 0; i >= Magics[index].Bonuses.Length; i++)
+            for (int i = 0; i < Magics[index].Bonuses.Length; i++)
             {
                 MagicBonuses[i].text = Magics[index].Bonuses[i].ThisToString();
             }
