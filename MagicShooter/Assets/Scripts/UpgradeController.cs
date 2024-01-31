@@ -25,8 +25,11 @@ public class UpgradeController : MonoBehaviour
     public int[] Levels;
     public float[] CurrentExp;
     public float[] NextLevelExp;
+    public int maxLevel = 10;
 
     [Header("Magic Menu")]
+    public GameObject MagicIcons;
+    public GameObject MagicInfo;
     public Image MagicImage;
     public TextMeshProUGUI MagicName;
     public TextMeshProUGUI SpellType;
@@ -34,6 +37,7 @@ public class UpgradeController : MonoBehaviour
     public TextMeshProUGUI ReloadTime;
     public TextMeshProUGUI ProjectileSpeed;
     public TextMeshProUGUI MagicDescription;
+    public TextMeshProUGUI MagicRequirementText;
     public TextMeshProUGUI[] MagicBonuses;
     public TextMeshProUGUI[] MagicRequirements;
     public TextMeshProUGUI MagicLevelText;
@@ -43,11 +47,16 @@ public class UpgradeController : MonoBehaviour
     public GameObject SpellsUnlocked;
     public Button _magicBuyButton;
     public TextMeshProUGUI _magicBuyButtonText;
+    private int _magicLastUsedIndex = 0;
+    [SerializeField] private Sprite _magicLastUsedSprite;
 
     [Header("Skills Menu")]
+    public GameObject SkillIcons;
+    public GameObject SkillInfo;
     public Image SkillImage;
     public TextMeshProUGUI SkillName;
     public TextMeshProUGUI SkillDescription;
+    public TextMeshProUGUI SkillRequirementText;
     public TextMeshProUGUI[] SkillBonuses;
     public TextMeshProUGUI[] SkillRequirements;
     public TextMeshProUGUI SkillLevelText;
@@ -55,6 +64,14 @@ public class UpgradeController : MonoBehaviour
     public GameObject SkillsUnlocked;
     public Button _skillBuyButton;
     public TextMeshProUGUI _skillBuyButtonText;
+    private int _skillLastUsedIndex = 0;
+    [SerializeField] private Sprite _skillLastUsedSprite;
+
+    [Header("Other")]
+    public bool _lastUsedMenu = false;
+    public Color DefaultColor;
+    public Color GoodColor;
+    public Color BadColor;
 
     public void Start()
     {
@@ -65,8 +82,36 @@ public class UpgradeController : MonoBehaviour
         AllUpgradesList.AddRange(Skills);
     }
 
+    public void ShowMenu()
+    {
+        if (!_lastUsedMenu) ShowSpells();
+        else ShowSkill();
+    }
+    public void ShowSpells()
+    {
+        MagicIcons.SetActive(true);
+        MagicInfo.SetActive(true);
+        SkillIcons.SetActive(false);
+        SkillInfo.SetActive(false);
+
+        SetMagic(_magicLastUsedIndex, _magicLastUsedSprite);
+    }
+    public void ShowSkill()
+    {
+        MagicIcons.SetActive(false);
+        MagicInfo.SetActive(false);
+        SkillIcons.SetActive(true);
+        SkillInfo.SetActive(true);
+
+        SetSkill(_skillLastUsedIndex, _skillLastUsedSprite);
+    }
+
     public void SetMagic(int index, Sprite sprite)
     {
+        if (sprite == null) sprite = _magicLastUsedSprite;
+        _magicLastUsedSprite = sprite;
+        _magicLastUsedIndex = index;
+        _lastUsedMenu = false;
         bool allowedToBuy = true;
 
         MagicImage.sprite = sprite;
@@ -83,27 +128,44 @@ public class UpgradeController : MonoBehaviour
         }
         foreach (TextMeshProUGUI mr in MagicRequirements)
         {
+            mr.color = DefaultColor;
             mr.text = "";
         }
 
-        for (int i = 0; i < Magics[index].Requirements.Length; i++)
+        if (Levels[index] >= maxLevel)
         {
-            int reqIndex = Magics[index].Requirements[i].UpgradeIndex;
-            string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index] + 1}";
+            MagicRequirementText.text = "Max level reached";
+        }
+        else
+        {
+            MagicRequirementText.text = "Requirements:";
 
-            if (Levels[reqIndex] >= Levels[index] + 1)
+            if (Magics[index].Requirements.Length > 0)
             {
-                allowedToBuy = true;
-                MagicRequirements[i].color = Color.green;
+                for (int i = 0; i < Magics[index].Requirements.Length; i++)
+                {
+                    int reqIndex = Magics[index].Requirements[i].UpgradeIndex;
+                    string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index] + 1}";
+
+                    if (Levels[reqIndex] >= Levels[index] + 1)
+                    {
+                        allowedToBuy = true;
+                        MagicRequirements[i].color = GoodColor;
+                    }
+                    else
+                    {
+                        allowedToBuy = false;
+                        MagicRequirements[i].color = BadColor;
+                    }
+
+                    MagicRequirements[i].text = req;
+                }
             }
             else
             {
-                allowedToBuy = false;
-                MagicRequirements[i].color = Color.red;
-            } 
-
-            MagicRequirements[i].text = req;
-        }
+                MagicRequirements[0].text = "No requirements";
+            }
+        } 
 
         if (Levels[index] <= 0)
         {
@@ -129,7 +191,7 @@ public class UpgradeController : MonoBehaviour
         if (allowedToBuy)
         {
             int price = (Levels[index] + 1) * 500;
-            if (Levels[index] >= 10)
+            if (Levels[index] >= maxLevel)
             {
                 _magicBuyButtonText.text = "MAX";
                 _magicBuyButton.interactable = false;
@@ -157,6 +219,10 @@ public class UpgradeController : MonoBehaviour
 
     public void SetSkill(int index, Sprite sprite)
     {
+        if (sprite == null) sprite = _skillLastUsedSprite;
+        _skillLastUsedSprite = sprite;
+        _skillLastUsedIndex = index;
+        _lastUsedMenu = true;
         bool allowedToBuy = true;
 
         SkillImage.sprite = sprite;
@@ -169,27 +235,45 @@ public class UpgradeController : MonoBehaviour
         }
         foreach (TextMeshProUGUI sr in SkillRequirements)
         {
+            sr.color = DefaultColor;
             sr.text = "";
         }
 
-        for (int i = 0; i < Skills[index].Requirements.Length; i++)
+        if (Levels[index + 12] >= maxLevel)
         {
-            int reqIndex = Skills[index].Requirements[i].UpgradeIndex;
-            string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index + 12] + 1}";
+            SkillRequirementText.text = "Max level reached";
+        }
+        else
+        {
+            SkillRequirementText.text = "Requirements:";
 
-            if (Levels[reqIndex] >= Levels[index + 12] + 1)
+            if (Skills[index].Requirements.Length > 0)
             {
-                allowedToBuy = true;
-                SkillRequirements[i].color = Color.green;
+                for (int i = 0; i < Skills[index].Requirements.Length; i++)
+                {
+                    int reqIndex = Skills[index].Requirements[i].UpgradeIndex;
+                    string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index + 12] + 1}";
+
+                    if (Levels[reqIndex] >= Levels[index + 12] + 1)
+                    {
+                        allowedToBuy = true;
+                        SkillRequirements[i].color = GoodColor;
+                    }
+                    else
+                    {
+                        allowedToBuy = false;
+                        SkillRequirements[i].color = BadColor;
+                    }
+
+                    SkillRequirements[i].text = req;
+                }
             }
             else
             {
-                allowedToBuy = false;
-                SkillRequirements[i].color = Color.red;
+                SkillRequirements[0].text = "No requirements";
             }
-
-            SkillRequirements[i].text = req;
         }
+        
 
         if (Levels[index + 12] <= 0)
         {
@@ -213,7 +297,7 @@ public class UpgradeController : MonoBehaviour
         int price = (Levels[index + 12] + 1) * 500;
         if (allowedToBuy)
         {
-            if (Levels[index + 12] >= 10)
+            if (Levels[index + 12] >= maxLevel)
             {
                 _skillBuyButtonText.text = "MAX";
                 _skillBuyButton.interactable = false;
