@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Fire Beam
   Description: Description
-  Bonuses: []
+  Bonuses:
+  - Type: 0
+    Math: 0
+    Value: 1
+  - Type: 0
+    Math: 0
+    Value: 1
   Requirements:
   - UpgradeIndex: 17
   ShotType: 2

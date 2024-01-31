@@ -14,8 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ice Arrow
   Description: Description
-  Bonuses: []
-  Requirements: []
+  Bonuses:
+  - Type: 6
+    Math: 1
+    Value: 1
+  - Type: 2
+    Math: 1
+    Value: 1
+  Requirements:
+  - UpgradeIndex: 20
   ShotType: 1
   Element: 2
   Damage: 1

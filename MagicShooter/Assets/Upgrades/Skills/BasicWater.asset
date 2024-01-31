@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: BasicWater
   m_EditorClassIdentifier: 
-  Name: BasicWater
+  Name: Basic Water
   Description: Description
-  Bonuses: []
+  Bonuses:
+  - Type: 6
+    Math: 1
+    Value: 2
   Requirements: []

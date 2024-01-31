@@ -40,6 +40,7 @@ public class MenuController : MonoBehaviour
         LoadMap();
         SetLevelText();
         LoadMoney();
+        StatsController.Instance.ReCalculate();
     }
 
     public void LoadMoney()

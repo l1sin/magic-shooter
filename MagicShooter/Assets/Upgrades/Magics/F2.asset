@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Inferno
   Description: Description
-  Bonuses: []
+  Bonuses:
+  - Type: 4
+    Math: 1
+    Value: 1
+  - Type: 0
+    Math: 1
+    Value: 1
   Requirements:
   - UpgradeIndex: 17
   ShotType: 1

@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Speed
   Description: Description
-  Bonuses: []
+  Bonuses:
+  - Type: 3
+    Math: 1
+    Value: 5
   Requirements: []

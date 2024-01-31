@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: AdvancedEarth
   m_EditorClassIdentifier: 
-  Name: AdvancedEarth
+  Name: Advanced Earth
   Description: Description
-  Bonuses: []
-  Requirements: []
+  Bonuses:
+  - Type: 5
+    Math: 1
+    Value: 3
+  Requirements:
+  - UpgradeIndex: 18

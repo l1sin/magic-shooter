@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Luck
   Description: Description
-  Bonuses: []
+  Bonuses:
+  - Type: 2
+    Math: 1
+    Value: 5
   Requirements: []

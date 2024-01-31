@@ -22,7 +22,6 @@ public class UpgradeController : MonoBehaviour
     }
 
     [Header("Data")]
-    public Stats _Stats;
     public Magic[] Magics;
     public Skill[] Skills;
     public List<Upgrade> AllUpgradesList;
@@ -207,17 +206,4 @@ public class UpgradeController : MonoBehaviour
         Levels[index+12]++;
         SetSkill(index, SkillImage.sprite);
     }
-
-    public class Stats
-    {
-        public int Damage;
-        public int Health;
-        public int Luck;
-        public int Speed;
-        public int FireMagic;
-        public int EarthMagic;
-        public int WaterMagic;
-        public int AirMagic;
-    }
-
 }

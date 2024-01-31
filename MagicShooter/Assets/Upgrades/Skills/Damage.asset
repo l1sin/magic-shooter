@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Damage
   Description: Description
-  Bonuses: []
+  Bonuses:
+  - Type: 0
+    Math: 1
+    Value: 10
   Requirements: []
