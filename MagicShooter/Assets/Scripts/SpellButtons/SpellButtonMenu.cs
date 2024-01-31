@@ -10,4 +10,10 @@ public class SpellButtonMenu : SpellButton
         MenuController.Instance.SetDefaultSpells(_spellIndex, 1);
         SaveManager.Instance.CurrentProgress.DefaultSpellIndexRight = _spellIndex;
     }
+
+    public void Unlock()
+    {
+        _interactable = true;
+        _lockedIcon.SetActive(false);
+    }
 }

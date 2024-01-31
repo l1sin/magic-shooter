@@ -8,6 +8,8 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] protected int _spellIndex;
     [SerializeField] protected Image _image;
     [SerializeField] protected Color _tintColor;
+    [SerializeField] protected GameObject _lockedIcon;
+    [SerializeField] protected bool _interactable;
     protected bool _leftHold;
     protected bool _rightHold;
     UnityEvent _leftClick = new UnityEvent();
@@ -23,6 +25,7 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!_interactable) return;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             _leftHold = false;
@@ -36,6 +39,7 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!_interactable) return;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             _leftClick.Invoke();

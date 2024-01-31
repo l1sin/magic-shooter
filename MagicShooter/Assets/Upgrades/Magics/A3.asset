@@ -22,6 +22,7 @@ MonoBehaviour:
     Math: 1
     Value: 1
   Requirements:
+  - UpgradeIndex: 9
   - UpgradeIndex: 23
   ShotType: 2
   Element: 3

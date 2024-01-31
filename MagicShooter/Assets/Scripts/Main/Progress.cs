@@ -9,6 +9,7 @@ public class Progress
     public int DefaultSpellIndexLeft;
     public int DefaultSpellIndexRight;
     public int SelectedMap;
+    public bool[] Maps;
     public int[] Upgrades;
     public float[] Experience;
 
@@ -20,6 +21,8 @@ public class Progress
         DefaultSpellIndexLeft = 0;
         DefaultSpellIndexRight = 0;
         SelectedMap = 0;
+        Maps = new bool[4];
         Upgrades = new int[24];
-    }
+        Experience = new float[12];
+}
 }

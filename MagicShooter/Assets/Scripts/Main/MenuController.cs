@@ -22,6 +22,16 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI[] _moneyText;
 
+    [Header("Progress Bars")]
+    [SerializeField] private ProgressBar _spellsBar;
+    [SerializeField] private ProgressBar _mapsBar;
+    [SerializeField] private ProgressBar _achievementsBar;
+    [SerializeField] private ProgressBar _monstersBar;
+    [SerializeField] private ProgressBar _upgradesBar;
+
+    [Header("Buttons")]
+    [SerializeField] private SpellButtonMenu[] _spellButtons;
+
     private void OnEnable()
     {
         if (Instance != null && Instance != this)
@@ -39,8 +49,64 @@ public class MenuController : MonoBehaviour
         LoadDefaultSpells();
         LoadMap();
         SetLevelText();
+        SetCharacterLevelText();
         LoadMoney();
         StatsController.Instance.ReCalculate();
+        UpdateAllProgressBars();
+    }
+
+    public void UnlockButtons()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Upgrades[i] > 0)
+            {
+                _spellButtons[i].Unlock();
+            }
+        }
+        
+    }
+
+    public void UpdateAllProgressBars()
+    {
+        UpdateSpellsBar();
+        UpdateMapsBar();
+        UpdateAchievementsBar();
+        UpdateMonstersBar();
+        UpdateUpgradesBar();
+    }
+
+    public void UpdateSpellsBar()
+    {
+        int j = 0;
+        for (int i = 0; i < 12; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Upgrades[i] > 0) j++;
+        }
+        _spellsBar.UpdateProgressBar(j, 12);
+        UnlockButtons();
+    }
+
+    public void UpdateMapsBar()
+    {
+        int j = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Maps[i] == true) j++;
+        }
+        _mapsBar.UpdateProgressBar(j, 4);
+    }
+
+    public void UpdateAchievementsBar() { }
+    public void UpdateMonstersBar() { }
+    public void UpdateUpgradesBar() 
+    {
+        int j = 0;
+        for (int i = 0; i < SaveManager.Instance.CurrentProgress.Upgrades.Length; i++)
+        {
+            j += SaveManager.Instance.CurrentProgress.Upgrades[i];
+        }
+        _upgradesBar.UpdateProgressBar(j, SaveManager.Instance.CurrentProgress.Upgrades.Length * 10);
     }
 
     public void LoadMoney()

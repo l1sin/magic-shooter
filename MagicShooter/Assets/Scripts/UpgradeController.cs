@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UpgradeController : MonoBehaviour
@@ -61,12 +58,17 @@ public class UpgradeController : MonoBehaviour
 
     public void Start()
     {
+        Levels = SaveManager.Instance.CurrentProgress.Upgrades;
+        CurrentExp = SaveManager.Instance.CurrentProgress.Experience;
+
         AllUpgradesList.AddRange(Magics);
         AllUpgradesList.AddRange(Skills);
     }
 
     public void SetMagic(int index, Sprite sprite)
     {
+        bool allowedToBuy = true;
+
         MagicImage.sprite = sprite;
         MagicName.text = Magics[index].Name;
         SpellType.text = $"Spell Type: {Magics[index].Element}";
@@ -86,7 +88,20 @@ public class UpgradeController : MonoBehaviour
 
         for (int i = 0; i < Magics[index].Requirements.Length; i++)
         {
-            string req = $"{AllUpgradesList[Magics[index].Requirements[i].UpgradeIndex].Name} {Levels[index] + 1}";
+            int reqIndex = Magics[index].Requirements[i].UpgradeIndex;
+            string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index] + 1}";
+
+            if (Levels[reqIndex] >= Levels[index] + 1)
+            {
+                allowedToBuy = true;
+                MagicRequirements[i].color = Color.green;
+            }
+            else
+            {
+                allowedToBuy = false;
+                MagicRequirements[i].color = Color.red;
+            } 
+
             MagicRequirements[i].text = req;
         }
 
@@ -101,7 +116,7 @@ public class UpgradeController : MonoBehaviour
             {
                 MagicBonuses[i].text = Magics[index].Bonuses[i].ThisToString(Levels[index]);
             }
-            SkillLevelText.text = $"Level {Levels[index]}";
+            MagicLevelText.text = $"Level {Levels[index]}";
             Experience.text = $"{CurrentExp[index]}/{NextLevelExp[index]}";
             ExpBar.fillAmount = CurrentExp[index] / NextLevelExp[index];
 
@@ -111,29 +126,39 @@ public class UpgradeController : MonoBehaviour
 
 
         _magicBuyButton.onClick.RemoveAllListeners();
-        int price = (Levels[index] + 1) * 500;
-        if (Levels[index] >= 10)
+        if (allowedToBuy)
         {
-            _magicBuyButtonText.text = "MAX";
-            _magicBuyButton.interactable = false;
-        }
-        else
-        {
-            _magicBuyButtonText.text = price.ToString();
-            if (MenuController.Instance.Money >= price)
+            int price = (Levels[index] + 1) * 500;
+            if (Levels[index] >= 10)
             {
-                _magicBuyButton.onClick.AddListener(()=> BuyMagic(index, price));
-                _magicBuyButton.interactable = true;
+                _magicBuyButtonText.text = "MAX";
+                _magicBuyButton.interactable = false;
             }
             else
             {
-                _magicBuyButton.interactable = false;
+                _magicBuyButtonText.text = price.ToString();
+                if (MenuController.Instance.Money >= price)
+                {
+                    _magicBuyButton.onClick.AddListener(() => BuyMagic(index, price));
+                    _magicBuyButton.interactable = true;
+                }
+                else
+                {
+                    _magicBuyButton.interactable = false;
+                }
             }
         }
+        else
+        {
+            _magicBuyButtonText.text = "Requirements not met";
+            _magicBuyButton.interactable = false;
+        } 
     }
 
     public void SetSkill(int index, Sprite sprite)
     {
+        bool allowedToBuy = true;
+
         SkillImage.sprite = sprite;
         SkillName.text = Skills[index].Name;
         SkillDescription.text = Skills[index].Description;
@@ -149,11 +174,24 @@ public class UpgradeController : MonoBehaviour
 
         for (int i = 0; i < Skills[index].Requirements.Length; i++)
         {
-            string req = $"{AllUpgradesList[Skills[index].Requirements[i].UpgradeIndex].Name} {Levels[index+12] + 1}";
+            int reqIndex = Skills[index].Requirements[i].UpgradeIndex;
+            string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index + 12] + 1}";
+
+            if (Levels[reqIndex] >= Levels[index + 12] + 1)
+            {
+                allowedToBuy = true;
+                SkillRequirements[i].color = Color.green;
+            }
+            else
+            {
+                allowedToBuy = false;
+                SkillRequirements[i].color = Color.red;
+            }
+
             SkillRequirements[i].text = req;
         }
 
-        if (Levels[index+12] <= 0)
+        if (Levels[index + 12] <= 0)
         {
             SkillsLocked.SetActive(true);
             SkillsUnlocked.SetActive(false);
@@ -162,9 +200,9 @@ public class UpgradeController : MonoBehaviour
         {
             for (int i = 0; i < Skills[index].Bonuses.Length; i++)
             {
-                SkillBonuses[i].text = Skills[index].Bonuses[i].ThisToString(Levels[index+12]);
+                SkillBonuses[i].text = Skills[index].Bonuses[i].ThisToString(Levels[index + 12]);
             }
-            SkillLevelText.text = $"Level {Levels[index+12]}";
+            SkillLevelText.text = $"Level {Levels[index + 12]}";
 
             SkillsLocked.SetActive(false);
             SkillsUnlocked.SetActive(true);
@@ -172,25 +210,33 @@ public class UpgradeController : MonoBehaviour
 
 
         _skillBuyButton.onClick.RemoveAllListeners();
-        int price = (Levels[index+12] + 1) * 500;
-        if (Levels[index+12] >= 10)
+        int price = (Levels[index + 12] + 1) * 500;
+        if (allowedToBuy)
         {
-            _skillBuyButtonText.text = "MAX";
-            _skillBuyButton.interactable = false;
-        }
-        else
-        {
-            _skillBuyButtonText.text = price.ToString();
-            if (MenuController.Instance.Money >= price)
+            if (Levels[index + 12] >= 10)
             {
-                _skillBuyButton.onClick.AddListener(() => BuySkill(index, price));
-                _skillBuyButton.interactable = true;
+                _skillBuyButtonText.text = "MAX";
+                _skillBuyButton.interactable = false;
             }
             else
             {
-                _skillBuyButton.interactable = false;
+                _skillBuyButtonText.text = price.ToString();
+                if (MenuController.Instance.Money >= price)
+                {
+                    _skillBuyButton.onClick.AddListener(() => BuySkill(index, price));
+                    _skillBuyButton.interactable = true;
+                }
+                else
+                {
+                    _skillBuyButton.interactable = false;
+                }
             }
         }
+        else
+        {
+            _skillBuyButtonText.text = "Requirements not met";
+            _skillBuyButton.interactable = false;
+        }   
     }
 
     public void BuyMagic(int index, int price)
@@ -198,12 +244,19 @@ public class UpgradeController : MonoBehaviour
         MenuController.Instance.SpendMoney(price);
         Levels[index]++;
         SetMagic(index, MagicImage.sprite);
+        MenuController.Instance.UpdateUpgradesBar();
+        MenuController.Instance.UpdateSpellsBar();
+        SaveManager.Instance.CurrentProgress.Upgrades = Levels;
+        SaveManager.Instance.CurrentProgress.Experience = CurrentExp;
     }
 
     public void BuySkill(int index, int price)
     {
         MenuController.Instance.SpendMoney(price);
-        Levels[index+12]++;
+        Levels[index + 12]++;
         SetSkill(index, SkillImage.sprite);
+        MenuController.Instance.UpdateUpgradesBar();
+        SaveManager.Instance.CurrentProgress.Upgrades = Levels;
+        SaveManager.Instance.CurrentProgress.Experience = CurrentExp;
     }
 }
