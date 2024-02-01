@@ -27,7 +27,6 @@ public class MenuController : MonoBehaviour
     [SerializeField] private ProgressBar _spellsBar;
     [SerializeField] private ProgressBar _mapsBar;
     [SerializeField] private ProgressBar _achievementsBar;
-    [SerializeField] private ProgressBar _monstersBar;
     [SerializeField] private ProgressBar _upgradesBar;
 
     [Header("Buttons")]
@@ -73,7 +72,6 @@ public class MenuController : MonoBehaviour
         UpdateSpellsBar();
         UpdateMapsBar();
         UpdateAchievementsBar();
-        UpdateMonstersBar();
         UpdateUpgradesBar();
     }
 
@@ -99,7 +97,6 @@ public class MenuController : MonoBehaviour
     }
 
     public void UpdateAchievementsBar() { }
-    public void UpdateMonstersBar() { }
     public void UpdateUpgradesBar() 
     {
         int j = 0;
