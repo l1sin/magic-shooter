@@ -11,6 +11,7 @@ public class MenuController : MonoBehaviour
 
     [Header("Map")]
     [SerializeField] private MapSelector _mapSelector;
+    [SerializeField] private MapShop _mapShop;
 
     [Header("Spells")]
     [SerializeField] private Image[] DefaultSpellLeftImage;
@@ -47,7 +48,7 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         LoadDefaultSpells();
-        LoadMap();
+        LoadMapsInfo();
         SetLevelText();
         SetCharacterLevelText();
         LoadMoney();
@@ -139,8 +140,9 @@ public class MenuController : MonoBehaviour
         _characterLevelText.text = $"Character Level {SaveManager.Instance.CurrentProgress.CharacterLevel + 1}";
     }
 
-    public void LoadMap()
+    public void LoadMapsInfo()
     {
+        _mapShop.UpdateMapInfo();
         _mapSelector.SelectMap(SaveManager.Instance.CurrentProgress.SelectedMap);
     }
 
