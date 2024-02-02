@@ -32,6 +32,9 @@ public class MenuController : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private SpellButtonMenu[] _spellButtons;
 
+    [Header("Achievements")]
+    [SerializeField] private AchievementController _achievementController;
+
     private void OnEnable()
     {
         if (Instance != null && Instance != this)
@@ -51,8 +54,21 @@ public class MenuController : MonoBehaviour
         SetLevelText();
         SetCharacterLevelText();
         LoadMoney();
-        StatsController.Instance.ReCalculate();
+        CalculateStats();
+
+        //Last
+        LoadAchivements();
         UpdateAllProgressBars();
+    }
+
+    public void LoadAchivements()
+    {
+        _achievementController.LoadAchievements();
+    }
+
+    public void CalculateStats()
+    {
+        StatsController.Instance.ReCalculate();
     }
 
     public void UnlockButtons()
@@ -96,7 +112,15 @@ public class MenuController : MonoBehaviour
         _mapsBar.UpdateProgressBar(j, 4);
     }
 
-    public void UpdateAchievementsBar() { }
+    public void UpdateAchievementsBar()
+    {
+        int j = 0;
+        for (int i = 0; i < 27; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Achievements[i] == true) j++;
+        }
+        _achievementsBar.UpdateProgressBar(j, 27);
+    }
     public void UpdateUpgradesBar() 
     {
         int j = 0;

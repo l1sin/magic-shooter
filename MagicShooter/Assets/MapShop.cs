@@ -47,5 +47,6 @@ public class MapShop : MonoBehaviour
         SaveManager.Instance.CurrentProgress.Maps = _maps;
         UpdateMapInfo();
         MenuController.Instance.UpdateMapsBar();
+        AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Maps);
     }
 }

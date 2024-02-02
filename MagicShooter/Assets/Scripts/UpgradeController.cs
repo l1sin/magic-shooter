@@ -332,6 +332,8 @@ public class UpgradeController : MonoBehaviour
         MenuController.Instance.UpdateSpellsBar();
         SaveManager.Instance.CurrentProgress.Upgrades = Levels;
         SaveManager.Instance.CurrentProgress.Experience = CurrentExp;
+        AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Upgrades);
+        AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Spells);
     }
 
     public void BuySkill(int index, int price)
@@ -342,5 +344,6 @@ public class UpgradeController : MonoBehaviour
         MenuController.Instance.UpdateUpgradesBar();
         SaveManager.Instance.CurrentProgress.Upgrades = Levels;
         SaveManager.Instance.CurrentProgress.Experience = CurrentExp;
+        AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Upgrades);
     }
 }

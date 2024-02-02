@@ -12,6 +12,9 @@ public class Progress
     public bool[] Maps;
     public int[] Upgrades;
     public float[] Experience;
+    public bool[] Achievements;
+    public int AllMoney;
+    public int Kills;
 
     public Progress()
     {
@@ -24,5 +27,8 @@ public class Progress
         Maps = new bool[4];
         Upgrades = new int[24];
         Experience = new float[12];
-}
+        Achievements = new bool[27];
+        AllMoney = 0;
+        Kills = 0;
+    }
 }
