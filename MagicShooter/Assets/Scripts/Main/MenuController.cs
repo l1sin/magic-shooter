@@ -54,10 +54,10 @@ public class MenuController : MonoBehaviour
         SetLevelText();
         SetCharacterLevelText();
         LoadMoney();
+        LoadAchivements();
         CalculateStats();
 
         //Last
-        LoadAchivements();
         UpdateAllProgressBars();
     }
 

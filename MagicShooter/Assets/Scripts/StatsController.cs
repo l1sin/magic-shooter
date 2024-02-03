@@ -13,10 +13,13 @@ public class StatsController : MonoBehaviour
     public Stats _UBPercent;
     public Stats _UBFlat;
     public Stats _CLB;
+    public Stats _AB;
     public TextMeshProUGUI[] UpgradeBonuses;
-    public TextMeshProUGUI[] CharLevelBonuses;
+    public TextMeshProUGUI[] LevelBonuses;
+    public TextMeshProUGUI[] AchievementBonuses;
     public TextMeshProUGUI[] FinalStats;
     public float _bonusPerLevel;
+    public float _bonusPerAchievement;
 
 
     private void OnEnable()
@@ -35,6 +38,7 @@ public class StatsController : MonoBehaviour
     {
         CalculateBonuses();
         CalculateLevelBonuses();
+        CalculateAchievementBonuses();
         CalculateFinal();
         UpdateStats();
     }
@@ -51,10 +55,15 @@ public class StatsController : MonoBehaviour
         UpgradeBonuses[7].text = $"Water Magic +{_UBPercent.WaterMagic}%";
         UpgradeBonuses[8].text = $"Air Magic +{_UBPercent.AirMagic}%";
 
-        CharLevelBonuses[0].text = $"Damage +{_CLB.Damage}%";
-        CharLevelBonuses[1].text = $"Health +{_CLB.Health}%";
-        CharLevelBonuses[2].text = $"Luck +{_CLB.Luck}%";
-        CharLevelBonuses[3].text = $"Speed +{_CLB.Speed}%";
+        LevelBonuses[0].text = $"Damage +{_CLB.Damage}%";
+        LevelBonuses[1].text = $"Health +{_CLB.Health}%";
+        LevelBonuses[2].text = $"Luck +{_CLB.Luck}%";
+        LevelBonuses[3].text = $"Speed +{_CLB.Speed}%";
+
+        AchievementBonuses[0].text = $"Damage +{_AB.Damage}%";
+        AchievementBonuses[1].text = $"Health +{_AB.Health}%";
+        AchievementBonuses[2].text = $"Luck +{_AB.Luck}%";
+        AchievementBonuses[3].text = $"Speed +{_AB.Speed}%";
 
         FinalStats[0].text = $"Damage: {_FinStats.Damage * 100}%";
         FinalStats[1].text = $"Health: {_FinStats.Health}";
@@ -153,18 +162,32 @@ public class StatsController : MonoBehaviour
         _CLB.Speed = _bonusPerLevel * SaveManager.Instance.CurrentProgress.CharacterLevel;
     }
 
+    public void CalculateAchievementBonuses()
+    {
+        _AB = new Stats();
+        int j = 0;
+        for (int i = 0; i < 27; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Achievements[i] == true) j++;
+        }
+        _AB.Damage = _bonusPerAchievement * j;
+        _AB.Health = _bonusPerAchievement * j;
+        _AB.Luck = _bonusPerAchievement * j;
+        _AB.Speed = _bonusPerAchievement * j;
+    }
+
     public void CalculateFinal()
     {
         _FinStats = new Stats();
 
-        _FinStats.Damage = (_DefaultStats.Damage + _UBFlat.Damage) * (((_UBPercent.Damage + _CLB.Damage) / 100) + 1);
-        _FinStats.Health = (_DefaultStats.Health + _UBFlat.Health) * (((_UBPercent.Health + _CLB.Health) / 100) +1);
-        _FinStats.Luck = (_DefaultStats.Luck + _UBFlat.Luck) * (((_UBPercent.Luck + _CLB.Luck) / 100) +1);
-        _FinStats.Speed = (_DefaultStats.Speed + _UBFlat.Speed) * (((_UBPercent.Speed + _CLB.Speed) / 100) +1);
-        _FinStats.FireMagic = (_DefaultStats.FireMagic + _UBFlat.FireMagic) * (((_UBPercent.FireMagic + _CLB.FireMagic) / 100) +1);
-        _FinStats.EarthMagic = (_DefaultStats.EarthMagic + _UBFlat.EarthMagic) * (((_UBPercent.EarthMagic + _CLB.EarthMagic) / 100) +1);
-        _FinStats.WaterMagic = (_DefaultStats.WaterMagic + _UBFlat.WaterMagic) * (((_UBPercent.WaterMagic + _CLB.WaterMagic) / 100) +1);
-        _FinStats.AirMagic = (_DefaultStats.AirMagic + _UBFlat.AirMagic) * (((_UBPercent.AirMagic + _CLB.AirMagic) / 100) +1);
+        _FinStats.Damage = (_DefaultStats.Damage + _UBFlat.Damage) * (((_UBPercent.Damage + _CLB.Damage + _AB.Damage) / 100) + 1);
+        _FinStats.Health = (_DefaultStats.Health + _UBFlat.Health) * (((_UBPercent.Health + _CLB.Health + _AB.Health) / 100) +1);
+        _FinStats.Luck = (_DefaultStats.Luck + _UBFlat.Luck) * (((_UBPercent.Luck + _CLB.Luck + _AB.Luck) / 100) +1);
+        _FinStats.Speed = (_DefaultStats.Speed + _UBFlat.Speed) * (((_UBPercent.Speed + _CLB.Speed + _AB.Speed) / 100) +1);
+        _FinStats.FireMagic = (_DefaultStats.FireMagic + _UBFlat.FireMagic) * (((_UBPercent.FireMagic + _CLB.FireMagic + _AB.FireMagic) / 100) +1);
+        _FinStats.EarthMagic = (_DefaultStats.EarthMagic + _UBFlat.EarthMagic) * (((_UBPercent.EarthMagic + _CLB.EarthMagic + _AB.EarthMagic) / 100) +1);
+        _FinStats.WaterMagic = (_DefaultStats.WaterMagic + _UBFlat.WaterMagic) * (((_UBPercent.WaterMagic + _CLB.WaterMagic + _AB.WaterMagic) / 100) +1);
+        _FinStats.AirMagic = (_DefaultStats.AirMagic + _UBFlat.AirMagic) * (((_UBPercent.AirMagic + _CLB.AirMagic + _AB.AirMagic) / 100) +1);
     }
 
     [Serializable]
