@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static AchievementController.Achievement;
 
 public class AchievementController : MonoBehaviour
@@ -8,6 +10,12 @@ public class AchievementController : MonoBehaviour
     [SerializeField] private bool[] _achievementStates;
     [SerializeField] Achievement[] _achievements;
     [SerializeField] AchievementIcon[] _icons;
+
+    [Header("Achievement focus")]
+    [SerializeField] private GameObject _achivementInfo;
+    [SerializeField] private Image _image;
+    [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _description;
 
     private void OnEnable()
     {
@@ -123,13 +131,32 @@ public class AchievementController : MonoBehaviour
         }
     }
 
+    public void FocusAchivement(int index, Sprite sprite)
+    {
+        _achivementInfo.SetActive(true);
+        _image.sprite = sprite;
+        
+        if (_achievementStates[index])
+        {
+            _name.text = _achievements[index].Name;
+            _description.text = _achievements[index].Description;
+        }
+        else
+        {
+            _name.text = "???";
+            _description.text = _achievements[index].Hint;
+        } 
+    }
+
     [Serializable]
     public class Achievement
     {
         public AchievementType Type;
         public int Goal;
         public int[] SpellsIndices;
+        public string Name;
         public string Description;
+        public string Hint;
 
         public enum AchievementType
         {
