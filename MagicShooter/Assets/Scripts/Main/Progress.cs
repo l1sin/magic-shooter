@@ -15,6 +15,9 @@ public class Progress
     public bool[] Achievements;
     public int AllMoney;
     public int Kills;
+    public float SFXVolume;
+    public float MusicVolume;
+    public float MouseSensetivity;
 
     public Progress()
     {
@@ -30,5 +33,8 @@ public class Progress
         Achievements = new bool[27];
         AllMoney = 0;
         Kills = 0;
+        SFXVolume = 0;
+        MusicVolume = 0;
+        MouseSensetivity = 1;
     }
 }

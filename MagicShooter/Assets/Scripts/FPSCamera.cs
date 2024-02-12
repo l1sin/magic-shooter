@@ -9,8 +9,8 @@ public class FPSCamera : MonoBehaviour
     [SerializeField] private float _minShake = 0;
 
     [SerializeField] private Transform _player;
-    [SerializeField] private float _mouseSensitivityX;
-    [SerializeField] private float _mouseSensitivityY;
+    [SerializeField] public float MouseSensitivityX = 1f;
+    [SerializeField] public float MouseSensitivityY = 1f;
     private float _verticalRotation;
     private float _horizontalRotation;
     private Vector2 _rotation;
@@ -34,10 +34,10 @@ public class FPSCamera : MonoBehaviour
 
     private void Rotate()
     {
-        _horizontalRotation = _rotation.x * _mouseSensitivityX;
+        _horizontalRotation = _rotation.x * MouseSensitivityX;
         _player.Rotate(Vector3.up * _horizontalRotation);
 
-        _verticalRotation -= _rotation.y * _mouseSensitivityY;
+        _verticalRotation -= _rotation.y * MouseSensitivityY;
         _verticalRotation = Mathf.Clamp(_verticalRotation, -90f, 90f);
         transform.localRotation = Quaternion.Euler(_verticalRotation, 0, 0);
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1070557989732705191}
   - component: {fileID: 6480861791529303261}
   - component: {fileID: 1124018327134895801}
+  - component: {fileID: 1993950517207449667}
   m_Layer: 0
   m_Name: ---DATA---
   m_TagString: Untagged
@@ -48,9 +49,31 @@ MonoBehaviour:
   CurrentProgress:
     Money: 0
     Level: 0
+    CharacterLevel: 0
     DefaultSpellIndexLeft: 0
     DefaultSpellIndexRight: 0
     SelectedMap: 0
+    Maps: 00000000
+    Upgrades: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    Experience:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Achievements: 000000000000000000000000000000000000000000000000000000
+    AllMoney: 0
+    Kills: 0
+    MusicVolume: 1
+    SFXVolume: 1
+    MouseSensetivity: 1
   Localization: []
   MainMenuSceneIndex: 1
   SaveKey: 270
@@ -68,3 +91,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultLanguage: 0
   Domen: 
+--- !u!114 &1993950517207449667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563ebaa55046e934da94483bd3facc57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundPrefab: {fileID: 3082421271153698346, guid: 5be4c79f3beea354e9ee824419b6002b,
+    type: 3}
+  _audioMixer: {fileID: 24100000, guid: c99f098306b88594b98111629e50f3ad, type: 2}

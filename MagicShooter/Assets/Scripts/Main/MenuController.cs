@@ -35,6 +35,9 @@ public class MenuController : MonoBehaviour
     [Header("Achievements")]
     [SerializeField] private AchievementController _achievementController;
 
+    [Header("Sliders")]
+    [SerializeField] private SliderController[] _sliders;
+
     private void OnEnable()
     {
         if (Instance != null && Instance != this)
@@ -49,6 +52,7 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
+        LoadSliders();
         LoadDefaultSpells();
         LoadMapsInfo();
         SetLevelText();
@@ -59,6 +63,14 @@ public class MenuController : MonoBehaviour
 
         //Last
         UpdateAllProgressBars();
+    }
+
+    public void LoadSliders()
+    {
+        foreach (SliderController s in _sliders)
+        {
+            s.LoadSlider();
+        }
     }
 
     public void LoadAchivements()
