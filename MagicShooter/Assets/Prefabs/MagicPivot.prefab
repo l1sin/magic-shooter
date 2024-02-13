@@ -187,6 +187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5425258621199588211, guid: 64c489fd93c308042b96a57847a19448,
         type: 3}
+      propertyPath: _element
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425258621199588211, guid: 64c489fd93c308042b96a57847a19448,
+        type: 3}
       propertyPath: _targets.m_Bits
       value: 320
       objectReference: {fileID: 0}
@@ -258,6 +263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173527034790665396, guid: 13d577ee8ff67d647882cf5ab4baeb88,
+        type: 3}
+      propertyPath: _element
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7173527034790665396, guid: 13d577ee8ff67d647882cf5ab4baeb88,
         type: 3}
@@ -345,6 +355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6589383426453238720, guid: b2b579e21b828f94dbce4a96647fc5a0,
         type: 3}
+      propertyPath: _element
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6589383426453238720, guid: b2b579e21b828f94dbce4a96647fc5a0,
+        type: 3}
       propertyPath: _targets.m_Bits
       value: 320
       objectReference: {fileID: 0}
@@ -419,6 +434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2307920982836851511, guid: b19aba13244b13b4fb8a46d1be769b96,
         type: 3}
+      propertyPath: _element
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307920982836851511, guid: b19aba13244b13b4fb8a46d1be769b96,
+        type: 3}
       propertyPath: _targets.m_Bits
       value: 320
       objectReference: {fileID: 0}
@@ -446,6 +466,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7721346621246380095}
     m_Modifications:
+    - target: {fileID: 986601455038100596, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
+        type: 3}
+      propertyPath: _element
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 986601455038100596, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
         type: 3}
       propertyPath: _targets.m_Bits
@@ -584,6 +609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EarthSpell1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711711127821339329, guid: 0642fb9035205864fa5c0718bf1839d3,
+        type: 3}
+      propertyPath: _element
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6711711127821339329, guid: 0642fb9035205864fa5c0718bf1839d3,
         type: 3}
@@ -774,6 +804,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1948569855281207592, guid: 5354012489c607441bbd4e10ca1324a5,
         type: 3}
+      propertyPath: _element
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948569855281207592, guid: 5354012489c607441bbd4e10ca1324a5,
+        type: 3}
       propertyPath: _targets.m_Bits
       value: 320
       objectReference: {fileID: 0}
@@ -851,6 +886,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7721346621246380095}
     m_Modifications:
+    - target: {fileID: 2706471766753400004, guid: c979ebaea7cd609408b95d2dc59bf5a8,
+        type: 3}
+      propertyPath: _element
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2706471766753400004, guid: c979ebaea7cd609408b95d2dc59bf5a8,
         type: 3}
       propertyPath: _targets.m_Bits
@@ -979,6 +1019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358219727564913704, guid: 09fda00f3da60ac4880180c068a58795,
+        type: 3}
+      propertyPath: _element
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5358219727564913704, guid: 09fda00f3da60ac4880180c068a58795,
         type: 3}

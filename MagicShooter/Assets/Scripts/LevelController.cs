@@ -16,9 +16,23 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup audioMixerGroup;
 
+    [SerializeField] private SpellButtonGame[] _spellButtons;
+
     public void Start()
     {
         Instance = this;
+        UnlockSpells();
+    }
+
+    public void UnlockSpells()
+    {
+        for (int i = 0; i < _spellButtons.Length; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Upgrades[i] > 0)
+            {
+                _spellButtons[i].Unlock();
+            }
+        }
     }
 
     public void ShowDeathScreen()

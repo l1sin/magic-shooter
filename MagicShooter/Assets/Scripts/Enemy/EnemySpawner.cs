@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _allEnemiesCount;
     [SerializeField] public int DeadEnemies;
     [SerializeField] private int _spawnedEnemies;
-    [SerializeField] private Text _deathCountText;
+    [SerializeField] private TextMeshProUGUI _deathCountText;
 
     [SerializeField] public float Timer;
 
@@ -35,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        //_level = SaveManager.Instance.CurrentProgress.Level;
+        _level = SaveManager.Instance.CurrentProgress.Level;
 
         _allEnemiesCount = _startEnemies + _level * _enemiesPerLevel;
 

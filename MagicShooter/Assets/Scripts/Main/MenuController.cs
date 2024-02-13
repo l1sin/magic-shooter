@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -63,6 +64,13 @@ public class MenuController : MonoBehaviour
 
         //Last
         UpdateAllProgressBars();
+    }
+
+    public void StartLevel()
+    {
+        StatsController.Instance.ReCalculate();
+        SaveManager.Instance.CurrentProgress.CurrentStats = StatsController.Instance._FinStats;
+        SceneManager.LoadScene(SaveManager.Instance.CurrentProgress.SelectedMap + 2);
     }
 
     public void LoadSliders()

@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e93d2be93de399f42afca8d0a787a795,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -202,21 +203,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---LEVEL---
       objectReference: {fileID: 0}
+    - target: {fileID: 4953223603049025177, guid: e156aea41dfef644389a26001ce8c4a3,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3144285789663827059, guid: e156aea41dfef644389a26001ce8c4a3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 580602704}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e156aea41dfef644389a26001ce8c4a3, type: 3}
---- !u!4 &384757468 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3144285789663827059, guid: e156aea41dfef644389a26001ce8c4a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 384757467}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580602703
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,12 +240,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580602703}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -125, y: 0, z: -125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 384757468}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &580602705
 TerrainCollider:
@@ -415,3 +411,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 867581081}
   - {fileID: 384757467}
+  - {fileID: 580602704}

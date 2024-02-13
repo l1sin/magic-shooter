@@ -16,7 +16,7 @@ public class CharacterHealth : MonoBehaviour, IDamageable
 
     public void Start()
     {
-        //_healthMax *= Mathf.Pow(_healthBuff, SaveManager.Instance.CurrentProgress.UpgradeLevels[8]);
+        HealthMax = SaveManager.Instance.CurrentProgress.CurrentStats.Health;
         HealthCurrent = HealthMax;
         UpdateHealthBar();
     }

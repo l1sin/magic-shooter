@@ -35,6 +35,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
+        DefaultSpeed = SaveManager.Instance.CurrentProgress.CurrentStats.Speed;
         IsGrounded = true;
     }
 

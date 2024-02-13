@@ -18,6 +18,7 @@ public class Progress
     public float SFXVolume;
     public float MusicVolume;
     public float MouseSensetivity;
+    public StatsController.Stats CurrentStats;
 
     public Progress()
     {
@@ -36,5 +37,6 @@ public class Progress
         SFXVolume = 0;
         MusicVolume = 0;
         MouseSensetivity = 1;
+        CurrentStats = new StatsController.Stats();
     }
 }

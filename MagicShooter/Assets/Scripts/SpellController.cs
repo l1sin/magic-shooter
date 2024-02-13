@@ -20,10 +20,23 @@ public class SpellController : MonoBehaviour
 
     private void Start()
     {
-        _currentSpellIndexLeft = 0;
-        _currentSpellIndexRight = 0;
+        _currentSpellIndexLeft = SaveManager.Instance.CurrentProgress.DefaultSpellIndexLeft;
+        _currentSpellIndexRight = SaveManager.Instance.CurrentProgress.DefaultSpellIndexRight;
         SetSpell(_currentSpellIndexLeft, 0);
         SetSpell(_currentSpellIndexRight, 1);
+        LoadSpellData();
+    }
+
+    public void LoadSpellData()
+    {
+        for (int i = 0; i < SpellsLeft.Count; i++)
+        {
+            SpellsLeft[i].SetDamage(i);
+        }
+        for (int i = 0; i < SpellsRight.Count; i++)
+        {
+            SpellsRight[i].SetDamage(i);
+        }
     }
 
     public void Update()

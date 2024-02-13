@@ -15,8 +15,10 @@ public class Spell : MonoBehaviour
     [SerializeField] private float _reloadTime;
     [SerializeField] public bool CanShoot = true;
 
+    [SerializeField] private float _levelDamageBonus = 0.1f;
     [SerializeField] private ShotType _shotType;
     [SerializeField] private Hand _hand;
+    [SerializeField] private Element _element;
 
     [SerializeField] public bool IsAttacking = false;
     private static float s_maxShootingDistance = 100f;
@@ -69,6 +71,31 @@ public class Spell : MonoBehaviour
     {
         CanShoot = true;
         IsAttacking = false;
+    }
+
+    public void SetDamage(int index)
+    {
+        float damageMulty = 1;
+        damageMulty *= 1+ (SaveManager.Instance.CurrentProgress.Upgrades[index] * _levelDamageBonus);
+        switch (_element)
+        {
+            case Element.Fire:
+                damageMulty *= SaveManager.Instance.CurrentProgress.CurrentStats.FireMagic;
+                break;
+            case Element.Earth:
+                damageMulty *= SaveManager.Instance.CurrentProgress.CurrentStats.EarthMagic;
+                break;
+            case Element.Water:
+                damageMulty *= SaveManager.Instance.CurrentProgress.CurrentStats.WaterMagic;
+                break;
+            case Element.Air:
+                damageMulty *= SaveManager.Instance.CurrentProgress.CurrentStats.EarthMagic;
+                break;
+            default: break;
+        }
+        damageMulty *= SaveManager.Instance.CurrentProgress.CurrentStats.Damage;
+
+        _damage *= damageMulty;
     }
 
     private void Update()

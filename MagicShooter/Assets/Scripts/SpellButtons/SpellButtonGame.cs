@@ -12,4 +12,10 @@ public class SpellButtonGame : SpellButton
     {
         _spellController.SetSpell(_spellIndex, 1);
     }
+
+    public void Unlock()
+    {
+        _interactable = true;
+        _lockedIcon.SetActive(false);
+    }
 }
