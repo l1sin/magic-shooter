@@ -53,6 +53,7 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
+        CursorHelper.ShowCursor();
         LoadSliders();
         LoadDefaultSpells();
         LoadMapsInfo();

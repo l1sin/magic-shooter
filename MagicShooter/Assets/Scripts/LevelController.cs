@@ -18,10 +18,13 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private SpellButtonGame[] _spellButtons;
 
+    [SerializeField] private SliderController[] _sliders;
+
     public void Start()
     {
         Instance = this;
         UnlockSpells();
+        LoadSliders();
     }
 
     public void UnlockSpells()
@@ -56,13 +59,16 @@ public class LevelController : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene(1);
         PauseManager.SetPause(false);
+        SceneManager.LoadScene(SaveManager.Instance.MainMenuSceneIndex);
     }
 
-    public void RestartLevel()
+    public void LoadSliders()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PauseManager.SetPause(false);
+        foreach (SliderController s in _sliders)
+        {
+            s.FindFPSCamera();
+            s.LoadSlider();
+        }
     }
 }

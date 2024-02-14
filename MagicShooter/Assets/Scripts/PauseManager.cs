@@ -12,17 +12,15 @@ public static class PauseManager
         Paused = state;
         if (Paused)
         {
-            PauseOn.Invoke();
+            PauseOn?.Invoke();
             CurrentTimeScale = 0;
             Time.timeScale = CurrentTimeScale;
-            Debug.Log("Paused");
         }
         else
         {
-            PauseOff.Invoke();
+            PauseOff?.Invoke();
             CurrentTimeScale = 1;
             Time.timeScale = CurrentTimeScale;
-            Debug.Log("UnPaused");
         }
     }
 

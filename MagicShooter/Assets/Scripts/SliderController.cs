@@ -84,4 +84,9 @@ public class SliderController : MonoBehaviour
         }
         SaveManager.Instance.CurrentProgress.MouseSensetivity = newValue;
     }
+
+    public void FindFPSCamera()
+    {
+        _fPSCamera = FindObjectOfType<FPSCamera>();
+    }
 }
