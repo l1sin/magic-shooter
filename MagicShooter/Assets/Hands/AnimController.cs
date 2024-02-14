@@ -16,7 +16,7 @@ public class AnimController : MonoBehaviour
         switch (_hand)
         {
             case Hand.Left:
-                if (CharacterInput.LeftMouseButton && !UIContorller.InMenu)
+                if (CharacterInput.LeftMouseButton && !UIContorller.SpellMenu)
                 {
                     _animatior.SetBool("Attack", true);
                 }
@@ -32,7 +32,7 @@ public class AnimController : MonoBehaviour
                 break;
 
             case Hand.Right:
-                if (CharacterInput.RightMouseButton && !UIContorller.InMenu)
+                if (CharacterInput.RightMouseButton && !UIContorller.SpellMenu)
                 {
                     _animatior.SetBool("Attack", true);
                 }

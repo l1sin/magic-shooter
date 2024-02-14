@@ -100,7 +100,7 @@ public class Spell : MonoBehaviour
 
     private void Update()
     {
-        if (IsAttacking && CanShoot && !UIContorller.InMenu)
+        if (IsAttacking && CanShoot && !UIContorller.SpellMenu)
         {
             switch (_shotType)
             {

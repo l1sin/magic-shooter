@@ -1,7 +1,12 @@
+using System;
 using UnityEngine;
 
 public class CharacterInput : MonoBehaviour
 {
+    [Header("Keys")]
+    public KeyCode SprintKey;
+    public KeyCode SpellMenuKey;
+    public KeyCode PauseKey;
 
     public static float MouseInputX;
     public static float MouseInputY;
@@ -10,20 +15,26 @@ public class CharacterInput : MonoBehaviour
     public static float MoveInputY;
     public static bool IsMoving;
 
-    public KeyCode SprintKey;
+    
     public static bool Sprint;
 
     public static bool LeftMouseButton;
     public static bool RightMouseButton;
     public static float MouseScroll;
 
-    public KeyCode SpellMenuKey;
+    
     public static bool SpellMenu;
+    public static bool PauseInput;
 
     public static bool Jump;
 
     public bool InputOn = true;
     public static bool MouseInputAllowed = true;
+    public static bool MoveInputAllowed = true;
+    public static bool ShootInputAllowed = true;
+    public static bool AllInputAllowed = true;
+
+
 
     private void Update()
     {
@@ -47,12 +58,18 @@ public class CharacterInput : MonoBehaviour
 
     private void GetInput()
     {
-        if (Input.GetButtonDown(GlobalStrings.JumpInput))
-        {
-            Jump = true;
-        }
+        GetMouseInput();
+        GetMoveInput();
+        GetShootInput();
 
-        if (MouseInputAllowed)
+        SpellMenu = Input.GetKey(SpellMenuKey);
+
+        if (Input.GetKeyDown(PauseKey)) PauseManager.TogglePause();
+    }
+
+    private void GetMouseInput()
+    {
+        if (MouseInputAllowed && AllInputAllowed)
         {
             MouseInputX = Input.GetAxis(GlobalStrings.MouseXInput);
             MouseInputY = Input.GetAxis(GlobalStrings.MouseYInput);
@@ -62,18 +79,44 @@ public class CharacterInput : MonoBehaviour
             MouseInputX = 0;
             MouseInputY = 0;
         }
+    }
 
-        MoveInputX = Input.GetAxisRaw(GlobalStrings.HorizontalInput);
-        MoveInputY = Input.GetAxisRaw(GlobalStrings.VerticalInput);
+    private void GetMoveInput()
+    {
+        if (MoveInputAllowed && AllInputAllowed)
+        {
+            if (Input.GetButtonDown(GlobalStrings.JumpInput)) Jump = true;
 
-        LeftMouseButton = Input.GetMouseButton(0);
-        RightMouseButton = Input.GetMouseButton(1);
-        MouseScroll = Input.GetAxis(GlobalStrings.MouseScrollWheel);
+            MoveInputX = Input.GetAxisRaw(GlobalStrings.HorizontalInput);
+            MoveInputY = Input.GetAxisRaw(GlobalStrings.VerticalInput);
 
-        SpellMenu = Input.GetKey(SpellMenuKey);
+            Sprint = Input.GetKey(SprintKey);
+        }
+        else
+        {
+            Jump = false;
+            MoveInputX = 0;
+            MoveInputY = 0;
+            Sprint = false;
+        }     
 
-        Sprint = Input.GetKey(SprintKey);
         if (MoveInputX != 0 || MoveInputY != 0) IsMoving = true;
         else IsMoving = false;
+    }
+
+    private void GetShootInput()
+    {
+        if (ShootInputAllowed && AllInputAllowed)
+        {
+            LeftMouseButton = Input.GetMouseButton(0);
+            RightMouseButton = Input.GetMouseButton(1);
+            MouseScroll = Input.GetAxis(GlobalStrings.MouseScrollWheel);
+        }
+        else
+        {
+            LeftMouseButton = false;
+            RightMouseButton = false;
+            MouseScroll = 0;
+        }
     }
 }

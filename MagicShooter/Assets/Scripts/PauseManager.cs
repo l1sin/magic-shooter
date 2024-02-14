@@ -1,20 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public static class PauseManager
 {
     public static bool Paused;
-    public static void TogglePause(bool state)
+    public static float CurrentTimeScale = 1f;
+    public static event Action PauseOn;
+    public static event Action PauseOff;
+    public static void SetPause(bool state)
     {
         Paused = state;
         if (Paused)
         {
-            Time.timeScale = 0;
+            PauseOn.Invoke();
+            CurrentTimeScale = 0;
+            Time.timeScale = CurrentTimeScale;
+            Debug.Log("Paused");
         }
         else
         {
-            Time.timeScale = 1;
+            PauseOff.Invoke();
+            CurrentTimeScale = 1;
+            Time.timeScale = CurrentTimeScale;
+            Debug.Log("UnPaused");
         }
+    }
+
+    public static void TogglePause()
+    {
+        SetPause(!Paused);
     }
 }

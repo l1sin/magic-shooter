@@ -37,16 +37,17 @@ public class LevelController : MonoBehaviour
 
     public void ShowDeathScreen()
     {
-        PauseManager.TogglePause(true);
+        PauseManager.SetPause(true);
         CursorHelper.ShowCursor();
         _deathScreen.SetActive(true);
         SoundManager.Instance.PlaySound(_deathSound, audioMixerGroup);
         Destroy(_musicPlayer);
+        
     }
 
     public void ShowWinScreen()
     {
-        PauseManager.TogglePause(true);
+        PauseManager.SetPause(true);
         CursorHelper.ShowCursor();
         _winScreen.SetActive(true);
         SoundManager.Instance.PlaySound(_winSound, audioMixerGroup);
@@ -56,12 +57,12 @@ public class LevelController : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene(1);
-        PauseManager.TogglePause(false);
+        PauseManager.SetPause(false);
     }
 
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PauseManager.TogglePause(false);
+        PauseManager.SetPause(false);
     }
 }
