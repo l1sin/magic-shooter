@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6480861791529303261}
   - component: {fileID: 1124018327134895801}
   - component: {fileID: 1993950517207449667}
+  - component: {fileID: 5669534904047929220}
   m_Layer: 0
   m_Name: ---DATA---
   m_TagString: Untagged
@@ -71,10 +72,18 @@ MonoBehaviour:
     Achievements: 000000000000000000000000000000000000000000000000000000
     AllMoney: 0
     Kills: 0
-    MusicVolume: 1
     SFXVolume: 1
+    MusicVolume: 1
     MouseSensetivity: 1
-  Localization: []
+    CurrentStats:
+      Damage: 0
+      Health: 0
+      Luck: 0
+      Speed: 0
+      FireMagic: 0
+      EarthMagic: 0
+      WaterMagic: 0
+      AirMagic: 0
   MainMenuSceneIndex: 1
   SaveKey: 270
 --- !u!114 &1124018327134895801
@@ -106,3 +115,16 @@ MonoBehaviour:
   _soundPrefab: {fileID: 3082421271153698346, guid: 5be4c79f3beea354e9ee824419b6002b,
     type: 3}
   _audioMixer: {fileID: 24100000, guid: c99f098306b88594b98111629e50f3ad, type: 2}
+--- !u!114 &5669534904047929220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0eaa98a316299f43a72f0d9beb8b43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Localization: []

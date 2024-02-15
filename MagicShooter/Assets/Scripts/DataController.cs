@@ -5,8 +5,8 @@ public class DataController : MonoBehaviour
     public static DataController Instance;
     public int[,] Experience;
     public int[,] Price;
-    public string[,] Dictionary;
-    public string[] Localization;
+    public string[,] Localization;
+    public string[] Dictionary;
     private void OnEnable()
     {
         if (Instance != null && Instance != this)
@@ -20,29 +20,51 @@ public class DataController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+    public void LoadAllData(string language)
     {
+        LoadLanguage(language);
+        LoadPrice();
+        LoadExperience();
+    }
 
+    public void LoadExperience()
+    {
+        Experience = Utility.Utility.ReadCSVInt("Experience");
+    }
+
+    public float GetExperienceValue(int spellIndex, int spellLevel)
+    {
+        return Experience[spellLevel, spellIndex];
+    }
+
+    public int GetPriceValue(int upgradeIndex, int upgradeLevel)
+    {
+        return Price[upgradeLevel, upgradeIndex];
+    }
+
+    public void LoadPrice()
+    {
+        Price = Utility.Utility.ReadCSVInt("Price");
     }
 
     public void LoadLanguage(string language)
     {
-        Dictionary = Utility.Utility.ReadCSVString("Localization");
+        Localization = Utility.Utility.ReadCSVString("Localization");
 
         int id = GetLanguageId(language);
-        Localization = new string[Dictionary.GetLength(0) - 1];
+        Dictionary = new string[Localization.GetLength(0) - 1];
 
-        for (int i = 1; i < Dictionary.GetLength(0); i++)
+        for (int i = 1; i < Localization.GetLength(0); i++)
         {
-            Localization[i - 1] = Dictionary[i, id];
+            Dictionary[i - 1] = Localization[i, id];
         }
     }
 
-    public int GetLanguageId(string language)
+    private int GetLanguageId(string language)
     {
-        for (int j = 0; j < Dictionary.GetLength(1); j++)
+        for (int j = 0; j < Localization.GetLength(1); j++)
         {
-            if (Dictionary[0, j] == language)
+            if (Localization[0, j] == language)
             {
                 return j;
             }

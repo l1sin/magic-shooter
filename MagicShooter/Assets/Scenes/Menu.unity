@@ -3077,7 +3077,7 @@ GameObject:
   - component: {fileID: 268860266}
   - component: {fileID: 268860265}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: ConntectionLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3116,7 +3116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7901,7 +7901,7 @@ GameObject:
   - component: {fileID: 620710186}
   - component: {fileID: 620710185}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ConntectionLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7940,7 +7940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8033,7 +8033,7 @@ GameObject:
   - component: {fileID: 653642360}
   - component: {fileID: 653642359}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ConntectionLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8072,7 +8072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10312,7 +10312,7 @@ MonoBehaviour:
   - {fileID: 484285157}
   - {fileID: 1566166680}
   MagicLevelText: {fileID: 389020011}
-  Experience: {fileID: 2103068702}
+  ExperienceText: {fileID: 2103068702}
   ExpBar: {fileID: 64598411658932428}
   SpellsLocked: {fileID: 1368910016}
   SpellsUnlocked: {fileID: 907113420}
@@ -27446,7 +27446,7 @@ GameObject:
   - component: {fileID: 1798104176}
   - component: {fileID: 1798104175}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: ConntectionLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27485,7 +27485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -23,8 +23,6 @@ public class UpgradeController : MonoBehaviour
     public Skill[] Skills;
     public List<Upgrade> AllUpgradesList;
     public int[] Levels;
-    public float[] CurrentExp;
-    public float[] NextLevelExp;
     public int maxLevel = 10;
 
     [Header("Magic Menu")]
@@ -41,7 +39,7 @@ public class UpgradeController : MonoBehaviour
     public TextMeshProUGUI[] MagicBonuses;
     public TextMeshProUGUI[] MagicRequirements;
     public TextMeshProUGUI MagicLevelText;
-    public TextMeshProUGUI Experience;
+    public TextMeshProUGUI ExperienceText;
     public Image ExpBar;
     public GameObject SpellsLocked;
     public GameObject SpellsUnlocked;
@@ -76,7 +74,6 @@ public class UpgradeController : MonoBehaviour
     public void Start()
     {
         Levels = SaveManager.Instance.CurrentProgress.Upgrades;
-        CurrentExp = SaveManager.Instance.CurrentProgress.Experience;
 
         AllUpgradesList.AddRange(Magics);
         AllUpgradesList.AddRange(Skills);
@@ -179,8 +176,19 @@ public class UpgradeController : MonoBehaviour
                 MagicBonuses[i].text = Magics[index].Bonuses[i].ThisToString(Levels[index]);
             }
             MagicLevelText.text = $"Level {Levels[index]}";
-            Experience.text = $"{CurrentExp[index]}/{NextLevelExp[index]}";
-            ExpBar.fillAmount = CurrentExp[index] / NextLevelExp[index];
+
+            if (Levels[index] < maxLevel)
+            {
+                float CurrentExperience = Mathf.Floor(SaveManager.Instance.CurrentProgress.Experience[index]);
+                float ExperienceToLevelUp = DataController.Instance.GetExperienceValue(index, Levels[index]);
+                ExperienceText.text = $"{CurrentExperience}/{ExperienceToLevelUp}";
+                ExpBar.fillAmount = CurrentExperience / ExperienceToLevelUp;
+            }
+            else
+            {
+                ExperienceText.text = $"MAX";
+                ExpBar.fillAmount = 1;
+            }            
 
             SpellsLocked.SetActive(false);
             SpellsUnlocked.SetActive(true);
@@ -190,7 +198,7 @@ public class UpgradeController : MonoBehaviour
         _magicBuyButton.onClick.RemoveAllListeners();
         if (allowedToBuy)
         {
-            int price = (Levels[index] + 1) * 500;
+            int price = DataController.Instance.GetPriceValue(index, Levels[index]);
             if (Levels[index] >= maxLevel)
             {
                 _magicBuyButtonText.text = "MAX";
@@ -294,7 +302,7 @@ public class UpgradeController : MonoBehaviour
 
 
         _skillBuyButton.onClick.RemoveAllListeners();
-        int price = (Levels[index + 12] + 1) * 500;
+        int price = DataController.Instance.GetPriceValue(index + 12, Levels[index + 12]);
         if (allowedToBuy)
         {
             if (Levels[index + 12] >= maxLevel)
@@ -331,7 +339,6 @@ public class UpgradeController : MonoBehaviour
         MenuController.Instance.UpdateUpgradesBar();
         MenuController.Instance.UpdateSpellsBar();
         SaveManager.Instance.CurrentProgress.Upgrades = Levels;
-        SaveManager.Instance.CurrentProgress.Experience = CurrentExp;
         AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Upgrades);
         AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Spells);
     }
@@ -343,7 +350,11 @@ public class UpgradeController : MonoBehaviour
         SetSkill(index, SkillImage.sprite);
         MenuController.Instance.UpdateUpgradesBar();
         SaveManager.Instance.CurrentProgress.Upgrades = Levels;
-        SaveManager.Instance.CurrentProgress.Experience = CurrentExp;
         AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Upgrades);
+    }
+
+    public void CheckSpellUpgrade()
+    {
+
     }
 }
