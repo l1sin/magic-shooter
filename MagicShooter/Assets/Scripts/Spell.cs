@@ -19,6 +19,7 @@ public class Spell : MonoBehaviour
     [SerializeField] private ShotType _shotType;
     [SerializeField] private Hand _hand;
     [SerializeField] private Element _element;
+    [SerializeField] private int _spellIndex;
 
     [SerializeField] public bool IsAttacking = false;
     private static float s_maxShootingDistance = 100f;
@@ -201,6 +202,7 @@ public class Spell : MonoBehaviour
         projectile.Impact = _impact;
         projectile.AudioMixerGroup = _audioMixerGroup;
         projectile.ImpactVolume = _impactVolume;
+        projectile.SpellIndex = _spellIndex;
     }
 
     private void Shoot()
@@ -227,13 +229,21 @@ public class Spell : MonoBehaviour
     private void MakeDamage(RaycastHit raycastHit)
     {
         IDamageable damageable = raycastHit.transform.GetComponentInParent<IDamageable>();
-        if (damageable != null) damageable.GetDamage(_damage);
+        if (damageable != null)
+        {
+            float exp = damageable.GetDamage(_damage);
+            LevelController.Instance.ExperienceOnLevel[_spellIndex] += exp;
+        }
     }
 
     private void MakeDamageDT(RaycastHit raycastHit)
     {
         IDamageable damageable = raycastHit.transform.GetComponentInParent<IDamageable>();
-        if (damageable != null) damageable.GetDamage(_damage * Time.deltaTime);
+        if (damageable != null)
+        {
+            float exp = damageable.GetDamage(_damage * Time.deltaTime);
+            LevelController.Instance.ExperienceOnLevel[_spellIndex] += exp;
+        } 
     }
 
     private void TracerHit(GameObject beam, RaycastHit raycastHit)

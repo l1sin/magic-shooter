@@ -72,6 +72,7 @@ public class MenuController : MonoBehaviour
         StatsController.Instance.ReCalculate();
         SaveManager.Instance.CurrentProgress.CurrentStats = StatsController.Instance._FinStats;
         SceneManager.LoadScene(SaveManager.Instance.CurrentProgress.SelectedMap + 2);
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
 
     public void LoadSliders()
@@ -161,6 +162,7 @@ public class MenuController : MonoBehaviour
     public void SpendMoney(int spendAmount)
     {
         Money -= spendAmount;
+        SaveManager.Instance.CurrentProgress.Money = Money;
         UpdataMoneyTexts();
     }
 

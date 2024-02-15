@@ -91,13 +91,13 @@ public class Yandex : MonoBehaviour
     {
         string lang = GetLanguage();
         Domen = GetDomen();
-        SaveManager.Instance.LoadLanguage(lang);
+        DataController.Instance.LoadLanguage(lang);
         LoadExtern();
     }
 
     public void EditorInit()
     {
-        SaveManager.Instance.LoadLanguage(DefaultLanguage.ToString());
+        DataController.Instance.LoadLanguage(DefaultLanguage.ToString());
         SaveManager.Instance.LoadDataLocal();
     }
 }

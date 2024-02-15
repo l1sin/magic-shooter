@@ -23,6 +23,8 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private SliderController[] _sliders;
 
+    [SerializeField] public float[] ExperienceOnLevel;
+
     public void Start()
     {
         Instance = this;

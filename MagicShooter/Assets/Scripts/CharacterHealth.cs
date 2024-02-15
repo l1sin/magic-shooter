@@ -26,7 +26,7 @@ public class CharacterHealth : MonoBehaviour, IDamageable
         LevelController.Instance.Lose();
     }
 
-    public void GetDamage(float damage)
+    public float GetDamage(float damage)
     {
         if (!_isDead)
         {
@@ -39,6 +39,7 @@ public class CharacterHealth : MonoBehaviour, IDamageable
                 Die();
             }
         }
+        return 0;
     }
 
     public void Cure(float curePercent)

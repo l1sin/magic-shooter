@@ -104,11 +104,13 @@ public class Enemy : MonoBehaviour, IDamageable
         audio.gameObject.transform.position = transform.position;
     }
 
-    public void GetDamage(float damage)
+    public float GetDamage(float damage)
     {
         if (!_isDead)
         {
+            float lastHealth = _healthCurrent;
             _healthCurrent -= damage;
+
             if (_healthCurrent <= 0)
             {
                 SetDead();
@@ -126,8 +128,14 @@ public class Enemy : MonoBehaviour, IDamageable
                     Die();
                     Destroy(gameObject, 2);
                 }
+                return lastHealth;
             }
-        } 
+            else
+            {
+                return damage;
+            }
+        }
+        return 0;
     }
 
     private void SetDead()

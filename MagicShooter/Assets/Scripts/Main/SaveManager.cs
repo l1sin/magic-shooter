@@ -5,8 +5,6 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
     public Progress CurrentProgress;
-    public string[,] Dictionary;
-    public string[] Localization;
     public int MainMenuSceneIndex;
     public KeyCode SaveKey;
     private void OnEnable()
@@ -89,31 +87,5 @@ public class SaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(progress);
         Yandex.SaveExtern(json);
         Debug.Log($"Cloud save");
-    }
-
-    public void LoadLanguage(string language)
-    {
-        Dictionary = Utility.Utility.ReadCSVString("Localization");
-
-        int id = GetLanguageId(language);
-        Localization = new string[Dictionary.GetLength(0) - 1];
-
-        for (int i = 1; i < Dictionary.GetLength(0); i++)
-        {
-            Localization[i - 1] = Dictionary[i, id];
-        }
-    }
-
-    public int GetLanguageId(string language)
-    {
-        for (int j = 0; j < Dictionary.GetLength(1); j++)
-        {
-            if (Dictionary[0, j] == language)
-            {
-                return j;
-            }
-        }
-        Debug.Log("Unknown language - switch to en");
-        return GetLanguageId("en");
     }
 }

@@ -107,7 +107,7 @@ public class EnemySpawner : MonoBehaviour
     public IEnumerator FinishLevel()
     {
         yield return new WaitForSeconds(_winTimer);
-        //LevelController.Instance.ShowWinScreen();
+        LevelController.Instance.Win();
     }
 
     public void UpdateDeathCount()

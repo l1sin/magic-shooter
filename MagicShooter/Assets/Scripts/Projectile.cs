@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     public LayerMask Targets;
     public GameObject Impact;
     public AudioMixerGroup AudioMixerGroup;
+    public int SpellIndex;
     public float ImpactVolume = 1;
 
     [Header("Private values")]
@@ -99,7 +100,8 @@ public class Projectile : MonoBehaviour
 
     private void MakeDamage(IDamageable damageable)
     {
-        damageable.GetDamage(Damage);
+        float exp = damageable.GetDamage(Damage);
+        LevelController.Instance.ExperienceOnLevel[SpellIndex] += exp;
     }
 
     private void ExplosionDamage()
@@ -114,7 +116,8 @@ public class Projectile : MonoBehaviour
         {
             if (damageable != null)
             {
-                damageable.GetDamage(Damage);
+                float exp = damageable.GetDamage(Damage);
+                LevelController.Instance.ExperienceOnLevel[SpellIndex] += exp;
             }
         }
     }
