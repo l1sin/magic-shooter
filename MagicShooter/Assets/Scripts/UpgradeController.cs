@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -355,6 +356,57 @@ public class UpgradeController : MonoBehaviour
 
     public void CheckSpellUpgrade()
     {
+        for (int i = 0; i < 12; i++)
+        {
+            if (SaveManager.Instance.CurrentProgress.Upgrades[i] < maxLevel)
+            {
+                bool canLevelup = true;
+                while (canLevelup)
+                {
+                    if (SaveManager.Instance.CurrentProgress.Experience[i] > DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]))
+                    {
+                        if (CheckMagicReq(i))
+                        {
+                            SaveManager.Instance.CurrentProgress.Experience[i] -= DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]);
+                            SaveManager.Instance.CurrentProgress.Upgrades[i]++;
+                            if (SaveManager.Instance.CurrentProgress.Upgrades[i] >= maxLevel)
+                            {
+                                canLevelup = false;
+                                SaveManager.Instance.CurrentProgress.Experience[i] = 0;
+                            }
+                        }
+                        else
+                        {
+                            SaveManager.Instance.CurrentProgress.Experience[i] = DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]) - 1;
+                            canLevelup = false;
+                        }    
+                    }
+                    else canLevelup = false;
+                }
+            }     
+        }
+    }
 
+    public bool CheckMagicReq(int index)
+    {
+        bool reqMet = true;
+
+        if (Magics[index].Requirements.Length > 0)
+        {
+            for (int i = 0; i < Magics[index].Requirements.Length; i++)
+            {
+                int reqIndex = Magics[index].Requirements[i].UpgradeIndex;
+
+                if (Levels[reqIndex] >= Levels[index] + 1)
+                {
+                    continue;
+                }
+                else
+                {
+                    reqMet = false;
+                }
+            }
+        }
+        return reqMet;
     }
 }

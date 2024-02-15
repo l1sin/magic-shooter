@@ -54,6 +54,7 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         CursorHelper.ShowCursor();
+        CheckSpellUpgrades();
         LoadSliders();
         LoadDefaultSpells();
         LoadMapsInfo();
@@ -65,6 +66,11 @@ public class MenuController : MonoBehaviour
 
         //Last
         UpdateAllProgressBars();
+    }
+
+    public void CheckSpellUpgrades()
+    {
+        UpgradeController.Instance.CheckSpellUpgrade();
     }
 
     public void StartLevel()
