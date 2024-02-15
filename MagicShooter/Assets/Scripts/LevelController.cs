@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     public static LevelController Instance;
+    [SerializeField] private UIContorller _ui;
+    public bool GameEnd = false;
+
     [SerializeField] private GameObject _deathScreen;
     [SerializeField] private GameObject _winScreen;
 
@@ -38,29 +41,33 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void ShowDeathScreen()
+
+    public void Lose()
     {
-        PauseManager.SetPause(true);
-        CursorHelper.ShowCursor();
-        _deathScreen.SetActive(true);
+        GameEnd = true;
         SoundManager.Instance.PlaySound(_deathSound, audioMixerGroup);
         Destroy(_musicPlayer);
-        
+        _ui.ShowDeathScreen();
     }
 
-    public void ShowWinScreen()
+    public void Win()
     {
-        PauseManager.SetPause(true);
-        CursorHelper.ShowCursor();
-        _winScreen.SetActive(true);
+        GameEnd = true;
         SoundManager.Instance.PlaySound(_winSound, audioMixerGroup);
         Destroy(_musicPlayer);
-    }
+        _ui.ShowWinScreen();
+    } 
 
     public void LoadMenu()
     {
         PauseManager.SetPause(false);
         SceneManager.LoadScene(SaveManager.Instance.MainMenuSceneIndex);
+    }
+
+    public void LoadThisLevel()
+    {
+        PauseManager.SetPause(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadSliders()

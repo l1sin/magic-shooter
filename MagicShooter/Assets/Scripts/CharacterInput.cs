@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CharacterInput : MonoBehaviour
@@ -15,14 +14,14 @@ public class CharacterInput : MonoBehaviour
     public static float MoveInputY;
     public static bool IsMoving;
 
-    
+
     public static bool Sprint;
 
     public static bool LeftMouseButton;
     public static bool RightMouseButton;
     public static float MouseScroll;
 
-    
+
     public static bool SpellMenu;
     public static bool PauseInput;
 
@@ -34,7 +33,13 @@ public class CharacterInput : MonoBehaviour
     public static bool ShootInputAllowed = true;
     public static bool AllInputAllowed = true;
 
-
+    public void Start()
+    {
+        MouseInputAllowed = true;
+        MoveInputAllowed = true;
+        ShootInputAllowed = true;
+        AllInputAllowed = true;
+    }
 
     private void Update()
     {
@@ -64,7 +69,7 @@ public class CharacterInput : MonoBehaviour
 
         SpellMenu = Input.GetKey(SpellMenuKey);
 
-        if (Input.GetKeyDown(PauseKey)) PauseManager.TogglePause();
+        if (Input.GetKeyDown(PauseKey) && !LevelController.Instance.GameEnd) PauseManager.TogglePause();
     }
 
     private void GetMouseInput()
@@ -98,7 +103,7 @@ public class CharacterInput : MonoBehaviour
             MoveInputX = 0;
             MoveInputY = 0;
             Sprint = false;
-        }     
+        }
 
         if (MoveInputX != 0 || MoveInputY != 0) IsMoving = true;
         else IsMoving = false;

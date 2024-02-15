@@ -23,7 +23,7 @@ public class CharacterHealth : MonoBehaviour, IDamageable
     
     public void Die()
     {
-        //LevelController.Instance.ShowDeathScreen();
+        LevelController.Instance.Lose();
     }
 
     public void GetDamage(float damage)

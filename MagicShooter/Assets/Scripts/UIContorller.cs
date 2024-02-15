@@ -1,11 +1,16 @@
+using Sounds;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class UIContorller : MonoBehaviour
 {
     [SerializeField] private GameObject _spellMenu;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _settingsMenu;
-    [SerializeField] private GameObject _crossHair;
+    [SerializeField] private GameObject _hud;
+    [SerializeField] private GameObject _deathScreen;
+    [SerializeField] private GameObject _winScreen;
     [SerializeField] private float _slowTimeScale = 0.2f;
 
     public static bool SpellMenu;
@@ -17,10 +22,37 @@ public class UIContorller : MonoBehaviour
         CheckSpellMenu();
     }
 
+    public void ShowDeathScreen()
+    {
+        PauseManager.SetPause(true);
+        HideAll();
+        CursorHelper.ShowCursor();
+        _deathScreen.SetActive(true);
+        CharacterInput.AllInputAllowed = false;
+    }
+
+    public void ShowWinScreen()
+    {
+        PauseManager.SetPause(true);
+        HideAll();
+        CursorHelper.ShowCursor();
+        _winScreen.SetActive(true);
+        CharacterInput.AllInputAllowed = false;
+    }
+
+    public void HideAll()
+    {
+        _spellMenu.SetActive(false);
+        _pauseMenu.SetActive(false);
+        _settingsMenu.SetActive(false);
+        _hud.SetActive(false);
+    }
+
     public void ShowPauseMenu()
     {
+        if (LevelController.Instance.GameEnd) return;
         HideSpellMenu();
-        _crossHair.SetActive(false);
+        _hud.SetActive(false);
         PauseMenu = true;
         _pauseMenu.SetActive(true);
         CursorHelper.ShowCursor();
@@ -29,7 +61,8 @@ public class UIContorller : MonoBehaviour
 
     public void HidePauseMenu()
     {
-        _crossHair.SetActive(true);
+        if (LevelController.Instance.GameEnd) return;
+        _hud.SetActive(true);
         PauseMenu = false;
         _pauseMenu.SetActive(false);
         _settingsMenu.SetActive(false);
@@ -39,8 +72,9 @@ public class UIContorller : MonoBehaviour
 
     public void ShowSpellMenu()
     {
+        if (LevelController.Instance.GameEnd) return;
         SpellMenu = true;
-        _crossHair.SetActive(false);
+        _hud.SetActive(false);
         _spellMenu.SetActive(true);
         Time.timeScale = _slowTimeScale;
         CursorHelper.ShowCursor();
@@ -49,8 +83,9 @@ public class UIContorller : MonoBehaviour
 
     public void HideSpellMenu()
     {
+        if (LevelController.Instance.GameEnd) return;
         SpellMenu = false;
-        _crossHair.SetActive(true);
+        _hud.SetActive(true);
         _spellMenu.SetActive(false);
         Time.timeScale = PauseManager.CurrentTimeScale;
         CursorHelper.LockAndHideCursor();
