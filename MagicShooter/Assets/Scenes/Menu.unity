@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.55996, g: 0.764151, b: 0.54427737, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 18a18be315858d64c9a8ce50ccd52e64, type: 2}
   m_HaloStrength: 0.5
@@ -25402,18 +25402,22 @@ MonoBehaviour:
     _TerrainData: {fileID: 15600000, guid: 38f06f2d07879f0439f74ffdb640368b, type: 2}
     _VolumeProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
     _Skybox: {fileID: 2100000, guid: 18a18be315858d64c9a8ce50ccd52e64, type: 2}
+    _AmbientColor: {r: 0.55996, g: 0.764151, b: 0.54427737, a: 1}
   - _CameraTransform: {fileID: 1585843496}
     _TerrainData: {fileID: 15600000, guid: 3882874590c989c43bf87014b0fed7f8, type: 2}
     _VolumeProfile: {fileID: 11400000, guid: 7ebea5a961014df4cab7ec43fd1bfec1, type: 2}
     _Skybox: {fileID: 2100000, guid: 6e2856ed18dcaa346bb4115b94e4b965, type: 2}
+    _AmbientColor: {r: 0.7735849, g: 0.7506011, b: 0.46342114, a: 1}
   - _CameraTransform: {fileID: 518576075}
     _TerrainData: {fileID: 15600000, guid: 64bb2f9351403244b929a26d1079c5af, type: 2}
     _VolumeProfile: {fileID: 11400000, guid: 8f131ed35a7bef047ab77d0f3955bd3c, type: 2}
     _Skybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+    _AmbientColor: {r: 0.54187435, g: 0.6725704, b: 0.9339623, a: 1}
   - _CameraTransform: {fileID: 1693437746}
     _TerrainData: {fileID: 15600000, guid: 96f0aa1c647bc3644988e1bfacd10117, type: 2}
     _VolumeProfile: {fileID: 11400000, guid: 4efd7372b8cd7a8418e511f955bafbad, type: 2}
     _Skybox: {fileID: 2100000, guid: 378bd1206205764499a393a2c4eb1205, type: 2}
+    _AmbientColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
 --- !u!4 &1660056631
 Transform:
   m_ObjectHideFlags: 0
