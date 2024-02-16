@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _level;
     [SerializeField] private float _dropChance;
 
-    [SerializeField] private int _allEnemiesCount;
+    [SerializeField] public static int AllEnemiesCount;
     [SerializeField] public int DeadEnemies;
     [SerializeField] private int _spawnedEnemies;
     [SerializeField] private TextMeshProUGUI _deathCountText;
@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _level = SaveManager.Instance.CurrentProgress.Level;
 
-        _allEnemiesCount = _startEnemies + _level * _enemiesPerLevel;
+        AllEnemiesCount = _startEnemies + _level * _enemiesPerLevel;
 
         _spawnPeriod = 1 / _spawnPerSecond;
         _spawnTimer = _spawnPeriod;
@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        if (_spawnedEnemies < _allEnemiesCount)
+        if (_spawnedEnemies < AllEnemiesCount)
         {
             int i;
             do
@@ -98,7 +98,7 @@ public class EnemySpawner : MonoBehaviour
     {
         DeadEnemies++;
         UpdateDeathCount();
-        if (DeadEnemies >= _allEnemiesCount)
+        if (DeadEnemies >= AllEnemiesCount)
         {
             StartCoroutine(FinishLevel());
         }
@@ -112,7 +112,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void UpdateDeathCount()
     {
-        _deathCountText.text = $"{DeadEnemies}/{_allEnemiesCount}";
+        _deathCountText.text = $"{DeadEnemies}/{AllEnemiesCount}";
     }
 
     private void OnDrawGizmosSelected()

@@ -24,6 +24,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private SliderController[] _sliders;
 
     [SerializeField] public float[] ExperienceOnLevel;
+    [SerializeField] public int CoinsCollected;
 
     public void Start()
     {
