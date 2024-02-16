@@ -8989,14 +8989,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10244,56 +10244,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c56716077dce8564692987166309cf91, type: 2}
   AllUpgradesList: []
   Levels: 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  CurrentExp:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  NextLevelExp:
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
-  - 10
   maxLevel: 10
   MagicIcons: {fileID: 894130884}
   MagicInfo: {fileID: 969368320}
@@ -25455,7 +25405,7 @@ MonoBehaviour:
   - _CameraTransform: {fileID: 1585843496}
     _TerrainData: {fileID: 15600000, guid: 3882874590c989c43bf87014b0fed7f8, type: 2}
     _VolumeProfile: {fileID: 11400000, guid: 7ebea5a961014df4cab7ec43fd1bfec1, type: 2}
-    _Skybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+    _Skybox: {fileID: 2100000, guid: 6e2856ed18dcaa346bb4115b94e4b965, type: 2}
   - _CameraTransform: {fileID: 518576075}
     _TerrainData: {fileID: 15600000, guid: 64bb2f9351403244b929a26d1079c5af, type: 2}
     _VolumeProfile: {fileID: 11400000, guid: 8f131ed35a7bef047ab77d0f3955bd3c, type: 2}
