@@ -15,11 +15,11 @@ MonoBehaviour:
   Name: Fire Beam
   Description: Description
   Bonuses:
-  - Type: 0
-    Math: 0
+  - Type: 4
+    Math: 1
     Value: 1
   - Type: 0
-    Math: 0
+    Math: 1
     Value: 1
   Requirements:
   - UpgradeIndex: 0

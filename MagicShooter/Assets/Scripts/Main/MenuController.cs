@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
 
     [Header("Data")]
     public int Money;
+    [SerializeField] private int _upgradesPerLevel = 10;
 
     [Header("Map")]
     [SerializeField] private MapSelector _mapSelector;
@@ -59,14 +60,14 @@ public class MenuController : MonoBehaviour
         LoadDefaultSpells();
         LoadMapsInfo();
         SetLevelText();
-        SetCharacterLevelText();
         LoadMoney();
         LoadAchivements();
-        CalculateStats();
 
         //Last
         UpdateAllProgressBars();
+        CalculateStats();
     }
+
 
     public void CheckSpellUpgrades()
     {
@@ -157,6 +158,8 @@ public class MenuController : MonoBehaviour
             j += SaveManager.Instance.CurrentProgress.Upgrades[i];
         }
         _upgradesBar.UpdateProgressBar(j, SaveManager.Instance.CurrentProgress.Upgrades.Length * 10);
+        SaveManager.Instance.CurrentProgress.CharacterLevel = j / _upgradesPerLevel;
+        _characterLevelText.text = $"Character Level {SaveManager.Instance.CurrentProgress.CharacterLevel + 1}";
     }
 
     public void LoadMoney()
@@ -183,11 +186,6 @@ public class MenuController : MonoBehaviour
     public void SetLevelText()
     {
         _levelText.text = $"Level {SaveManager.Instance.CurrentProgress.Level + 1}";
-    }
-
-    public void SetCharacterLevelText()
-    {
-        _characterLevelText.text = $"Character Level {SaveManager.Instance.CurrentProgress.CharacterLevel + 1}";
     }
 
     public void LoadMapsInfo()

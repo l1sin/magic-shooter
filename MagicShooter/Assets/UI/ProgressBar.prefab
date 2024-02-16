@@ -203,6 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _filledImage: {fileID: 6059356938023951771}
   _text: {fileID: 2093446777306161513}
+  _commonColor: {r: 1, g: 0, b: 0, a: 1}
+  _maxFillColor: {r: 1, g: 0.8535938, b: 0, a: 1}
 --- !u!1001 &2944116604515041064
 PrefabInstance:
   m_ObjectHideFlags: 0
