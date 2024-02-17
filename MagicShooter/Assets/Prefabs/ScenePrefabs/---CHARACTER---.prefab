@@ -512,7 +512,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
   m_FrequencyGain: 1
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: -645.1924, y: 416.16818, z: -157.98679}
 --- !u!1 &5650703443722264344
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +748,21 @@ MonoBehaviour:
   - {fileID: 5970252728183873515}
   - {fileID: 5996226177840540743}
   - {fileID: 6312702333127993975}
+  _currentSpellLeftImage: {fileID: 0}
+  _currentSpellRightImage: {fileID: 0}
+  _spellImages:
+  - {fileID: 21300000, guid: ea06bd592e3b4fc4980aaa501b73a2d5, type: 3}
+  - {fileID: 21300000, guid: b9446de14f4551a418fd3c7d0bcddb0c, type: 3}
+  - {fileID: 21300000, guid: 037b1da1aa239054db2f4db91f9d4dce, type: 3}
+  - {fileID: 21300000, guid: c235fffafcd8de64b90f5a8c986fda37, type: 3}
+  - {fileID: 21300000, guid: b4b7c2bef5574224487b0c857413daa8, type: 3}
+  - {fileID: 21300000, guid: c28c99df475c39341ab11788412e8df4, type: 3}
+  - {fileID: 21300000, guid: af94c7f6301a13a4eae24502fddf4ee5, type: 3}
+  - {fileID: 21300000, guid: 08b8048c26858b94b8e34657d2cf4417, type: 3}
+  - {fileID: 21300000, guid: bf4268176ad63aa4387526ef72323826, type: 3}
+  - {fileID: 21300000, guid: 845f6af1c1919fb4685ddb5b90c9ca50, type: 3}
+  - {fileID: 21300000, guid: fbfd3c4d47dc2fa4a95deb7e8af0730e, type: 3}
+  - {fileID: 21300000, guid: 48fd299f9c85c3746b1a7c473b6f52c3, type: 3}
   LeftHandAttack: 0
   RightHandAttack: 0
 --- !u!114 &1339418581768716235
@@ -859,11 +874,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _virtualCamera: {fileID: 4786172858793953448}
-  _shakeResetSpeed: 5
+  _shakeResetSpeed: 10
   _minShake: 0
+  _maxShake: 5
   _player: {fileID: 1512545351678953115}
-  _mouseSensitivityX: 1
-  _mouseSensitivityY: 1
+  MouseSensitivityX: 1
+  MouseSensitivityY: 1
 --- !u!1001 &3984252567689609269
 PrefabInstance:
   m_ObjectHideFlags: 0

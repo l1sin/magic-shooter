@@ -6,7 +6,8 @@ public class FPSCamera : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     private CinemachineBasicMultiChannelPerlin _noize;
     [SerializeField] private float _shakeResetSpeed;
-    [SerializeField] private float _minShake = 0;
+    [SerializeField] private float _minShake = 0f;
+    [SerializeField] private float _maxShake = 5f;
 
     [SerializeField] private Transform _player;
     [SerializeField] public float MouseSensitivityX = 1f;
@@ -52,6 +53,7 @@ public class FPSCamera : MonoBehaviour
     public void Shake(float shake)
     {
         _noize.m_AmplitudeGain += shake;
+        if (_noize.m_AmplitudeGain > _maxShake) _noize.m_AmplitudeGain = _maxShake;
     }
 
     public void SetShake(float shake)

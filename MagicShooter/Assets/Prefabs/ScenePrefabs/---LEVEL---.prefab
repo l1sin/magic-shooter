@@ -166,12 +166,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb5070fdea50772478eb0bb02fa2cedc, type: 3}
+--- !u!114 &591509472583537440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 673811355622890332, guid: cb5070fdea50772478eb0bb02fa2cedc,
+    type: 3}
+  m_PrefabInstance: {fileID: 102647521953187964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1201512116868519311 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1279037168120929779, guid: cb5070fdea50772478eb0bb02fa2cedc,
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3987299262719851784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3907179360436614516, guid: cb5070fdea50772478eb0bb02fa2cedc,
+    type: 3}
+  m_PrefabInstance: {fileID: 102647521953187964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4428379408699228522 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4330333072629434646, guid: cb5070fdea50772478eb0bb02fa2cedc,
@@ -247,21 +271,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5534356222296238360, guid: c40c78e60ff3bd84abdb503ceea5da24,
+    - target: {fileID: 3318324821559858146, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
-      propertyPath: mNoiseOffsets.x
-      value: -645.1924
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534356222296238360, guid: c40c78e60ff3bd84abdb503ceea5da24,
+      propertyPath: _currentSpellLeftImage
+      value: 
+      objectReference: {fileID: 3987299262719851784}
+    - target: {fileID: 3318324821559858146, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
-      propertyPath: mNoiseOffsets.y
-      value: 416.16818
-      objectReference: {fileID: 0}
-    - target: {fileID: 5534356222296238360, guid: c40c78e60ff3bd84abdb503ceea5da24,
-        type: 3}
-      propertyPath: mNoiseOffsets.z
-      value: -157.98679
-      objectReference: {fileID: 0}
+      propertyPath: _currentSpellRightImage
+      value: 
+      objectReference: {fileID: 591509472583537440}
     - target: {fileID: 7933733167643697979, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
       propertyPath: m_Name

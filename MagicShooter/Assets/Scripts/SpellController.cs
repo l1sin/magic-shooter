@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellController : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class SpellController : MonoBehaviour
 
     [SerializeField] private List<GameObject> SpellObjectsLeft;
     [SerializeField] private List<GameObject> SpellObjectsRight;
+
+    [SerializeField] private Image _currentSpellLeftImage;
+    [SerializeField] private Image _currentSpellRightImage;
+    [SerializeField] private Sprite[] _spellImages;
+
 
     public bool LeftHandAttack;
     public bool RightHandAttack;
@@ -57,6 +63,7 @@ public class SpellController : MonoBehaviour
                 g.SetActive(false);
             }
             SpellObjectsLeft[_currentSpellIndexLeft].SetActive(true);
+            _currentSpellLeftImage.sprite = _spellImages[spellIndex];
 
         }
         else if (hand == 1)
@@ -69,6 +76,7 @@ public class SpellController : MonoBehaviour
                 g.SetActive(false);
             }
             SpellObjectsRight[_currentSpellIndexRight].SetActive(true);
+            _currentSpellRightImage.sprite = _spellImages[spellIndex];
         }
     }
 }
