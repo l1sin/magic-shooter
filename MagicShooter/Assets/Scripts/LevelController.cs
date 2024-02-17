@@ -1,4 +1,5 @@
 using Sounds;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,7 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] public float[] ExperienceOnLevel;
     [SerializeField] public int CoinsCollected;
+    [SerializeField] private TextMeshProUGUI _coinsCollectedText;
 
     public void Start()
     {
@@ -47,6 +49,7 @@ public class LevelController : MonoBehaviour
     public void CollectCoin(int value)
     {
         CoinsCollected += value;
+        _coinsCollectedText.text = $"{CoinsCollected}";
     }
 
     public void Lose()
