@@ -21,6 +21,7 @@ public class Progress
     public StatsController.Stats CurrentStats;
     public bool CoinPremium;
     public bool ExpPremium;
+    public int Difficulty;
 
     public Progress()
     {
@@ -42,5 +43,6 @@ public class Progress
         CurrentStats = new StatsController.Stats();
         CoinPremium = false;
         ExpPremium = false;
+        Difficulty = 1;
     }
 }

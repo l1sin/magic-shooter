@@ -8,12 +8,21 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Color _commonColor;
     [SerializeField] private Color _maxFillColor;
+    [SerializeField] private bool _showFinalNumber;
 
-    public void UpdateProgressBar(int current, int max)
+    public void UpdateProgressBar(float current, float max)
     {
         _text.text = $"{current}/{max}";
-        _filledImage.fillAmount = (float)current / (float)max;
-        if (_filledImage.fillAmount < 1) _filledImage.color = _commonColor;
-        else _filledImage.color = _maxFillColor;
+        _filledImage.fillAmount = current / max;
+        if (_filledImage.fillAmount < 1)
+        {
+            
+            _filledImage.color = _commonColor;
+        }
+        else
+        {
+            if (!_showFinalNumber) _text.text = "MAX";
+            _filledImage.color = _maxFillColor;
+        } 
     }
 }

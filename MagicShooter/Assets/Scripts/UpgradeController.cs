@@ -40,12 +40,11 @@ public class UpgradeController : MonoBehaviour
     public TextMeshProUGUI[] MagicBonuses;
     public TextMeshProUGUI[] MagicRequirements;
     public TextMeshProUGUI MagicLevelText;
-    public TextMeshProUGUI ExperienceText;
-    public Image ExpBar;
     public GameObject SpellsLocked;
     public GameObject SpellsUnlocked;
     public Button _magicBuyButton;
     public TextMeshProUGUI _magicBuyButtonText;
+    public ProgressBar _magicProgressBar;
     private int _magicLastUsedIndex = 0;
     [SerializeField] private Sprite _magicLastUsedSprite;
 
@@ -182,14 +181,12 @@ public class UpgradeController : MonoBehaviour
             {
                 float CurrentExperience = Mathf.Floor(SaveManager.Instance.CurrentProgress.Experience[index]);
                 float ExperienceToLevelUp = DataController.Instance.GetExperienceValue(index, Levels[index]);
-                ExperienceText.text = $"{CurrentExperience}/{ExperienceToLevelUp}";
-                ExpBar.fillAmount = CurrentExperience / ExperienceToLevelUp;
+                _magicProgressBar.UpdateProgressBar(CurrentExperience, ExperienceToLevelUp);
             }
             else
             {
-                ExperienceText.text = $"MAX";
-                ExpBar.fillAmount = 1;
-            }            
+                _magicProgressBar.UpdateProgressBar(1, 1);
+            }
 
             SpellsLocked.SetActive(false);
             SpellsUnlocked.SetActive(true);
@@ -369,21 +366,20 @@ public class UpgradeController : MonoBehaviour
                         {
                             SaveManager.Instance.CurrentProgress.Experience[i] -= DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]);
                             SaveManager.Instance.CurrentProgress.Upgrades[i]++;
-                            if (SaveManager.Instance.CurrentProgress.Upgrades[i] >= maxLevel)
-                            {
-                                canLevelup = false;
-                                SaveManager.Instance.CurrentProgress.Experience[i] = 0;
-                            }
                         }
                         else
                         {
                             SaveManager.Instance.CurrentProgress.Experience[i] = DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]) - 1;
                             canLevelup = false;
-                        }    
+                        }
                     }
                     else canLevelup = false;
                 }
-            }     
+            }
+            else
+            {
+                SaveManager.Instance.CurrentProgress.Experience[i] = 1;
+            }
         }
     }
 

@@ -24,6 +24,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _characterLevelText;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI[] _moneyText;
+    [SerializeField] private TextMeshProUGUI _difficultyText;
 
     [Header("Progress Bars")]
     [SerializeField] private ProgressBar _spellsBar;
@@ -55,6 +56,7 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         CursorHelper.ShowCursor();
+        SetDifficultyText();
         CheckSpellUpgrades();
         LoadSliders();
         LoadDefaultSpells();
@@ -68,6 +70,33 @@ public class MenuController : MonoBehaviour
         CalculateStats();
     }
 
+    public void SetDifficultyText()
+    {
+        switch (SaveManager.Instance.CurrentProgress.Difficulty)
+        {
+            case 0:
+                _difficultyText.text = "Difficulty: Easy";
+                break;
+            case 1:
+                _difficultyText.text = "Difficulty: Medium";
+                break;
+            case 2:
+                _difficultyText.text = "Difficulty: Hard";
+                break;
+            default: break;
+        }
+    }
+
+    public void ResetLevelProgress()
+    {
+        SaveManager.Instance.CurrentProgress.Level = 0;
+        SetLevelText();
+    }
+
+    public void SetDifficulty(int difficulty)
+    {
+        SaveManager.Instance.CurrentProgress.Difficulty = difficulty;
+    }
 
     public void CheckSpellUpgrades()
     {
