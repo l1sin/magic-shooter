@@ -44,6 +44,10 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    public void CollectCoin(int value)
+    {
+        CoinsCollected += value;
+    }
 
     public void Lose()
     {

@@ -6,7 +6,7 @@ public class Drop : MonoBehaviour
     [SerializeField] private DropType _dropType;
     [SerializeField] private LayerMask _character;
     [SerializeField] private float _curePercent;
-    [SerializeField] private float _coinValue;
+    [SerializeField] private int _coinValue;
     private enum DropType
     {
         Coin,
@@ -24,6 +24,7 @@ public class Drop : MonoBehaviour
             switch (_dropType)
             {
                 case DropType.Coin:
+                    LevelController.Instance.CollectCoin(_coinValue * (SaveManager.Instance.CurrentProgress.Level + 1));
                     break;
                 case DropType.Aidkit:
                     other.GetComponent<CharacterHealth>().Cure(_curePercent);

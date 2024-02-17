@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438279772347664899}
-  m_Mesh: {fileID: -5216581434543980006, guid: 5c5e3a9c316b56f49ab2619038e0767d, type: 3}
+  m_Mesh: {fileID: -5216581434543980006, guid: 8bafd3e77e308634a9a26e69187cb4ad, type: 3}
 --- !u!23 &2960093270292679592
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 35129471643679242baef96ac77e2b8d, type: 2}
+  - {fileID: 2100000, guid: daf7f7c83ea449342a1571ce92027f13, type: 2}
+  - {fileID: 2100000, guid: b3262248f61852f4b80a63f8a5f1f0ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +105,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1867815050556529658
 MonoBehaviour:
@@ -124,4 +125,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _curePercent: 0
-  _coinValue: 10
+  _coinValue: 1

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] public EnemySpawner EnemySpawner;
     [SerializeField] public Transform FollowTarget;
-    [SerializeField] public float DropChance;
+    [SerializeField] public float DropChance = 0.05f;
     [SerializeField] protected Animator _animator;
     [SerializeField] protected NavMeshAgent _agent;
     [SerializeField] protected float _speedCoef;
@@ -37,6 +37,10 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected AudioClip _meatExplosion;
     [SerializeField] protected AudioMixerGroup _audioMixerGroup;
 
+    [SerializeField] protected static float _easyDifficultyCoef = 0.75f;
+    [SerializeField] protected static float _mediumDifficultyCoef = 1f;
+    [SerializeField] protected static float _hardDifficultyCoef = 1.5f;
+
     private void Init()
     {
         _healthCurrent = _healthMax;
@@ -58,7 +62,29 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         SetColor(color);
         SetBuff(tier);
+        SetDifficulty();
         Init();
+    }
+
+    private void SetDifficulty()
+    {
+        int dif  = SaveManager.Instance.CurrentProgress.Difficulty;
+        switch (dif)
+        {
+            case 0:
+                _healthMax *= _easyDifficultyCoef;
+                _damage *= _easyDifficultyCoef;
+                break;
+            case 1:
+                _healthMax *= _mediumDifficultyCoef;
+                _damage *= _mediumDifficultyCoef;
+                break;
+            case 2:
+                _healthMax *= _hardDifficultyCoef;
+                _damage *= _hardDifficultyCoef;
+                break;
+            default: break;
+        }
     }
 
     private void SetBuff(int tier)
@@ -87,7 +113,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void DropItem()
     {
-        if (Random.Range(0f, 1f) <= DropChance)
+        if (Random.Range(0f, 1f) <= DropChance * SaveManager.Instance.CurrentProgress.CurrentStats.Luck)
         {
             int itemIndex = Random.Range(0, _drops.Length);
             Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 100, transform.position.z), Vector3.down * 200, out RaycastHit hitInfo, 300, _ground);
