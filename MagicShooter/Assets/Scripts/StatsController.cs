@@ -66,7 +66,7 @@ public class StatsController : MonoBehaviour
         AchievementBonuses[3].text = $"Speed +{_AB.Speed}%";
 
         FinalStats[0].text = $"Damage: {_FinStats.Damage * 100}%";
-        FinalStats[1].text = $"Health: {_FinStats.Health}";
+        FinalStats[1].text = $"Health: {Mathf.FloorToInt(_FinStats.Health)}";
         FinalStats[2].text = $"Luck: {_FinStats.Luck * 100}%";
         FinalStats[3].text = $"Speed: {_FinStats.Speed}";
         FinalStats[4].text = $"Fire Magic: {_FinStats.FireMagic * 100}%";

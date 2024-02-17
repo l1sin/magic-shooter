@@ -7,9 +7,8 @@ public class CharacterHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] public float HealthCurrent;
     [SerializeField] public float HealthMax;
-    [SerializeField] private float _healthBuff;
     [SerializeField] private bool _isDead;
-    [SerializeField] private Image _hpBar;
+    [SerializeField] private HealthBar _hpBar;
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioMixerGroup _audioMixerGroup;
     public int HitsTaken;
@@ -51,6 +50,6 @@ public class CharacterHealth : MonoBehaviour, IDamageable
 
     private void UpdateHealthBar()
     {
-        _hpBar.fillAmount = HealthCurrent / HealthMax;
+        _hpBar.UpdateHealthBar(HealthCurrent, HealthMax);
     }
 }

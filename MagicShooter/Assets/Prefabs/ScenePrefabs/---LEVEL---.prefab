@@ -184,21 +184,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3987299262719851784 stripped
+--- !u!114 &3577830003596471513 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3907179360436614516, guid: cb5070fdea50772478eb0bb02fa2cedc,
+  m_CorrespondingSourceObject: {fileID: 3516093110289573029, guid: cb5070fdea50772478eb0bb02fa2cedc,
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 46a6a6401ac1c0849b052bed4bebc1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4428379408699228522 stripped
+--- !u!114 &3987299262719851784 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4330333072629434646, guid: cb5070fdea50772478eb0bb02fa2cedc,
+  m_CorrespondingSourceObject: {fileID: 3907179360436614516, guid: cb5070fdea50772478eb0bb02fa2cedc,
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
@@ -220,7 +220,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _hpBar
       value: 
-      objectReference: {fileID: 4428379408699228522}
+      objectReference: {fileID: 3577830003596471513}
     - target: {fileID: 1512545351678953115, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
       propertyPath: m_LocalPosition.x
