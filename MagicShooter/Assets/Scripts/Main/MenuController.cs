@@ -1,5 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,6 +12,8 @@ public class MenuController : MonoBehaviour
     [Header("Data")]
     public int Money;
     [SerializeField] private int _upgradesPerLevel = 10;
+    [SerializeField] private Texture _yanTexture;
+    [SerializeField] private RawImage[] _yanIcons;
 
     [Header("Map")]
     [SerializeField] private MapSelector _mapSelector;
@@ -25,6 +29,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI[] _moneyText;
     [SerializeField] private TextMeshProUGUI _difficultyText;
+    [SerializeField] private GameObject[] _premiumButtons;
+    [SerializeField] private GameObject[] _checks;
+    [SerializeField] private GameObject _thanksText;
 
     [Header("Progress Bars")]
     [SerializeField] private ProgressBar _spellsBar;
@@ -56,6 +63,7 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         CursorHelper.ShowCursor();
+        LoadPremium();
         SetDifficultyText();
         CheckSpellUpgrades();
         LoadSliders();
@@ -68,6 +76,79 @@ public class MenuController : MonoBehaviour
         //Last
         UpdateAllProgressBars();
         CalculateStats();
+        SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
+    }
+
+    public void BuyNoAds()
+    {
+        SaveManager.Instance.CurrentProgress.NoAds = true;
+        _premiumButtons[0].SetActive(false);
+        _checks[0].SetActive(true);
+        _thanksText.SetActive(true);
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+    }
+
+    public void BuyCoinPremium()
+    {
+        SaveManager.Instance.CurrentProgress.CoinPremium = true;
+        _premiumButtons[1].SetActive(false);
+        _checks[1].SetActive(true);
+        _thanksText.SetActive(true);
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+    }
+
+    public void BuyExpPremium()
+    {
+        SaveManager.Instance.CurrentProgress.ExpPremium = true;
+        _premiumButtons[2].SetActive(false);
+        _checks[2].SetActive(true);
+        _thanksText.SetActive(true);
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+    }
+
+    public void LoadPremium()
+    {
+        if (SaveManager.Instance.CurrentProgress.NoAds)
+        {
+            _premiumButtons[0].SetActive(false);
+            _checks[0].SetActive(true);
+            _thanksText.SetActive(true);
+        }
+        if (SaveManager.Instance.CurrentProgress.CoinPremium)
+        {
+            _premiumButtons[1].SetActive(false);
+            _checks[1].SetActive(true);
+            _thanksText.SetActive(true);
+        }
+        if (SaveManager.Instance.CurrentProgress.ExpPremium)
+        {
+            _premiumButtons[2].SetActive(false);
+            _checks[2].SetActive(true);
+            _thanksText.SetActive(true);
+        } 
+    }
+
+    public void SetYanTexture(string url)
+    {
+        StartCoroutine(DownloadYanImage(url));
+    }
+
+    public IEnumerator DownloadYanImage(string mediaUrl)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(mediaUrl);
+        yield return request.SendWebRequest();
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.Log(request.error);
+        }
+        else
+        {
+            _yanTexture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+        }
+        foreach (RawImage ri in _yanIcons)
+        {
+            ri.texture = _yanTexture;
+        }
     }
 
     public void SetDifficultyText()
