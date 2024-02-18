@@ -2854,7 +2854,7 @@ PrefabInstance:
     - target: {fileID: 3879552787477405249, guid: 5c6b923e3759a0e40b3def748cc61d1f,
         type: 3}
       propertyPath: m_text
-      value: Epx Ad Bonus X2
+      value: Exp Ad Bonus X2
       objectReference: {fileID: 0}
     - target: {fileID: 3879552787477405249, guid: 5c6b923e3759a0e40b3def748cc61d1f,
         type: 3}

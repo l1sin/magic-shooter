@@ -101,21 +101,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6496889262621759706, guid: 25a133fc0049f944e88742fcea3abeef,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6496889262621759706, guid: 25a133fc0049f944e88742fcea3abeef,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6496889262621759706, guid: 25a133fc0049f944e88742fcea3abeef,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 7335840591165482495, guid: 25a133fc0049f944e88742fcea3abeef,
         type: 3}
       propertyPath: m_Name
@@ -195,26 +180,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EarthSpell3
       objectReference: {fileID: 0}
-    - target: {fileID: 5425258621199588211, guid: 64c489fd93c308042b96a57847a19448,
-        type: 3}
-      propertyPath: _element
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425258621199588211, guid: 64c489fd93c308042b96a57847a19448,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425258621199588211, guid: 64c489fd93c308042b96a57847a19448,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425258621199588211, guid: 64c489fd93c308042b96a57847a19448,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -283,26 +248,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173527034790665396, guid: 13d577ee8ff67d647882cf5ab4baeb88,
-        type: 3}
-      propertyPath: _element
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173527034790665396, guid: 13d577ee8ff67d647882cf5ab4baeb88,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173527034790665396, guid: 13d577ee8ff67d647882cf5ab4baeb88,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173527034790665396, guid: 13d577ee8ff67d647882cf5ab4baeb88,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 7263491427787817457, guid: 13d577ee8ff67d647882cf5ab4baeb88,
         type: 3}
@@ -383,26 +328,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterSpell2
       objectReference: {fileID: 0}
-    - target: {fileID: 6589383426453238720, guid: b2b579e21b828f94dbce4a96647fc5a0,
-        type: 3}
-      propertyPath: _element
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589383426453238720, guid: b2b579e21b828f94dbce4a96647fc5a0,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589383426453238720, guid: b2b579e21b828f94dbce4a96647fc5a0,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6589383426453238720, guid: b2b579e21b828f94dbce4a96647fc5a0,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -472,26 +397,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2307920982836851511, guid: b19aba13244b13b4fb8a46d1be769b96,
-        type: 3}
-      propertyPath: _element
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307920982836851511, guid: b19aba13244b13b4fb8a46d1be769b96,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307920982836851511, guid: b19aba13244b13b4fb8a46d1be769b96,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307920982836851511, guid: b19aba13244b13b4fb8a46d1be769b96,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 4605411604750833738, guid: b19aba13244b13b4fb8a46d1be769b96,
         type: 3}
       propertyPath: m_Name
@@ -516,26 +421,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7721346621246380095}
     m_Modifications:
-    - target: {fileID: 986601455038100596, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
-        type: 3}
-      propertyPath: _element
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 986601455038100596, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 986601455038100596, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 986601455038100596, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 2021799760151875208, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -590,11 +475,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AirSpell3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5189511183917698434, guid: 51cda506ba3b3c942a53fe97cdb60cb2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -670,26 +550,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EarthSpell1
       objectReference: {fileID: 0}
-    - target: {fileID: 6711711127821339329, guid: 0642fb9035205864fa5c0718bf1839d3,
-        type: 3}
-      propertyPath: _element
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6711711127821339329, guid: 0642fb9035205864fa5c0718bf1839d3,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6711711127821339329, guid: 0642fb9035205864fa5c0718bf1839d3,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6711711127821339329, guid: 0642fb9035205864fa5c0718bf1839d3,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -713,11 +573,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireSpell1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2862685766511683939, guid: bb21a1fb2e925ae49aab3433384c3d07,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2935226977700096867, guid: bb21a1fb2e925ae49aab3433384c3d07,
         type: 3}
@@ -769,16 +624,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6129188945998214814, guid: bb21a1fb2e925ae49aab3433384c3d07,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6129188945998214814, guid: bb21a1fb2e925ae49aab3433384c3d07,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -798,21 +643,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7721346621246380095}
     m_Modifications:
-    - target: {fileID: 146028761352662646, guid: d26e640fe35c18645b178bcf13330310,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 146028761352662646, guid: d26e640fe35c18645b178bcf13330310,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 146028761352662646, guid: d26e640fe35c18645b178bcf13330310,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 3316666944226234440, guid: d26e640fe35c18645b178bcf13330310,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -887,26 +717,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7721346621246380095}
     m_Modifications:
-    - target: {fileID: 1948569855281207592, guid: 5354012489c607441bbd4e10ca1324a5,
-        type: 3}
-      propertyPath: _element
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948569855281207592, guid: 5354012489c607441bbd4e10ca1324a5,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948569855281207592, guid: 5354012489c607441bbd4e10ca1324a5,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948569855281207592, guid: 5354012489c607441bbd4e10ca1324a5,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 5890276188631865402, guid: 5354012489c607441bbd4e10ca1324a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -981,26 +791,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7721346621246380095}
     m_Modifications:
-    - target: {fileID: 2706471766753400004, guid: c979ebaea7cd609408b95d2dc59bf5a8,
-        type: 3}
-      propertyPath: _element
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706471766753400004, guid: c979ebaea7cd609408b95d2dc59bf5a8,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706471766753400004, guid: c979ebaea7cd609408b95d2dc59bf5a8,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706471766753400004, guid: c979ebaea7cd609408b95d2dc59bf5a8,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
     - target: {fileID: 5321284595919638434, guid: c979ebaea7cd609408b95d2dc59bf5a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1124,26 +914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5358219727564913704, guid: 09fda00f3da60ac4880180c068a58795,
-        type: 3}
-      propertyPath: _element
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5358219727564913704, guid: 09fda00f3da60ac4880180c068a58795,
-        type: 3}
-      propertyPath: _spellIndex
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5358219727564913704, guid: 09fda00f3da60ac4880180c068a58795,
-        type: 3}
-      propertyPath: _shakeAmount
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5358219727564913704, guid: 09fda00f3da60ac4880180c068a58795,
-        type: 3}
-      propertyPath: _targets.m_Bits
-      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 8848664926680039302, guid: 09fda00f3da60ac4880180c068a58795,
         type: 3}

@@ -48,14 +48,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _fpsCamera: {fileID: 0}
-  _shakeAmount: 0.75
+  _shakeAmount: 1.5
   _damage: 10
   _level: 0
   _exp: 0
   _reloadTime: 0.5
   CanShoot: 1
+  _levelDamageBonus: 0.1
   _shotType: 1
   _hand: 0
+  _element: 0
+  _spellIndex: 0
   IsAttacking: 0
   _targets:
     serializedVersion: 2
@@ -205,6 +208,11 @@ PrefabInstance:
     - target: {fileID: 1629755673237372898, guid: f0e5f9029972f684b96156e652ccfd3e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797254259379418330, guid: f0e5f9029972f684b96156e652ccfd3e,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769487446484422762, guid: f0e5f9029972f684b96156e652ccfd3e,

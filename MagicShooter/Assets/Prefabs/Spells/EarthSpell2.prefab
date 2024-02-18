@@ -48,14 +48,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _fpsCamera: {fileID: 0}
-  _shakeAmount: 3
+  _shakeAmount: 4
   _damage: 10
   _level: 0
   _exp: 0
   _reloadTime: 1.5
   CanShoot: 1
+  _levelDamageBonus: 0.1
   _shotType: 1
   _hand: 0
+  _element: 1
+  _spellIndex: 4
   IsAttacking: 0
   _targets:
     serializedVersion: 2

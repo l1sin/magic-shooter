@@ -48,18 +48,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _fpsCamera: {fileID: 0}
-  _shakeAmount: 2
+  _shakeAmount: 3.5
   _damage: 10
   _level: 0
   _exp: 0
   _reloadTime: 1
   CanShoot: 1
+  _levelDamageBonus: 0.1
   _shotType: 0
   _hand: 0
+  _element: 3
+  _spellIndex: 11
   IsAttacking: 0
   _targets:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 320
   _muzzle: {fileID: 2787285279814989034}
   _tracer: {fileID: 539303030880150381, guid: 4fee00bc738278e4b8788cf9f0309df4, type: 3}
   _impact: {fileID: 7305614234217482715, guid: 643f16df974ba3840a98910f86cb3f33, type: 3}
@@ -85,7 +88,7 @@ PrefabInstance:
     - target: {fileID: 3593140643226880591, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}
       propertyPath: m_Name
-      value: GaussMuzzle
+      value: LightningMuzzle
       objectReference: {fileID: 0}
     - target: {fileID: 7194980020985220552, guid: 94eefd2ec4ff6a543ae1fbd6a825b002,
         type: 3}

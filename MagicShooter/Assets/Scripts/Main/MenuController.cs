@@ -48,6 +48,11 @@ public class MenuController : MonoBehaviour
     [Header("Sliders")]
     [SerializeField] private SliderController[] _sliders;
 
+    [Header("Menus")]
+    [SerializeField] private GameObject _mainMenu;
+    [SerializeField] private GameObject _welcomeMenu;
+    [SerializeField] private GameObject _elements;
+
     private void OnEnable()
     {
         if (Instance != null && Instance != this)
@@ -63,6 +68,13 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         CursorHelper.ShowCursor();
+        if (SaveManager.Instance.CurrentProgress.Init) StartGame();
+        else SetActiveWelcomeMenu(true);
+    }
+
+    public void StartGame()
+    {
+        _mainMenu.SetActive(true);
         LoadPremium();
         SetDifficultyText();
         CheckSpellUpgrades();
@@ -77,6 +89,48 @@ public class MenuController : MonoBehaviour
         UpdateAllProgressBars();
         CalculateStats();
         SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
+    }
+
+    public void SetActiveWelcomeMenu(bool state)
+    {
+        _welcomeMenu.SetActive(state);
+        _elements.SetActive(state);
+    }
+
+    public void ChooseFirstElement(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                SaveManager.Instance.CurrentProgress.Upgrades[16] = 1;
+                SaveManager.Instance.CurrentProgress.Upgrades[0] = 1;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexLeft = 0;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexRight = 0;
+                break;
+            case 1:
+                SaveManager.Instance.CurrentProgress.Upgrades[18] = 1;
+                SaveManager.Instance.CurrentProgress.Upgrades[3] = 1;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexLeft = 3;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexRight = 3;
+                break;
+            case 2:
+                SaveManager.Instance.CurrentProgress.Upgrades[20] = 1;
+                SaveManager.Instance.CurrentProgress.Upgrades[6] = 1;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexLeft = 6;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexRight = 6;
+                break;
+            case 3:
+                SaveManager.Instance.CurrentProgress.Upgrades[22] = 1;
+                SaveManager.Instance.CurrentProgress.Upgrades[9] = 1;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexLeft = 9;
+                SaveManager.Instance.CurrentProgress.DefaultSpellIndexRight = 9;
+                break;
+            default: break;
+        }
+        SaveManager.Instance.CurrentProgress.Init = true;
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+        StartGame();
+        SetActiveWelcomeMenu(false);
     }
 
     public void BuyNoAds()
@@ -125,7 +179,7 @@ public class MenuController : MonoBehaviour
             _premiumButtons[2].SetActive(false);
             _checks[2].SetActive(true);
             _thanksText.SetActive(true);
-        } 
+        }
     }
 
     public void SetYanTexture(string url)
@@ -219,7 +273,7 @@ public class MenuController : MonoBehaviour
                 _spellButtons[i].Unlock();
             }
         }
-        
+
     }
 
     public void UpdateAllProgressBars()
@@ -260,7 +314,7 @@ public class MenuController : MonoBehaviour
         }
         _achievementsBar.UpdateProgressBar(j, 27);
     }
-    public void UpdateUpgradesBar() 
+    public void UpdateUpgradesBar()
     {
         int j = 0;
         for (int i = 0; i < SaveManager.Instance.CurrentProgress.Upgrades.Length; i++)
