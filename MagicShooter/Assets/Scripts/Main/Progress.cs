@@ -23,6 +23,7 @@ public class Progress
     public bool CoinPremium;
     public bool ExpPremium;
     public int Difficulty;
+    public bool Init;
 
     public Progress()
     {
@@ -33,18 +34,20 @@ public class Progress
         DefaultSpellIndexRight = 0;
         SelectedMap = 0;
         Maps = new bool[4];
+        Maps[0] = true;
         Upgrades = new int[24];
         Experience = new float[12];
         Achievements = new bool[27];
         AllMoney = 0;
         Kills = 0;
-        SFXVolume = 0;
-        MusicVolume = 0;
+        SFXVolume = 1;
+        MusicVolume = 1;
         MouseSensetivity = 1;
         CurrentStats = new StatsController.Stats();
         NoAds = false;
         CoinPremium = false;
         ExpPremium = false;
         Difficulty = 1;
+        Init = false;
     }
 }

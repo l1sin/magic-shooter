@@ -275,17 +275,17 @@ public class MenuController : MonoBehaviour
     public void LoadMoney()
     {
         Money = SaveManager.Instance.CurrentProgress.Money;
-        UpdataMoneyTexts();
+        UpdateMoneyTexts();
     }
 
     public void SpendMoney(int spendAmount)
     {
         Money -= spendAmount;
         SaveManager.Instance.CurrentProgress.Money = Money;
-        UpdataMoneyTexts();
+        UpdateMoneyTexts();
     }
 
-    public void UpdataMoneyTexts()
+    public void UpdateMoneyTexts()
     {
         foreach (TextMeshProUGUI t in _moneyText)
         {
