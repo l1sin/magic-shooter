@@ -11,6 +11,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Volume _vignetteVolume;
     
     [SerializeField] private float _vignetteThreshold;
+    [SerializeField] private bool _affectVignette;
     private float _colorStep;
 
     [SerializeField] private Color[] _colors;
@@ -32,6 +33,6 @@ public class HealthBar : MonoBehaviour
         _line.color = _colors[colorIndex];
         _frame.color = new Color(_colors[colorIndex].r * 0.5f, _colors[colorIndex].g * 0.5f, _colors[colorIndex].b * 0.5f, _frame.color.a);
 
-        _vignetteVolume.weight = 1 - percent;
+        if (_affectVignette) _vignetteVolume.weight = 1 - percent;
     }
 }

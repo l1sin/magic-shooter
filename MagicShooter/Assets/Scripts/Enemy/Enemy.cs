@@ -22,8 +22,8 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected float _damage;
     [SerializeField] protected bool _inAttackRange;
 
-    [SerializeField] protected float _healthCurrent;
-    [SerializeField] protected float _healthMax;
+    [SerializeField] public float HealthCurrent;
+    [SerializeField] public float HealthMax;
     [SerializeField] protected bool _isDead;
     [SerializeField] protected List<GameObject> _toDestroy;
 
@@ -41,9 +41,13 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected static float _mediumDifficultyCoef = 1f;
     [SerializeField] protected static float _hardDifficultyCoef = 1.5f;
 
+    [SerializeField] protected bool _isBoss;
+    [SerializeField] public string Name;
+    [SerializeField] public HealthBar BossHPBar;
+
     private void Init()
     {
-        _healthCurrent = _healthMax;
+        HealthCurrent = HealthMax;
         _speedModificator = _agent.speed / _speedCoef;
         _animator.SetFloat("SpeedModificator", _speedModificator);
 
@@ -66,21 +70,29 @@ public class Enemy : MonoBehaviour, IDamageable
         Init();
     }
 
+    public void SetBoss(Color color)
+    {
+        SetColor(color);
+        SetDifficulty();
+        Init();
+        BossHPBar.UpdateHealthBar(HealthCurrent, HealthMax);
+    }
+
     private void SetDifficulty()
     {
         int dif  = SaveManager.Instance.CurrentProgress.Difficulty;
         switch (dif)
         {
             case 0:
-                _healthMax *= _easyDifficultyCoef;
+                HealthMax *= _easyDifficultyCoef;
                 _damage *= _easyDifficultyCoef;
                 break;
             case 1:
-                _healthMax *= _mediumDifficultyCoef;
+                HealthMax *= _mediumDifficultyCoef;
                 _damage *= _mediumDifficultyCoef;
                 break;
             case 2:
-                _healthMax *= _hardDifficultyCoef;
+                HealthMax *= _hardDifficultyCoef;
                 _damage *= _hardDifficultyCoef;
                 break;
             default: break;
@@ -89,7 +101,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void SetBuff(int tier)
     {
-        _healthMax *= Mathf.Pow(_healthBuff, tier);
+        HealthMax *= Mathf.Pow(_healthBuff, tier);
         _damage *= Mathf.Pow(_damageBuff, tier);
         _agent.speed *= Mathf.Pow(_speedBuff, tier);
     }
@@ -107,8 +119,16 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        EnemySpawner.IncrementDead();
-        DropItem();
+        if (!_isBoss)
+        {
+            EnemySpawner.IncrementDead();
+            DropItem();
+        }
+        else
+        {
+            EnemySpawner.BossDefeated();
+        }
+        
     }
 
     public void DropItem()
@@ -134,13 +154,15 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (!_isDead)
         {
-            float lastHealth = _healthCurrent;
-            _healthCurrent -= damage;
+            float lastHealth = HealthCurrent;
+            HealthCurrent -= damage;
 
-            if (_healthCurrent <= 0)
+            if (_isBoss) BossHPBar.UpdateHealthBar(HealthCurrent, HealthMax);
+
+            if (HealthCurrent <= 0)
             {
                 SetDead();
-                if (damage >= _healthMax)
+                if (damage >= HealthMax)
                 {
                     Destroy(Instantiate(_particles, _explosionPlace.position, transform.rotation), 5);
                     DeathSound(_meatExplosion);
@@ -188,6 +210,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_attackCollider.position, _attackRadius);
     }
 }
