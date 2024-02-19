@@ -45,34 +45,34 @@ public class StatsController : MonoBehaviour
 
     public void UpdateStats()
     {
-        UpgradeBonuses[0].text = $"Damage +{_UBPercent.Damage}%";
-        UpgradeBonuses[1].text = $"Health +{_UBFlat.Health}";
-        UpgradeBonuses[2].text = $"Health +{_UBPercent.Health}%";
-        UpgradeBonuses[3].text = $"Luck +{_UBPercent.Luck}%";
-        UpgradeBonuses[4].text = $"Speed +{_UBPercent.Speed}%";
-        UpgradeBonuses[5].text = $"Fire Magic +{_UBPercent.FireMagic}%";
-        UpgradeBonuses[6].text = $"Earth Magic +{_UBPercent.EarthMagic}%";
-        UpgradeBonuses[7].text = $"Water Magic +{_UBPercent.WaterMagic}%";
-        UpgradeBonuses[8].text = $"Air Magic +{_UBPercent.AirMagic}%";
+        UpgradeBonuses[0].text = $"{DataController.Instance.Dictionary[28]} +{_UBPercent.Damage}%";
+        UpgradeBonuses[1].text = $"{DataController.Instance.Dictionary[29]} +{_UBFlat.Health}";
+        UpgradeBonuses[2].text = $"{DataController.Instance.Dictionary[29]} +{_UBPercent.Health}%";
+        UpgradeBonuses[3].text = $"{DataController.Instance.Dictionary[30]} +{_UBPercent.Luck}%";
+        UpgradeBonuses[4].text = $"{DataController.Instance.Dictionary[31]} +{_UBPercent.Speed}%";
+        UpgradeBonuses[5].text = $"{DataController.Instance.Dictionary[32]} +{_UBPercent.FireMagic}%";
+        UpgradeBonuses[6].text = $"{DataController.Instance.Dictionary[33]} +{_UBPercent.EarthMagic}%";
+        UpgradeBonuses[7].text = $"{DataController.Instance.Dictionary[34]} +{_UBPercent.WaterMagic}%";
+        UpgradeBonuses[8].text = $"{DataController.Instance.Dictionary[35]} +{_UBPercent.AirMagic}%";
 
-        LevelBonuses[0].text = $"Damage +{_CLB.Damage}%";
-        LevelBonuses[1].text = $"Health +{_CLB.Health}%";
-        LevelBonuses[2].text = $"Luck +{_CLB.Luck}%";
-        LevelBonuses[3].text = $"Speed +{_CLB.Speed}%";
+        LevelBonuses[0].text = $"{DataController.Instance.Dictionary[28]} +{_CLB.Damage}%";
+        LevelBonuses[1].text = $"{DataController.Instance.Dictionary[29]} +{_CLB.Health}%";
+        LevelBonuses[2].text = $"{DataController.Instance.Dictionary[30]} +{_CLB.Luck}%";
+        LevelBonuses[3].text = $"{DataController.Instance.Dictionary[31]} +{_CLB.Speed}%";
 
-        AchievementBonuses[0].text = $"Damage +{_AB.Damage}%";
-        AchievementBonuses[1].text = $"Health +{_AB.Health}%";
-        AchievementBonuses[2].text = $"Luck +{_AB.Luck}%";
-        AchievementBonuses[3].text = $"Speed +{_AB.Speed}%";
+        AchievementBonuses[0].text = $"{DataController.Instance.Dictionary[28]} +{_AB.Damage}%";
+        AchievementBonuses[1].text = $"{DataController.Instance.Dictionary[29]} +{_AB.Health}%";
+        AchievementBonuses[2].text = $"{DataController.Instance.Dictionary[30]} +{_AB.Luck}%";
+        AchievementBonuses[3].text = $"{DataController.Instance.Dictionary[31]} +{_AB.Speed}%";
 
-        FinalStats[0].text = $"Damage: {_FinStats.Damage * 100}%";
-        FinalStats[1].text = $"Health: {Mathf.FloorToInt(_FinStats.Health)}";
-        FinalStats[2].text = $"Luck: {_FinStats.Luck * 100}%";
-        FinalStats[3].text = $"Speed: {_FinStats.Speed}";
-        FinalStats[4].text = $"Fire Magic: {_FinStats.FireMagic * 100}%";
-        FinalStats[5].text = $"Earth Magic: {_FinStats.EarthMagic * 100}%";
-        FinalStats[6].text = $"Water Magic: {_FinStats.WaterMagic * 100}%";
-        FinalStats[7].text = $"Air Magic: {_FinStats.AirMagic * 100}%";
+        FinalStats[0].text = $"{DataController.Instance.Dictionary[28]}: {_FinStats.Damage * 100}%";
+        FinalStats[1].text = $"{DataController.Instance.Dictionary[29]}: {Mathf.FloorToInt(_FinStats.Health)}";
+        FinalStats[2].text = $"{DataController.Instance.Dictionary[30]}: {_FinStats.Luck * 100}%";
+        FinalStats[3].text = $"{DataController.Instance.Dictionary[31]}: {_FinStats.Speed}";
+        FinalStats[4].text = $"{DataController.Instance.Dictionary[32]}: {_FinStats.FireMagic * 100}%";
+        FinalStats[5].text = $"{DataController.Instance.Dictionary[33]}: {_FinStats.EarthMagic * 100}%";
+        FinalStats[6].text = $"{DataController.Instance.Dictionary[34]}: {_FinStats.WaterMagic * 100}%";
+        FinalStats[7].text = $"{DataController.Instance.Dictionary[35]}: {_FinStats.AirMagic * 100}%";
     }
 
     public void CalculateBonuses()
