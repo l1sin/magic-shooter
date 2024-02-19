@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: A2
   m_EditorClassIdentifier: 
   Name: Tornado
-  Description: Description
+  Description: Advanced spell of air magic. A moving disturbance in air density forming
+    a miniature tornado. Explodes on hit.
   Bonuses:
   - Type: 7
     Math: 1

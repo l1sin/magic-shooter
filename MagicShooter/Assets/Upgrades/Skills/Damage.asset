@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Damage
   m_EditorClassIdentifier: 
   Name: Damage
-  Description: Description
+  Description: Special training to increase all spell damage.
   Bonuses:
   - Type: 0
     Math: 1

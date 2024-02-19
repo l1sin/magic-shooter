@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: E2
   m_EditorClassIdentifier: 
   Name: Lump
-  Description: Description
+  Description: Advanced spell of earth magic. Huge lump that can be thrown at high
+    speed.
   Bonuses:
   - Type: 5
     Math: 1

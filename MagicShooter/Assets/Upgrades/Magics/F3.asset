@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: F3
   m_EditorClassIdentifier: 
   Name: Fire Beam
-  Description: Description
+  Description: Advanced spell of fire magic. A continuous stream of incinerating
+    fiery energy.
   Bonuses:
   - Type: 4
     Math: 1

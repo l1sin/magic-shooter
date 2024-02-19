@@ -814,9 +814,15 @@ MonoBehaviour:
   - {fileID: 1438279772347664899, guid: 8ec28c70f65cec640a659314b899a8be, type: 3}
   - {fileID: 4658963222401955512, guid: 388989e3e3b366144a22ae600a9e1f8f, type: 3}
   _deathSound: {fileID: 8300000, guid: 1b8d319dbdcb5bc438c6369da803b157, type: 3}
-  _meatExplosion: {fileID: 8300000, guid: 5ece57bcbcaeaf647b86c04d26271d18, type: 3}
+  _meatExplosion:
+  - {fileID: 8300000, guid: 5ece57bcbcaeaf647b86c04d26271d18, type: 3}
+  - {fileID: 8300000, guid: d998edc2ff8abab469f4fb6326235062, type: 3}
+  - {fileID: 8300000, guid: 88298b9866087e74089e7e58a5d99057, type: 3}
   _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
     type: 2}
+  _isBoss: 0
+  Name: 
+  BossHPBar: {fileID: 0}
 --- !u!195 &298557508639181234
 NavMeshAgent:
   m_ObjectHideFlags: 0

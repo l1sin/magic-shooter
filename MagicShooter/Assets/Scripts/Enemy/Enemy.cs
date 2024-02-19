@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected GameObject[] _drops;
 
     [SerializeField] protected AudioClip _deathSound;
-    [SerializeField] protected AudioClip _meatExplosion;
+    [SerializeField] protected AudioClip[] _meatExplosion;
     [SerializeField] protected AudioMixerGroup _audioMixerGroup;
 
     [SerializeField] protected static float _easyDifficultyCoef = 0.75f;
@@ -150,6 +150,14 @@ public class Enemy : MonoBehaviour, IDamageable
         audio.gameObject.transform.position = transform.position;
     }
 
+    public void DeathSoundRandom(AudioClip[] clip)
+    {
+        AudioSource audio = SoundManager.Instance.PlaySoundRandom(clip, _audioMixerGroup);
+        audio.spatialBlend = 1;
+        audio.minDistance = 10;
+        audio.gameObject.transform.position = transform.position;
+    }
+
     public float GetDamage(float damage)
     {
         if (!_isDead)
@@ -165,7 +173,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 if (damage >= HealthMax)
                 {
                     Destroy(Instantiate(_particles, _explosionPlace.position, transform.rotation), 5);
-                    DeathSound(_meatExplosion);
+                    DeathSoundRandom(_meatExplosion);
                     Die();
                     Destroy(gameObject);
                 }

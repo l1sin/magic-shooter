@@ -261,9 +261,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7253736956780015467, guid: 4a9cd65e2cf1bdd48af3b981b28c6a88,
         type: 3}
+      propertyPath: _meatExplosion.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253736956780015467, guid: 4a9cd65e2cf1bdd48af3b981b28c6a88,
+        type: 3}
       propertyPath: _shootingPoints.Array.size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7253736956780015467, guid: 4a9cd65e2cf1bdd48af3b981b28c6a88,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ece57bcbcaeaf647b86c04d26271d18, type: 3}
+    - target: {fileID: 7253736956780015467, guid: 4a9cd65e2cf1bdd48af3b981b28c6a88,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d998edc2ff8abab469f4fb6326235062, type: 3}
+    - target: {fileID: 7253736956780015467, guid: 4a9cd65e2cf1bdd48af3b981b28c6a88,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 88298b9866087e74089e7e58a5d99057, type: 3}
     - target: {fileID: 7253736956780015467, guid: 4a9cd65e2cf1bdd48af3b981b28c6a88,
         type: 3}
       propertyPath: _shootingPoints.Array.data[0]

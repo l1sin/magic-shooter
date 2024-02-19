@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: F2
   m_EditorClassIdentifier: 
   Name: Inferno
-  Description: Description
+  Description: Advanced spell of fire magic. Ball of untamed fire essence. Explodes
+    on hit.
   Bonuses:
   - Type: 4
     Math: 1

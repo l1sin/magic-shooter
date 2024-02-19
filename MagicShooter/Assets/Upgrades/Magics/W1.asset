@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: W1
   m_EditorClassIdentifier: 
   Name: Ice Arrow
-  Description: Description
+  Description: Basic spell of water magic. Crystallized water in the form of a sharp
+    shard.
   Bonuses:
   - Type: 6
     Math: 1

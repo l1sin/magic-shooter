@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Luck
   m_EditorClassIdentifier: 
   Name: Luck
-  Description: Description
+  Description: A special ritual to improve the favor of the gods.
   Bonuses:
   - Type: 2
     Math: 1

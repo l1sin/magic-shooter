@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: W3
   m_EditorClassIdentifier: 
   Name: Ice Beam
-  Description: Description
+  Description: "\rAdvanced spell of water magic. A continuous stream of freezing
+    cold."
   Bonuses:
   - Type: 6
     Math: 1

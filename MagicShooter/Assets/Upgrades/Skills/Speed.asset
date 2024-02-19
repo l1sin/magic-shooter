@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   Name: Speed
-  Description: Description
+  Description: "\rSpecial training to increase your leg speed."
   Bonuses:
   - Type: 3
     Math: 1

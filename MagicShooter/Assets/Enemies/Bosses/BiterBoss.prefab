@@ -38,6 +38,26 @@ PrefabInstance:
       propertyPath: _attackRadius
       value: 1.95
       objectReference: {fileID: 0}
+    - target: {fileID: 1553919402318062188, guid: 7464185d1d0417846854309e9e8e62d2,
+        type: 3}
+      propertyPath: _meatExplosion.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553919402318062188, guid: 7464185d1d0417846854309e9e8e62d2,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ece57bcbcaeaf647b86c04d26271d18, type: 3}
+    - target: {fileID: 1553919402318062188, guid: 7464185d1d0417846854309e9e8e62d2,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d998edc2ff8abab469f4fb6326235062, type: 3}
+    - target: {fileID: 1553919402318062188, guid: 7464185d1d0417846854309e9e8e62d2,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 88298b9866087e74089e7e58a5d99057, type: 3}
     - target: {fileID: 5110551364728654923, guid: 7464185d1d0417846854309e9e8e62d2,
         type: 3}
       propertyPath: m_Name

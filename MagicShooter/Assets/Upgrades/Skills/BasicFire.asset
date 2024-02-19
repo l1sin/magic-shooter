@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BasicFire
   m_EditorClassIdentifier: 
   Name: Basic Fire
-  Description: Foundation of basic fire magic
+  Description: Theoretical foundations of basic fire magic. Allows you to improve
+    practical skills of Fireball.
   Bonuses:
   - Type: 4
     Math: 1

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: A3
   m_EditorClassIdentifier: 
   Name: Thunder
-  Description: Description
+  Description: "\rAdvanced spell of air magic. Miniature thunderclouds forming a
+    high-voltage lightning discharge."
   Bonuses:
   - Type: 7
     Math: 1

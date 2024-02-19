@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: E1
   m_EditorClassIdentifier: 
   Name: Rock
-  Description: Description
+  Description: Basic spell of earth magic. Small rock that can be thrown at high
+    speed.
   Bonuses:
   - Type: 5
     Math: 1

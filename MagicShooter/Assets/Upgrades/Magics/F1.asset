@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: F1
   m_EditorClassIdentifier: 
   Name: Fireball
-  Description: Description
+  Description: Basic spell of fire magic. Ball of pure fire.
   Bonuses:
   - Type: 4
     Math: 1
@@ -23,7 +23,6 @@ MonoBehaviour:
     Value: 1
   Requirements:
   - UpgradeIndex: 16
-    UpgradeLevel: 1
   ShotType: 1
   Element: 0
   Damage: 1

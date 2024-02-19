@@ -4,7 +4,7 @@ using UnityEngine;
 public class Upgrade : ScriptableObject
 {
     public string Name;
-    public string Description;
+    [TextArea(2,5)]public string Description;
     public Bonus[] Bonuses;
     public Requirement[] Requirements;
 
@@ -45,12 +45,5 @@ public class Upgrade : ScriptableObject
     public struct Requirement
     {
         public int UpgradeIndex;
-        //public int UpgradeLevel;
-
-        //public bool CheckRequirement(ref int[] upgrades)
-        //{
-        //    if (upgrades[UpgradeIndex] >= UpgradeLevel) return true;
-        //    else return false;
-        //}
     }
 }

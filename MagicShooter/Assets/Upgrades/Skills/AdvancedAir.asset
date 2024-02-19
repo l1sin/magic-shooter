@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: AdvancedAir
   m_EditorClassIdentifier: 
   Name: Advanced Air
-  Description: Description
+  Description: Theoretical foundations of advanced air magic. Allows you to improve
+    practical skills of Tornado and Thunder.
   Bonuses:
   - Type: 7
     Math: 1

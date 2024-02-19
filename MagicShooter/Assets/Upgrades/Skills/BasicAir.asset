@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BasicAir
   m_EditorClassIdentifier: 
   Name: Basic Air
-  Description: Description
+  Description: Theoretical foundations of basic air magic. Allows you to improve
+    practical skills of Airball.
   Bonuses:
   - Type: 7
     Math: 1

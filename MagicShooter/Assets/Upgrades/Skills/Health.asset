@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   Name: Health
-  Description: Description
+  Description: Special training to increase your body's endurance.
   Bonuses:
   - Type: 1
     Math: 0

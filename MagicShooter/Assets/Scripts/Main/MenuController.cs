@@ -210,13 +210,13 @@ public class MenuController : MonoBehaviour
         switch (SaveManager.Instance.CurrentProgress.Difficulty)
         {
             case 0:
-                _difficultyText.text = "Difficulty: Easy";
+                _difficultyText.text = $"{DataController.Instance.Dictionary[3]}: {DataController.Instance.Dictionary[4]}";
                 break;
             case 1:
-                _difficultyText.text = "Difficulty: Medium";
+                _difficultyText.text = $"{DataController.Instance.Dictionary[3]}: {DataController.Instance.Dictionary[5]}";
                 break;
             case 2:
-                _difficultyText.text = "Difficulty: Hard";
+                _difficultyText.text = $"{DataController.Instance.Dictionary[3]}: {DataController.Instance.Dictionary[6]}";
                 break;
             default: break;
         }
@@ -323,7 +323,7 @@ public class MenuController : MonoBehaviour
         }
         _upgradesBar.UpdateProgressBar(j, SaveManager.Instance.CurrentProgress.Upgrades.Length * 10);
         SaveManager.Instance.CurrentProgress.CharacterLevel = j / _upgradesPerLevel;
-        _characterLevelText.text = $"Character Level {SaveManager.Instance.CurrentProgress.CharacterLevel + 1}";
+        _characterLevelText.text = $"{DataController.Instance.Dictionary[11]} {SaveManager.Instance.CurrentProgress.CharacterLevel + 1}";
     }
 
     public void LoadMoney()
@@ -349,7 +349,7 @@ public class MenuController : MonoBehaviour
 
     public void SetLevelText()
     {
-        _levelText.text = $"Level {SaveManager.Instance.CurrentProgress.Level + 1}";
+        _levelText.text = $"{DataController.Instance.Dictionary[2]} {SaveManager.Instance.CurrentProgress.Level + 1}";
     }
 
     public void LoadMapsInfo()

@@ -113,6 +113,26 @@ PrefabInstance:
       propertyPath: _attackRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5807294998732358178, guid: e1aebe65e95454842b6c0636ddc73263,
+        type: 3}
+      propertyPath: _meatExplosion.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807294998732358178, guid: e1aebe65e95454842b6c0636ddc73263,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ece57bcbcaeaf647b86c04d26271d18, type: 3}
+    - target: {fileID: 5807294998732358178, guid: e1aebe65e95454842b6c0636ddc73263,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d998edc2ff8abab469f4fb6326235062, type: 3}
+    - target: {fileID: 5807294998732358178, guid: e1aebe65e95454842b6c0636ddc73263,
+        type: 3}
+      propertyPath: _meatExplosion.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 88298b9866087e74089e7e58a5d99057, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
