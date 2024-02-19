@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: AdvancedAir
   m_EditorClassIdentifier: 
-  Name: Advanced Air
-  Description: Theoretical foundations of advanced air magic. Allows you to improve
-    practical skills of Tornado and Thunder.
+  NameId: 158
+  DescriptionId: 159
   Bonuses:
   - Type: 7
     Math: 1

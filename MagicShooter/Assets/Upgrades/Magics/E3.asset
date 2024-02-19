@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295bee9571241448b47db4e2c719c2b, type: 3}
   m_Name: E3
   m_EditorClassIdentifier: 
-  Name: Stone Gatling
-  Description: Advanced spell of earth magic. A lot of tiny rocks that can be thrown
-    at very high speed comparable to a Gatling gun.
+  NameId: 144
+  DescriptionId: 145
   Bonuses:
   - Type: 5
     Math: 1

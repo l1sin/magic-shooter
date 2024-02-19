@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295bee9571241448b47db4e2c719c2b, type: 3}
   m_Name: F2
   m_EditorClassIdentifier: 
-  Name: Inferno
-  Description: Advanced spell of fire magic. Ball of untamed fire essence. Explodes
-    on hit.
+  NameId: 148
+  DescriptionId: 149
   Bonuses:
   - Type: 4
     Math: 1

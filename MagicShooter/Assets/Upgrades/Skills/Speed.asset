@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: Speed
   m_EditorClassIdentifier: 
-  Name: Speed
-  Description: "\rSpecial training to increase your leg speed."
+  NameId: 180
+  DescriptionId: 181
   Bonuses:
   - Type: 3
     Math: 1

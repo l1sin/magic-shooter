@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295bee9571241448b47db4e2c719c2b, type: 3}
   m_Name: W2
   m_EditorClassIdentifier: 
-  Name: Ice Lance
-  Description: Advanced spell of water magic. Crystallized water in the form of a
-    sharp lance.
+  NameId: 154
+  DescriptionId: 155
   Bonuses:
   - Type: 6
     Math: 1

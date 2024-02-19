@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: Luck
   m_EditorClassIdentifier: 
-  Name: Luck
-  Description: A special ritual to improve the favor of the gods.
+  NameId: 178
+  DescriptionId: 179
   Bonuses:
   - Type: 2
     Math: 1

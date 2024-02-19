@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Upgrade : ScriptableObject
 {
-    public string Name;
-    [TextArea(2,5)]public string Description;
+    public int NameId;
+    public int DescriptionId;
     public Bonus[] Bonuses;
     public Requirement[] Requirements;
 

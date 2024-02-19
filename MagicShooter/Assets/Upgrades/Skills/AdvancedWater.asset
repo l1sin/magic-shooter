@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: AdvancedWater
   m_EditorClassIdentifier: 
-  Name: Advanced Water
-  Description: Theoretical foundations of advanced water magic. Allows you to improve
-    practical skills of Ice Lance and Ice Beam.
+  NameId: 164
+  DescriptionId: 165
   Bonuses:
   - Type: 6
     Math: 1

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: BasicFire
   m_EditorClassIdentifier: 
-  Name: Basic Fire
-  Description: Theoretical foundations of basic fire magic. Allows you to improve
-    practical skills of Fireball.
+  NameId: 170
+  DescriptionId: 171
   Bonuses:
   - Type: 4
     Math: 1

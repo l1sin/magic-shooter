@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: BasicAir
   m_EditorClassIdentifier: 
-  Name: Basic Air
-  Description: Theoretical foundations of basic air magic. Allows you to improve
-    practical skills of Airball.
+  NameId: 166
+  DescriptionId: 167
   Bonuses:
   - Type: 7
     Math: 1

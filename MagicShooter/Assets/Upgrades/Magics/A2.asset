@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295bee9571241448b47db4e2c719c2b, type: 3}
   m_Name: A2
   m_EditorClassIdentifier: 
-  Name: Tornado
-  Description: Advanced spell of air magic. A moving disturbance in air density forming
-    a miniature tornado. Explodes on hit.
+  NameId: 136
+  DescriptionId: 137
   Bonuses:
   - Type: 7
     Math: 1

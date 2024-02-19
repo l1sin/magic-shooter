@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295bee9571241448b47db4e2c719c2b, type: 3}
   m_Name: W3
   m_EditorClassIdentifier: 
-  Name: Ice Beam
-  Description: "\rAdvanced spell of water magic. A continuous stream of freezing
-    cold."
+  NameId: 156
+  DescriptionId: 157
   Bonuses:
   - Type: 6
     Math: 1

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: BasicWater
   m_EditorClassIdentifier: 
-  Name: Basic Water
-  Description: Theoretical foundations of basic water magic. Allows you to improve
-    practical skills of Ice Arrow.
+  NameId: 172
+  DescriptionId: 173
   Bonuses:
   - Type: 6
     Math: 1

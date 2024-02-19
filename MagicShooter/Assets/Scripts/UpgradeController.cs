@@ -39,6 +39,8 @@ public class UpgradeController : MonoBehaviour
     public TextMeshProUGUI[] MagicBonuses;
     public TextMeshProUGUI[] MagicRequirements;
     public TextMeshProUGUI MagicLevelText;
+    public GameObject MagicRequirementsNotMetText;
+    public GameObject MagicPrice;
     public GameObject SpellsLocked;
     public GameObject SpellsUnlocked;
     public Button _magicBuyButton;
@@ -57,8 +59,11 @@ public class UpgradeController : MonoBehaviour
     public TextMeshProUGUI[] SkillBonuses;
     public TextMeshProUGUI[] SkillRequirements;
     public TextMeshProUGUI SkillLevelText;
+    public GameObject SkillRequirementsNotMetText;
+    public GameObject SkillPrice;
     public GameObject SkillsLocked;
     public GameObject SkillsUnlocked;
+    public GameObject _skillBuyButtonObject;
     public Button _skillBuyButton;
     public TextMeshProUGUI _skillBuyButtonText;
     private int _skillLastUsedIndex = 0;
@@ -111,12 +116,12 @@ public class UpgradeController : MonoBehaviour
         bool allowedToBuy = true;
 
         MagicImage.sprite = sprite;
-        MagicName.text = Magics[index].Name;
-        SpellType.text = $"Spell Type: {Magics[index].Element}";
-        Damage.text = $"Damage: {Magics[index].Damage}";
-        ReloadTime.text = $"Reload Time: {Magics[index].ReloadTime}";
-        ProjectileSpeed.text = $"Projectile Speed: {Magics[index].ProjectileSpeed}";
-        MagicDescription.text = Magics[index].Description;
+        MagicName.text = $"{DataController.Instance.Dictionary[Magics[index].NameId]}";
+        SpellType.text = $"{DataController.Instance.Dictionary[119]}: {Magics[index].Element}";
+        Damage.text = $"{DataController.Instance.Dictionary[28]}: {Magics[index].Damage}";
+        ReloadTime.text = $"{DataController.Instance.Dictionary[120]}: {Magics[index].ReloadTime}";
+        ProjectileSpeed.text = $"{DataController.Instance.Dictionary[121]}: {Magics[index].ProjectileSpeed}";
+        MagicDescription.text = $"{DataController.Instance.Dictionary[Magics[index].DescriptionId]}";
 
         foreach (TextMeshProUGUI mb in MagicBonuses)
         {
@@ -130,18 +135,18 @@ public class UpgradeController : MonoBehaviour
 
         if (Levels[index] >= maxLevel)
         {
-            MagicRequirementText.text = "Max level reached";
+            MagicRequirementText.text = $"{DataController.Instance.Dictionary[122]}";
         }
         else
         {
-            MagicRequirementText.text = "Requirements:";
+            MagicRequirementText.text = $"{DataController.Instance.Dictionary[123]}:";
 
             if (Magics[index].Requirements.Length > 0)
             {
                 for (int i = 0; i < Magics[index].Requirements.Length; i++)
                 {
                     int reqIndex = Magics[index].Requirements[i].UpgradeIndex;
-                    string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index] + 1}";
+                    string req = $"{DataController.Instance.Dictionary[AllUpgradesList[reqIndex].NameId]} {Levels[index] + 1}";
 
                     if (Levels[reqIndex] >= Levels[index] + 1)
                     {
@@ -159,7 +164,7 @@ public class UpgradeController : MonoBehaviour
             }
             else
             {
-                MagicRequirements[0].text = "No requirements";
+                MagicRequirements[0].text = $"{DataController.Instance.Dictionary[124]}";
             }
         } 
 
@@ -174,7 +179,7 @@ public class UpgradeController : MonoBehaviour
             {
                 MagicBonuses[i].text = Magics[index].Bonuses[i].ThisToString(Levels[index]);
             }
-            MagicLevelText.text = $"Level {Levels[index]}";
+            MagicLevelText.text = $"{DataController.Instance.Dictionary[2]} {Levels[index]}";
 
             if (Levels[index] < maxLevel)
             {
@@ -195,10 +200,12 @@ public class UpgradeController : MonoBehaviour
         _magicBuyButton.onClick.RemoveAllListeners();
         if (allowedToBuy)
         {
+            MagicRequirementsNotMetText.SetActive(false);
+            MagicPrice.SetActive(true);
             int price = DataController.Instance.GetPriceValue(index, Levels[index]);
             if (Levels[index] >= maxLevel)
             {
-                _magicBuyButtonText.text = "MAX";
+                _magicBuyButtonText.text = $"{DataController.Instance.Dictionary[125]}";
                 _magicBuyButton.interactable = false;
             }
             else
@@ -217,7 +224,8 @@ public class UpgradeController : MonoBehaviour
         }
         else
         {
-            _magicBuyButtonText.text = "Requirements not met";
+            MagicRequirementsNotMetText.SetActive(true);
+            MagicPrice.SetActive(false);
             _magicBuyButton.interactable = false;
         } 
     }
@@ -231,8 +239,8 @@ public class UpgradeController : MonoBehaviour
         bool allowedToBuy = true;
 
         SkillImage.sprite = sprite;
-        SkillName.text = Skills[index].Name;
-        SkillDescription.text = Skills[index].Description;
+        SkillName.text = $"{DataController.Instance.Dictionary[Skills[index].NameId]}";
+        SkillDescription.text = $"{DataController.Instance.Dictionary[Skills[index].DescriptionId]}";
 
         foreach (TextMeshProUGUI sb in SkillBonuses)
         {
@@ -246,18 +254,20 @@ public class UpgradeController : MonoBehaviour
 
         if (Levels[index + 12] >= maxLevel)
         {
-            SkillRequirementText.text = "Max level reached";
+            SkillRequirementText.text = $"{DataController.Instance.Dictionary[122]}";
+            _skillBuyButtonObject.SetActive(false);
         }
         else
         {
-            SkillRequirementText.text = "Requirements:";
+            SkillRequirementText.text = $"{DataController.Instance.Dictionary[123]}:";
+            _skillBuyButtonObject.SetActive(true);
 
             if (Skills[index].Requirements.Length > 0)
             {
                 for (int i = 0; i < Skills[index].Requirements.Length; i++)
                 {
                     int reqIndex = Skills[index].Requirements[i].UpgradeIndex;
-                    string req = $"{AllUpgradesList[reqIndex].Name} {Levels[index + 12] + 1}";
+                    string req = $"{DataController.Instance.Dictionary[AllUpgradesList[reqIndex].NameId]} {Levels[index + 12] + 1}";
 
                     if (Levels[reqIndex] >= Levels[index + 12] + 1)
                     {
@@ -275,7 +285,7 @@ public class UpgradeController : MonoBehaviour
             }
             else
             {
-                SkillRequirements[0].text = "No requirements";
+                SkillRequirements[0].text = $"{DataController.Instance.Dictionary[124]}";
             }
         }
         
@@ -291,7 +301,7 @@ public class UpgradeController : MonoBehaviour
             {
                 SkillBonuses[i].text = Skills[index].Bonuses[i].ThisToString(Levels[index + 12]);
             }
-            SkillLevelText.text = $"Level {Levels[index + 12]}";
+            SkillLevelText.text = $"{DataController.Instance.Dictionary[2]} {Levels[index + 12]}";
 
             SkillsLocked.SetActive(false);
             SkillsUnlocked.SetActive(true);
@@ -302,9 +312,12 @@ public class UpgradeController : MonoBehaviour
         int price = DataController.Instance.GetPriceValue(index + 12, Levels[index + 12]);
         if (allowedToBuy)
         {
+            SkillRequirementsNotMetText.SetActive(false);
+            SkillPrice.SetActive(true);
+
             if (Levels[index + 12] >= maxLevel)
             {
-                _skillBuyButtonText.text = "MAX";
+                _skillBuyButtonText.text = $"{DataController.Instance.Dictionary[125]}";
                 _skillBuyButton.interactable = false;
             }
             else
@@ -323,7 +336,9 @@ public class UpgradeController : MonoBehaviour
         }
         else
         {
-            _skillBuyButtonText.text = "Requirements not met";
+            SkillRequirementsNotMetText.SetActive(true);
+            SkillPrice.SetActive(false);
+            _skillBuyButtonText.text = $"{DataController.Instance.Dictionary[126]}";
             _skillBuyButton.interactable = false;
         }   
     }

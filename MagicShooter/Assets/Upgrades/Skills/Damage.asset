@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: Damage
   m_EditorClassIdentifier: 
-  Name: Damage
-  Description: Special training to increase all spell damage.
+  NameId: 174
+  DescriptionId: 175
   Bonuses:
   - Type: 0
     Math: 1

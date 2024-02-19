@@ -79,7 +79,7 @@ public class Summary : MonoBehaviour
             _expGain[i] = gain;
             if (gain > 0)
             {
-                exp += $"{_magics[i].Name}: +{Mathf.FloorToInt(gain)} Exp\n";
+                exp += $"{_magics[i].NameId}: +{Mathf.FloorToInt(gain)} Exp\n";
             }
         }
         _expText.text = exp;

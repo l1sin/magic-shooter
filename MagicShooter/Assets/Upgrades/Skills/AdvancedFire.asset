@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a2e8c7cbbdd9b47ab7a693d661bf13, type: 3}
   m_Name: AdvancedFire
   m_EditorClassIdentifier: 
-  Name: Advanced Fire
-  Description: Theoretical foundations of advanced fire magic. Allows you to improve
-    practical skills of Inferno and Fire Beam.
+  NameId: 162
+  DescriptionId: 163
   Bonuses:
   - Type: 4
     Math: 1

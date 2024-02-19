@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295bee9571241448b47db4e2c719c2b, type: 3}
   m_Name: E1
   m_EditorClassIdentifier: 
-  Name: Rock
-  Description: Basic spell of earth magic. Small rock that can be thrown at high
-    speed.
+  NameId: 140
+  DescriptionId: 141
   Bonuses:
   - Type: 5
     Math: 1
