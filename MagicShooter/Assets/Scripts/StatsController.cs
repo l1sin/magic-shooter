@@ -87,9 +87,9 @@ public class StatsController : MonoBehaviour
         {
             foreach (Bonus b in u[i].Bonuses)
             {
-                if (b.Math == Bonus.BonusMath.Percent)
+                if (b._BonusMath == Bonus.BonusMath.Percent)
                 {
-                    switch (b.Type)
+                    switch (b._BonusType)
                     {
                         case Bonus.BonusType.Damage:
                             _UBPercent.Damage += b.Value * l[i];
@@ -118,9 +118,9 @@ public class StatsController : MonoBehaviour
                         default: break;
                     }
                 }
-                else if (b.Math == Bonus.BonusMath.Flat)
+                else if (b._BonusMath == Bonus.BonusMath.Flat)
                 {
-                    switch (b.Type)
+                    switch (b._BonusType)
                     {
                         case Bonus.BonusType.Damage:
                             _UBFlat.Damage += b.Value * l[i];

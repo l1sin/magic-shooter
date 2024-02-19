@@ -11,13 +11,6 @@ public class Yandex : MonoBehaviour
     {
         en,
         ru,
-        tr,
-        es,
-        pt,
-        id,
-        fr,
-        it,
-        de
     }
 
     [DllImport("__Internal")]

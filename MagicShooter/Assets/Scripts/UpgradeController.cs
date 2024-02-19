@@ -117,7 +117,7 @@ public class UpgradeController : MonoBehaviour
 
         MagicImage.sprite = sprite;
         MagicName.text = $"{DataController.Instance.Dictionary[Magics[index].NameId]}";
-        SpellType.text = $"{DataController.Instance.Dictionary[119]}: {Magics[index].Element}";
+        SpellType.text = $"{DataController.Instance.Dictionary[119]}: {Magics[index].GetElementName()}";
         Damage.text = $"{DataController.Instance.Dictionary[28]}: {Magics[index].Damage}";
         ReloadTime.text = $"{DataController.Instance.Dictionary[120]}: {Magics[index].ReloadTime}";
         ProjectileSpeed.text = $"{DataController.Instance.Dictionary[121]}: {Magics[index].ProjectileSpeed}";

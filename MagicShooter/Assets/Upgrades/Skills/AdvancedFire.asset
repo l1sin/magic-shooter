@@ -15,8 +15,8 @@ MonoBehaviour:
   NameId: 162
   DescriptionId: 163
   Bonuses:
-  - Type: 4
-    Math: 1
+  - _BonusType: 4
+    _BonusMath: 1
     Value: 3
   Requirements:
   - UpgradeIndex: 16

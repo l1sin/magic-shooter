@@ -15,7 +15,7 @@ MonoBehaviour:
   NameId: 178
   DescriptionId: 179
   Bonuses:
-  - Type: 2
-    Math: 1
+  - _BonusType: 2
+    _BonusMath: 1
     Value: 5
   Requirements: []
