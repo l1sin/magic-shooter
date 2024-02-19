@@ -16,7 +16,12 @@ PrefabInstance:
     - target: {fileID: 650806376171037530, guid: 9f2b6f2b6bf69be4fa6817d3aa0175ef,
         type: 3}
       propertyPath: Name
-      value: Hunter
+      value: Reaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 650806376171037530, guid: 9f2b6f2b6bf69be4fa6817d3aa0175ef,
+        type: 3}
+      propertyPath: NameId
+      value: 222
       objectReference: {fileID: 0}
     - target: {fileID: 650806376171037530, guid: 9f2b6f2b6bf69be4fa6817d3aa0175ef,
         type: 3}

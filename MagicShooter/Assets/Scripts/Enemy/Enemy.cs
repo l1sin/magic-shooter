@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected static float _hardDifficultyCoef = 1.5f;
 
     [SerializeField] protected bool _isBoss;
-    [SerializeField] public string Name;
+    [SerializeField] public int NameId;
     [SerializeField] public HealthBar BossHPBar;
 
     private void Init()

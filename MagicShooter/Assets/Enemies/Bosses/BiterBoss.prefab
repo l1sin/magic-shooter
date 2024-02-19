@@ -15,6 +15,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1553919402318062188, guid: 7464185d1d0417846854309e9e8e62d2,
         type: 3}
+      propertyPath: NameId
+      value: 221
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553919402318062188, guid: 7464185d1d0417846854309e9e8e62d2,
+        type: 3}
       propertyPath: _damage
       value: 50
       objectReference: {fileID: 0}

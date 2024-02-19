@@ -59,18 +59,18 @@ public class Summary : MonoBehaviour
         _reward = 0;
         int level = SaveManager.Instance.CurrentProgress.Level;
         if (level >= _baseReward.Length) level = _baseReward.Length - 1;
-        _baseRewardText.text = $"Base Reward: {_baseReward[level]}";
+        _baseRewardText.text = $"{DataController.Instance.Dictionary[209]}: {_baseReward[level]}";
         int coinsCollected = LevelController.Instance.CoinsCollected;
-        _coinsCollectedText.text = $"Coins collected: {coinsCollected}";
+        _coinsCollectedText.text = $"{DataController.Instance.Dictionary[210]}: {coinsCollected}";
         _reward = _baseReward[level] + coinsCollected;
         if (_coinPremiumBonus) _reward *= 2;
         if (_coinAdBonus) _reward *= 2;
-        _rewardText.text = $"Reward: {_reward}";
+        _rewardText.text = $"{DataController.Instance.Dictionary[211]}: {_reward}";
     }
 
     private void ShowExperience()
     {
-        string exp = "Experience:\n";
+        string exp = $"{DataController.Instance.Dictionary[212]}:\n";
         for (int i = 0; i < 12; i++)
         {
             float gain = LevelController.Instance.ExperienceOnLevel[i];
@@ -79,7 +79,7 @@ public class Summary : MonoBehaviour
             _expGain[i] = gain;
             if (gain > 0)
             {
-                exp += $"{_magics[i].NameId}: +{Mathf.FloorToInt(gain)} Exp\n";
+                exp += $"{DataController.Instance.Dictionary[_magics[i].NameId]}: +{Mathf.FloorToInt(gain)} {DataController.Instance.Dictionary[213]}\n";
             }
         }
         _expText.text = exp;

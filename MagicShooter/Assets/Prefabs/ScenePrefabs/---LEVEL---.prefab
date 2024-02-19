@@ -91,11 +91,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1388809407765818586, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
-      propertyPath: m_Name
-      value: BossNameText
-      objectReference: {fileID: 0}
     - target: {fileID: 2379424678505315637, guid: cb5070fdea50772478eb0bb02fa2cedc,
         type: 3}
       propertyPath: _spellController
@@ -106,11 +101,6 @@ PrefabInstance:
       propertyPath: _spellController
       value: 
       objectReference: {fileID: 2296199961775718799}
-    - target: {fileID: 3101105652315495756, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3257677861682775292, guid: cb5070fdea50772478eb0bb02fa2cedc,
         type: 3}
       propertyPath: _spellController
@@ -128,24 +118,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4241868616963749680, guid: cb5070fdea50772478eb0bb02fa2cedc,
         type: 3}
-      propertyPath: _bossHPBar
-      value: 
-      objectReference: {fileID: 3055123115997697328}
-    - target: {fileID: 4241868616963749680, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
       propertyPath: _character
       value: 
       objectReference: {fileID: 2678815567405225206}
-    - target: {fileID: 4241868616963749680, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
-      propertyPath: _bossNameText
-      value: 
-      objectReference: {fileID: 3638384038812568727}
-    - target: {fileID: 4241868616963749680, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
-      propertyPath: _bossHPBarScript
-      value: 
-      objectReference: {fileID: 4039145404655000541}
     - target: {fileID: 4309628104656761729, guid: cb5070fdea50772478eb0bb02fa2cedc,
         type: 3}
       propertyPath: _spellController
@@ -171,16 +146,6 @@ PrefabInstance:
       propertyPath: _spellController
       value: 
       objectReference: {fileID: 2296199961775718799}
-    - target: {fileID: 5656714633859112747, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5656714633859112747, guid: cb5070fdea50772478eb0bb02fa2cedc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 7494813277000033937, guid: cb5070fdea50772478eb0bb02fa2cedc,
         type: 3}
       propertyPath: _spellController
@@ -219,12 +184,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3055123115997697328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3101105652315495756, guid: cb5070fdea50772478eb0bb02fa2cedc,
-    type: 3}
-  m_PrefabInstance: {fileID: 102647521953187964}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3577830003596471513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3516093110289573029, guid: cb5070fdea50772478eb0bb02fa2cedc,
@@ -237,18 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a6a6401ac1c0849b052bed4bebc1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3638384038812568727 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3680160392891843819, guid: cb5070fdea50772478eb0bb02fa2cedc,
-    type: 3}
-  m_PrefabInstance: {fileID: 102647521953187964}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3987299262719851784 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3907179360436614516, guid: cb5070fdea50772478eb0bb02fa2cedc,
@@ -259,18 +206,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4039145404655000541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4134656546384958369, guid: cb5070fdea50772478eb0bb02fa2cedc,
-    type: 3}
-  m_PrefabInstance: {fileID: 102647521953187964}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3055123115997697328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46a6a6401ac1c0849b052bed4bebc1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3589566175166042733

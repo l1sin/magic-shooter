@@ -157,8 +157,7 @@ public class EnemySpawner : MonoBehaviour
         enemy.BossHPBar = _bossHPBarScript;
         _bossSpawned = true;
         _bossHPBar.SetActive(true);
-        Debug.Log("Boss");
-        _bossNameText.text = enemy.Name;
+        _bossNameText.text = DataController.Instance.Dictionary[enemy.NameId];
 
         enemy.SetBoss(_tierColors[bossIndex]);
     }
