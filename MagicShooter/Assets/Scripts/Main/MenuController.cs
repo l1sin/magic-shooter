@@ -217,8 +217,6 @@ public class MenuController : MonoBehaviour
                 break;
             case 2:
                 _difficultyText.text = $"{DataController.Instance.Dictionary[3]}: {DataController.Instance.Dictionary[6]}";
-                Debug.Log(_difficultyText.text);
-                Debug.Log($"{DataController.Instance.Dictionary[3]}: {DataController.Instance.Dictionary[6]}");
                 break;
             default: break;
         }
