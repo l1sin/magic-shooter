@@ -138,13 +138,13 @@ public class AchievementController : MonoBehaviour
         
         if (_achievementStates[index])
         {
-            _name.text = _achievements[index].Name;
-            _description.text = _achievements[index].Description;
+            _name.text = DataController.Instance.Dictionary[_achievements[index].NameId];
+            _description.text = DataController.Instance.Dictionary[_achievements[index].DescriptionId];
         }
         else
         {
             _name.text = "???";
-            _description.text = _achievements[index].Hint;
+            _description.text = DataController.Instance.Dictionary[_achievements[index].HintId];
         } 
     }
 
@@ -154,9 +154,9 @@ public class AchievementController : MonoBehaviour
         public AchievementType Type;
         public int Goal;
         public int[] SpellsIndices;
-        public string Name;
-        public string Description;
-        public string Hint;
+        public int NameId;
+        public int DescriptionId;
+        public int HintId;
 
         public enum AchievementType
         {
