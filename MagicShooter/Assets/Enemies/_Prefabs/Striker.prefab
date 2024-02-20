@@ -614,6 +614,7 @@ MonoBehaviour:
   _explosionPlace: {fileID: 6812945957532181782}
   _attackCollider: {fileID: 2140863403535221359}
   _attackRadius: 15
+  _startAttackRadius: 12.5
   _attackLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -641,7 +642,7 @@ MonoBehaviour:
   _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
     type: 2}
   _isBoss: 0
-  Name: 
+  NameId: 0
   BossHPBar: {fileID: 0}
   _bullet: {fileID: 4253988701360597558, guid: 5baac004c53410a45acf3910ee586572, type: 3}
   _shootingPoints:

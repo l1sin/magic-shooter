@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected Transform _explosionPlace;
     [SerializeField] protected Transform _attackCollider;
     [SerializeField] protected float _attackRadius;
+    [SerializeField] protected float _startAttackRadius;
     [SerializeField] protected LayerMask _attackLayerMask;
     [SerializeField] protected LayerMask _ground;
     [SerializeField] protected float _damage;
@@ -56,7 +57,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (!_isDead)
         {
-            _inAttackRange = Physics.CheckSphere(_attackCollider.position, _attackRadius, _attackLayerMask);
+            _inAttackRange = Physics.CheckSphere(_attackCollider.position, _startAttackRadius, _attackLayerMask);
             _animator.SetBool("InAttackRange", _inAttackRange);
             _agent.destination = FollowTarget.position;
         }
@@ -220,5 +221,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_attackCollider.position, _attackRadius);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(_attackCollider.position, _startAttackRadius);
     }
 }
