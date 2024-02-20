@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: 4. SpiderData
   m_EditorClassIdentifier: 
   Data:
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
+  - Health: 15
+    Damage: 15
+    Speed: 7
+  - Health: 30
+    Damage: 30
+    Speed: 8
+  - Health: 45
+    Damage: 45
+    Speed: 9
+  - Health: 60
+    Damage: 60
+    Speed: 10
+  - Health: 75
+    Damage: 75
+    Speed: 11

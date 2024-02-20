@@ -28,4 +28,4 @@ MonoBehaviour:
   Element: 3
   Damage: 10
   ReloadTime: 1
-  ProjectileSpeed: 30
+  ProjectileSpeed: 60

@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: 5. LordData
   m_EditorClassIdentifier: 
   Data:
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
-  - Health: 0
-    Damage: 0
-    Speed: 0
+  - Health: 50
+    Damage: 30
+    Speed: 4
+  - Health: 100
+    Damage: 60
+    Speed: 5
+  - Health: 150
+    Damage: 90
+    Speed: 6
+  - Health: 200
+    Damage: 120
+    Speed: 7
+  - Health: 250
+    Damage: 150
+    Speed: 8

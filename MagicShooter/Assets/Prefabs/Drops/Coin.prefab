@@ -125,4 +125,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _curePercent: 0
-  _coinValue: 1
+  _coinValue: 5

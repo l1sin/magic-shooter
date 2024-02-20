@@ -26,6 +26,6 @@ MonoBehaviour:
   - UpgradeIndex: 17
   ShotType: 2
   Element: 0
-  Damage: 10
+  Damage: 20
   ReloadTime: 0
   ProjectileSpeed: 0

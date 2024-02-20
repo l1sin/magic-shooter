@@ -24,8 +24,8 @@ MonoBehaviour:
   Requirements:
   - UpgradeIndex: 9
   - UpgradeIndex: 23
-  ShotType: 2
+  ShotType: 0
   Element: 3
-  Damage: 10
-  ReloadTime: 1
+  Damage: 30
+  ReloadTime: 1.5
   ProjectileSpeed: 0

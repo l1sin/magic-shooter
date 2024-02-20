@@ -27,7 +27,7 @@ public class Progress
 
     public Progress()
     {
-        Money = 0;
+        Money = 1000;
         Level = 0;
         CharacterLevel = 0;
         DefaultSpellIndexLeft = 0;
@@ -38,7 +38,7 @@ public class Progress
         Upgrades = new int[24];
         Experience = new float[12];
         Achievements = new bool[27];
-        AllMoney = 0;
+        AllMoney = 1000;
         Kills = 0;
         SFXVolume = 1;
         MusicVolume = 1;
