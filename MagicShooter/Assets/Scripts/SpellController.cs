@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class SpellController : MonoBehaviour
 {
+    [SerializeField] private Magic[] _spellList;
+
     [SerializeField] private Spell _currentSpellLeft;
     [SerializeField] private Spell _currentSpellRight;
 
@@ -37,10 +39,13 @@ public class SpellController : MonoBehaviour
     {
         for (int i = 0; i < SpellsLeft.Count; i++)
         {
+            SpellsLeft[i].LoadSpellData(_spellList[i]);
             SpellsLeft[i].SetDamage(i);
+
         }
         for (int i = 0; i < SpellsRight.Count; i++)
         {
+            SpellsRight[i].LoadSpellData(_spellList[i]);
             SpellsRight[i].SetDamage(i);
         }
     }

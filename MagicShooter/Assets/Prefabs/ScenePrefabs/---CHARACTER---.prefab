@@ -699,6 +699,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e2543b20868bb4db2209878459ab9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spellList:
+  - {fileID: 11400000, guid: 7d157a62c6384d541809305f05122720, type: 2}
+  - {fileID: 11400000, guid: 4f895d01a13d19640bc1a415c9b26fa1, type: 2}
+  - {fileID: 11400000, guid: 9f5583991fec1574da9ad8145489ed8e, type: 2}
+  - {fileID: 11400000, guid: 37da140fcda85c14b9262109e2843ab4, type: 2}
+  - {fileID: 11400000, guid: 935e597012988be4e86fd32596c0eac0, type: 2}
+  - {fileID: 11400000, guid: 1ec04c17576d10e46a0f532c60b85196, type: 2}
+  - {fileID: 11400000, guid: 72a460d235e76dc43ba03abd3eccfc8b, type: 2}
+  - {fileID: 11400000, guid: a37c5884aec8e2a45bbb12325ee7b003, type: 2}
+  - {fileID: 11400000, guid: 55d26209ecc305540a0775d610917376, type: 2}
+  - {fileID: 11400000, guid: 94f9f10e751137c4883e3b6da133c2f5, type: 2}
+  - {fileID: 11400000, guid: 3a4cbb0e1fa32c847a845081966c3098, type: 2}
+  - {fileID: 11400000, guid: 039adbde9fcba2445a291aeee1df4296, type: 2}
   _currentSpellLeft: {fileID: 0}
   _currentSpellRight: {fileID: 0}
   _currentSpellIndexLeft: 0

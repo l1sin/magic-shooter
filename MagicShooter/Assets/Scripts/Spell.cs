@@ -74,6 +74,13 @@ public class Spell : MonoBehaviour
         IsAttacking = false;
     }
 
+    public void LoadSpellData(Magic data)
+    {
+        _damage = data.Damage;
+        _reloadTime = data.ReloadTime;
+        _speed = data.ProjectileSpeed;
+    }
+
     public void SetDamage(int index)
     {
         float damageMulty = 1;

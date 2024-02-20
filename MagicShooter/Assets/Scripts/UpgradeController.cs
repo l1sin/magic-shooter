@@ -119,8 +119,10 @@ public class UpgradeController : MonoBehaviour
         MagicName.text = $"{DataController.Instance.Dictionary[Magics[index].NameId]}";
         SpellType.text = $"{DataController.Instance.Dictionary[119]}: {Magics[index].GetElementName()}";
         Damage.text = $"{DataController.Instance.Dictionary[28]}: {Magics[index].Damage}";
-        ReloadTime.text = $"{DataController.Instance.Dictionary[120]}: {Magics[index].ReloadTime}";
-        ProjectileSpeed.text = $"{DataController.Instance.Dictionary[121]}: {Magics[index].ProjectileSpeed}";
+        if (Magics[index].ReloadTime == 0) ReloadTime.text = $"{DataController.Instance.Dictionary[120]}: -";
+        else ReloadTime.text = $"{DataController.Instance.Dictionary[120]}: {Magics[index].ReloadTime}";
+        if (Magics[index].ProjectileSpeed == 0) ProjectileSpeed.text = $"{DataController.Instance.Dictionary[121]}: -";
+        else ProjectileSpeed.text = $"{DataController.Instance.Dictionary[121]}: {Magics[index].ProjectileSpeed}";
         MagicDescription.text = $"{DataController.Instance.Dictionary[Magics[index].DescriptionId]}";
 
         foreach (TextMeshProUGUI mb in MagicBonuses)
