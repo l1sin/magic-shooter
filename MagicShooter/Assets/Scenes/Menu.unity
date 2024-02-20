@@ -690,7 +690,7 @@ PrefabInstance:
     - target: {fileID: 1549928875925599856, guid: 1588ab65f3bd39649a35aa0b2706fa87,
         type: 3}
       propertyPath: m_Name
-      value: SpellLearnButton
+      value: SpellLearnButtonText
       objectReference: {fileID: 0}
     - target: {fileID: 3879552787477405249, guid: 1588ab65f3bd39649a35aa0b2706fa87,
         type: 3}
@@ -6575,6 +6575,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551737996201300184, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -10161,6 +10171,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698033461888331385, guid: e87a86bc5cffa8d48bc62f4c0e92b611,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12474,6 +12489,10 @@ MonoBehaviour:
   AllUpgradesList: []
   Levels: 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   maxLevel: 10
+  BuyClip: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+  AudioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
+    type: 2}
+  Volume: 0.25
   MagicIcons: {fileID: 894130884}
   MagicInfo: {fileID: 969368320}
   MagicImage: {fileID: 1494465801}
@@ -20438,6 +20457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PriceText
       objectReference: {fileID: 0}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     - target: {fileID: 1551737996201300184, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -21462,6 +21486,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698033461888331385, guid: e87a86bc5cffa8d48bc62f4c0e92b611,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22143,6 +22172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PriceText
       objectReference: {fileID: 0}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     - target: {fileID: 1551737996201300184, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -30311,6 +30345,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1551737996201300184, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -35558,6 +35602,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698033461888331385, guid: e87a86bc5cffa8d48bc62f4c0e92b611,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36684,6 +36733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PriceText
       objectReference: {fileID: 0}
+    - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     - target: {fileID: 1551737996201300184, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -37775,7 +37829,7 @@ PrefabInstance:
     - target: {fileID: 1549928875925599856, guid: 1588ab65f3bd39649a35aa0b2706fa87,
         type: 3}
       propertyPath: m_Name
-      value: SkillLearnButton
+      value: SkillLearnButtonText
       objectReference: {fileID: 0}
     - target: {fileID: 3879552787477405249, guid: 1588ab65f3bd39649a35aa0b2706fa87,
         type: 3}
@@ -39244,6 +39298,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698033461888331385, guid: e87a86bc5cffa8d48bc62f4c0e92b611,
+        type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

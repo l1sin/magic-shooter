@@ -1,4 +1,6 @@
+using Sounds;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Drop : MonoBehaviour
 {
@@ -7,6 +9,9 @@ public class Drop : MonoBehaviour
     [SerializeField] private LayerMask _character;
     [SerializeField] private float _curePercent;
     [SerializeField] private int _coinValue;
+    [SerializeField] private AudioClip _clip;
+    [SerializeField] private AudioMixerGroup _group;
+    [SerializeField][Range(0f, 1f)] private float _volume;
     private enum DropType
     {
         Coin,
@@ -31,7 +36,13 @@ public class Drop : MonoBehaviour
                     break;
                 default: break;
             }
+            PlaySoundOnClick();
             Destroy(gameObject);
         }
+    }
+
+    private void PlaySoundOnClick()
+    {
+        SoundManager.Instance.PlaySound(_clip, _group, _volume);
     }
 }

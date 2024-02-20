@@ -1,4 +1,6 @@
+using Sounds;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,6 +16,11 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     protected bool _rightHold;
     UnityEvent _leftClick = new UnityEvent();
     UnityEvent _rightClick = new UnityEvent();
+
+    [SerializeField] private AudioClip _clip;
+    [SerializeField] private AudioMixerGroup _group;
+    [SerializeField][Range(0f, 1f)] private float _volume;
+
     protected void Start()
     {
         _leftClick.AddListener(OnLeftClick);
@@ -52,5 +59,11 @@ public class SpellButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             _rightHold = true;
             _image.color = _tintColor;
         }
+        PlaySoundOnClick();
+    }
+
+    private void PlaySoundOnClick()
+    {
+        SoundManager.Instance.PlaySound(_clip, _group, _volume);
     }
 }

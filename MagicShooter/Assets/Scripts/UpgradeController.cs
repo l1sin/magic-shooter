@@ -1,6 +1,8 @@
+using Sounds;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class UpgradeController : MonoBehaviour
@@ -24,6 +26,9 @@ public class UpgradeController : MonoBehaviour
     public List<Upgrade> AllUpgradesList;
     public int[] Levels;
     public int maxLevel = 10;
+    public AudioClip BuyClip;
+    public AudioMixerGroup AudioMixerGroup;
+    [Range(0f, 1f)] public float Volume;
 
     [Header("Magic Menu")]
     public GameObject MagicIcons;
@@ -355,6 +360,7 @@ public class UpgradeController : MonoBehaviour
         SaveManager.Instance.CurrentProgress.Upgrades = Levels;
         AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Upgrades);
         AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Spells);
+        SoundManager.Instance.PlaySound(BuyClip, AudioMixerGroup, Volume);
     }
 
     public void BuySkill(int index, int price)
@@ -365,6 +371,7 @@ public class UpgradeController : MonoBehaviour
         MenuController.Instance.UpdateUpgradesBar();
         SaveManager.Instance.CurrentProgress.Upgrades = Levels;
         AchievementController.Instance.CheckType(AchievementController.Achievement.AchievementType.Upgrades);
+        SoundManager.Instance.PlaySound(BuyClip, AudioMixerGroup, Volume);
     }
 
     public void CheckSpellUpgrade()

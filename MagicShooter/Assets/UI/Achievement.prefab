@@ -95,6 +95,9 @@ MonoBehaviour:
   _lockedSprite: {fileID: 21300000, guid: 3cc52156ff131ff4085ab94c649c3be0, type: 3}
   _index: 0
   _button: {fileID: 4779273899446865480}
+  _clip: {fileID: 8300000, guid: 9e7f376217b6bd74c90c0742a02c41a2, type: 3}
+  _group: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad, type: 2}
+  _volume: 0.5
 --- !u!114 &4779273899446865480
 MonoBehaviour:
   m_ObjectHideFlags: 0

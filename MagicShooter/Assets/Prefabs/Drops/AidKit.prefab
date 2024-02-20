@@ -125,3 +125,6 @@ MonoBehaviour:
     m_Bits: 128
   _curePercent: 0.2
   _coinValue: 0
+  _clip: {fileID: 8300000, guid: 364a03953585c23428bde6f8f8436a36, type: 3}
+  _group: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad, type: 2}
+  _volume: 0.5

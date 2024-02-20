@@ -95,6 +95,9 @@ MonoBehaviour:
   _tintColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   _lockedIcon: {fileID: 2824683472882977013}
   _interactable: 0
+  _clip: {fileID: 8300000, guid: 9e7f376217b6bd74c90c0742a02c41a2, type: 3}
+  _group: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad, type: 2}
+  _volume: 0.5
   _spellController: {fileID: 0}
 --- !u!1 &2824683472882977013
 GameObject:
