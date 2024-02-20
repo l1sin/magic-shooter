@@ -184,6 +184,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 102647521953187964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3184386319114119757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3268939452481872433, guid: cb5070fdea50772478eb0bb02fa2cedc,
+    type: 3}
+  m_PrefabInstance: {fileID: 102647521953187964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bfb8912701a0240a9f21b3ed70cf28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3577830003596471513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3516093110289573029, guid: cb5070fdea50772478eb0bb02fa2cedc,
@@ -271,11 +283,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2167771799439572720, guid: c40c78e60ff3bd84abdb503ceea5da24,
+    - target: {fileID: 1558831032630874721, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6999998
-      objectReference: {fileID: 0}
+      propertyPath: _staminaBar
+      value: 
+      objectReference: {fileID: 3184386319114119757}
     - target: {fileID: 3318324821559858146, guid: c40c78e60ff3bd84abdb503ceea5da24,
         type: 3}
       propertyPath: _currentSpellLeftImage

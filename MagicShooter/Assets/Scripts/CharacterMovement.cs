@@ -15,7 +15,15 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _stickForce;
     [SerializeField] private float _jumpTime;
     [SerializeField] private bool _jumpState = false;
+
     [SerializeField] private float _sprintCoef;
+    [SerializeField] private float _staminaMax;
+    [SerializeField] private float _staminaCurrent;
+    [SerializeField] private float _staminaRecoverSpeed;
+    [SerializeField] private float _staminaDrainSpeed;
+    [SerializeField] private bool _staminaDepleted;
+    [SerializeField] private bool _staminaInUse;
+    [SerializeField] private StaminaBar _staminaBar;
 
     [Header("Jump")]
     [SerializeField] public float JumpHeight;
@@ -37,6 +45,10 @@ public class CharacterMovement : MonoBehaviour
     {
         DefaultSpeed = SaveManager.Instance.CurrentProgress.CurrentStats.Speed;
         IsGrounded = true;
+        _staminaCurrent = _staminaMax;
+        _staminaDepleted = false;
+        _staminaInUse = false;
+        _staminaBar.UpdateStaminaBar(_staminaCurrent, _staminaMax, _staminaDepleted);
     }
 
     private void Update()
@@ -48,6 +60,40 @@ public class CharacterMovement : MonoBehaviour
         Fall();
         ApplyVerticalVelocity();
         ToggleAnimationState();
+        RecoverStamina();
+        _staminaBar.UpdateStaminaBar(_staminaCurrent, _staminaMax, _staminaDepleted);
+    }
+
+    public void RecoverStamina()
+    {
+        if (!_staminaInUse)
+        {
+            _staminaCurrent += Time.deltaTime * _staminaRecoverSpeed;
+            if (_staminaCurrent >= _staminaMax)
+            {
+                _staminaDepleted = false;
+                _staminaCurrent = _staminaMax;
+            }
+        }  
+    }
+
+    public void UseStamina()
+    {
+        if (CharacterInput.Sprint && IsGrounded && !_staminaDepleted && (MoveInput != default))
+        {
+            CurrentSpeed *= _sprintCoef;
+            _staminaCurrent -= Time.deltaTime * _staminaDrainSpeed;
+            _staminaInUse = true;
+            if (_staminaCurrent < 0)
+            {
+                _staminaCurrent = 0;
+                _staminaDepleted = true;
+            }
+        }
+        else
+        {
+            _staminaInUse = false;
+        }
     }
 
     // Called from Animator event
@@ -74,10 +120,9 @@ public class CharacterMovement : MonoBehaviour
     private void Move()
     {
         MoveInput = new Vector2(CharacterInput.MoveInputX, CharacterInput.MoveInputY);
-        if (MoveInput == default) return;
         Vector3 movement = transform.right * MoveInput.x + transform.forward * MoveInput.y;
         CurrentSpeed = DefaultSpeed;
-        if (CharacterInput.Sprint && IsGrounded) CurrentSpeed *= _sprintCoef;
+        UseStamina();
         _characterController.Move(movement * CurrentSpeed * Time.deltaTime);
     }
 

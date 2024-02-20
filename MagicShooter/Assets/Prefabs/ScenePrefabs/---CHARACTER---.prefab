@@ -633,6 +633,13 @@ MonoBehaviour:
   _jumpTime: 0.2
   _jumpState: 0
   _sprintCoef: 1.5
+  _staminaMax: 10
+  _staminaCurrent: 0
+  _staminaRecoverSpeed: 3
+  _staminaDrainSpeed: 2
+  _staminaDepleted: 0
+  _staminaInUse: 0
+  _staminaBar: {fileID: 0}
   JumpHeight: 2
   _groundCheck: {fileID: 5837957709004847189}
   _groundCheckRadius: 0.49
