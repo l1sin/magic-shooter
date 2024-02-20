@@ -417,6 +417,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 88298b9866087e74089e7e58a5d99057, type: 3}
   _audioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
     type: 2}
+  _enemyData: {fileID: 11400000, guid: 8d6881f314f9b5c40800b5f9575c9370, type: 2}
   _isBoss: 0
   NameId: 0
   BossHPBar: {fileID: 0}

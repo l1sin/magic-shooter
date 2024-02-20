@@ -42,6 +42,8 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected static float _mediumDifficultyCoef = 1f;
     [SerializeField] protected static float _hardDifficultyCoef = 1.5f;
 
+    [SerializeField] protected EnemyData _enemyData;
+
     [SerializeField] protected bool _isBoss;
     [SerializeField] public int NameId;
     [SerializeField] public HealthBar BossHPBar;
@@ -102,9 +104,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void SetBuff(int tier)
     {
-        HealthMax *= Mathf.Pow(_healthBuff, tier);
-        _damage *= Mathf.Pow(_damageBuff, tier);
-        _agent.speed *= Mathf.Pow(_speedBuff, tier);
+        HealthMax = _enemyData.Data[tier].Health;
+        _damage = _enemyData.Data[tier].Damage;
+        _agent.speed = _enemyData.Data[tier].Speed;
     }
 
     public void SetColor(Color color)
