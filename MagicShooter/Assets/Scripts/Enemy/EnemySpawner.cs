@@ -65,20 +65,8 @@ public class EnemySpawner : MonoBehaviour
         UpdateDeathCount();
     }
 
-    public void SkipToBoss()
-    {
-        foreach (Enemy e in _enemies)
-        {
-            e.GetDamage(999999999);
-        }
-        _spawnedEnemies = AllEnemiesCount;
-        DeadEnemies = AllEnemiesCount;
-        UpdateDeathCount();
-    }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) SkipToBoss();
         Timer += Time.deltaTime;
         _spawnTimer -= Time.deltaTime;
         if (_spawnTimer <= 0)

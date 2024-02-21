@@ -20,11 +20,6 @@ public class SaveManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(SaveKey)) SaveData(CurrentProgress);
-    }
-
     public void LoadDataLocal()
     {
         Progress progress;

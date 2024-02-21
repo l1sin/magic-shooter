@@ -89,6 +89,7 @@ public class MenuController : MonoBehaviour
         UpdateAllProgressBars();
         CalculateStats();
         SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
 
     public void SetActiveWelcomeMenu(bool state)

@@ -44,6 +44,7 @@ public class UpgradeController : MonoBehaviour
     public TextMeshProUGUI[] MagicBonuses;
     public TextMeshProUGUI[] MagicRequirements;
     public TextMeshProUGUI MagicLevelText;
+    public TextMeshProUGUI MagicBonusLevel;
     public GameObject MagicRequirementsNotMetText;
     public GameObject MagicPrice;
     public GameObject SpellsLocked;
@@ -186,6 +187,7 @@ public class UpgradeController : MonoBehaviour
             {
                 MagicBonuses[i].text = Magics[index].Bonuses[i].ThisToString(Levels[index]);
             }
+            MagicBonusLevel.text = $"+{Levels[index] * 10}% {DataController.Instance.Dictionary[Magics[index].NameId]} {DataController.Instance.Dictionary[28].ToLower()}";
             MagicLevelText.text = $"{DataController.Instance.Dictionary[2]} {Levels[index]}";
 
             if (Levels[index] < maxLevel)
