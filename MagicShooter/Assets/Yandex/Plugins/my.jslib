@@ -26,15 +26,15 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-  WatchAdAdd: function () {
+  WatchAdCoins: function () {
     ysdk.adv.showRewardedVideo({
       callbacks: {
         onOpen: () => {
           console.log('Video ad open.');
         },
         onRewarded: () => {
-          myGameInstance.SendMessage('MainMenuController', 'GetAdReward');
-          console.log('Rewarded 500 money');
+          myGameInstance.SendMessage('WinScreen', 'DoubleCoin');
+          console.log('Rewarded double coins');
         },
         onClose: () => {
           console.log('Video ad closed.');
@@ -46,15 +46,15 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-  WatchAdDouble: function () {
+  WatchAdExp: function () {
     ysdk.adv.showRewardedVideo({
       callbacks: {
         onOpen: () => {
           console.log('Video ad open.');
         },
         onRewarded: () => {
-          myGameInstance.SendMessage('WinScreen', 'RewardAd');
-          console.log('Rewarded double money');
+          myGameInstance.SendMessage('WinScreen', 'DoubleExp');
+          console.log('Rewarded double exp');
         },
         onClose: () => {
           console.log('Video ad closed.');
@@ -129,11 +129,6 @@ mergeInto(LibraryManager.library, {
     var buffer = _malloc(bufferSize);
     stringToUTF8(price, buffer, bufferSize);
     return buffer;
-  },
-
-  GetYanIcon: function () {
-    var url = gameShop[0].getPriceCurrencyImage('medium')
-    myGameInstance.SendMessage('MainMenuController', 'SetYanTexture', url); 
   },
 
   GameReady: function () {

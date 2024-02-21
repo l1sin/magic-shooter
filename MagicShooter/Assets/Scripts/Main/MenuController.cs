@@ -88,8 +88,18 @@ public class MenuController : MonoBehaviour
         //Last
         UpdateAllProgressBars();
         CalculateStats();
-        SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+        SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
+#if UNITY_EDITOR
+        Debug.Log("FullscreenAd");
+#elif UNITY_WEBGL
+        Yandex.FullScreenAd();
+        if (!Yandex.Instance.Init)
+        {
+            Yandex.Instance.Init = true;
+            Yandex.GameReady();
+        }    
+#endif
     }
 
     public void URL()

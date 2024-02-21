@@ -1,3 +1,4 @@
+using Sounds;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -83,6 +84,28 @@ public class Summary : MonoBehaviour
             }
         }
         _expText.text = exp;
+    }
+
+    public void CallWatchCoinAd()
+    {
+        SoundManager.Instance.OffSound();
+#if UNITY_EDITOR
+        Debug.Log("Rewarded double coins");
+        DoubleCoin();
+#elif UNITY_WEBGL
+        Yandex.WatchAdCoins();
+#endif
+    }
+
+    public void CallWatchExpAd()
+    {
+        SoundManager.Instance.OffSound();
+#if UNITY_EDITOR
+        Debug.Log("Rewarded double exp");
+        DoubleExp();
+#elif UNITY_WEBGL
+        Yandex.WatchAdExp();
+#endif
     }
 
     public void DoubleCoin()

@@ -7,6 +7,7 @@ public class Yandex : MonoBehaviour
     public const string Path = "idbfs/MagicShooterSaveDirectory";
     public Localization DefaultLanguage;
     public string Domen;
+    public bool Init = false;
     public enum Localization
     {
         en,
@@ -20,10 +21,10 @@ public class Yandex : MonoBehaviour
     public static extern void Rate();
 
     [DllImport("__Internal")]
-    public static extern void WatchAdAdd();
+    public static extern void WatchAdCoins();
 
     [DllImport("__Internal")]
-    public static extern void WatchAdDouble();
+    public static extern void WatchAdExp();
 
     [DllImport("__Internal")]
     public static extern void SaveExtern(string data);
@@ -42,9 +43,6 @@ public class Yandex : MonoBehaviour
 
     [DllImport("__Internal")]
     public static extern string GetPrice(int index);
-
-    [DllImport("__Internal")]
-    public static extern void GetYanIcon();
 
     [DllImport("__Internal")]
     public static extern void GameReady();
