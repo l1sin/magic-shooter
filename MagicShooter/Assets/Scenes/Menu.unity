@@ -6579,7 +6579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _clip
       value: 
-      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
     - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_Enabled
@@ -10174,7 +10174,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _clip
       value: 
-      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12649,7 +12649,7 @@ MonoBehaviour:
   AllUpgradesList: []
   Levels: 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   maxLevel: 10
-  BuyClip: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+  BuyClip: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
   AudioMixerGroup: {fileID: -1704924787224313407, guid: c99f098306b88594b98111629e50f3ad,
     type: 2}
   Volume: 0.25
@@ -21652,7 +21652,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _clip
       value: 
-      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30515,7 +30515,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _clip
       value: 
-      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
     - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_Enabled
@@ -35772,7 +35772,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _clip
       value: 
-      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37871,8 +37871,8 @@ RectTransform:
   - {fileID: 1664671242}
   - {fileID: 2014566387}
   - {fileID: 1708507029}
-  - {fileID: 8727728403980492958}
   - {fileID: 1303444629}
+  - {fileID: 8727728403980492958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -39483,7 +39483,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _clip
       value: 
-      objectReference: {fileID: 8300000, guid: 310af3bbf6c1e064aabb1b6dd796d339, type: 3}
+      objectReference: {fileID: 8300000, guid: 7f7834a944b3c7d4589cc3d3b3366ac5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
