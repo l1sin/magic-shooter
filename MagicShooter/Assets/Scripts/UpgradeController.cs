@@ -383,7 +383,7 @@ public class UpgradeController : MonoBehaviour
                 bool canLevelup = true;
                 while (canLevelup)
                 {
-                    if (SaveManager.Instance.CurrentProgress.Experience[i] > DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]))
+                    if (SaveManager.Instance.CurrentProgress.Experience[i] >= DataController.Instance.GetExperienceValue(i, SaveManager.Instance.CurrentProgress.Upgrades[i]))
                     {
                         if (CheckMagicReq(i))
                         {

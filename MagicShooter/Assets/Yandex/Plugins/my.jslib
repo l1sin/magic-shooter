@@ -84,14 +84,14 @@ mergeInto(LibraryManager.library, {
     if (player.getMode() === 'lite')
     {
       console.log("Loading. No auth. Use local save.");
-      myGameInstance.SendMessage('SaveManager', 'LoadDataLocal');
+      myGameInstance.SendMessage('---DATA---', 'LoadDataLocal');
     }
     else
     {
       player.getData().then(_data => {
         console.log("Loading. Auth. Use cloud save.");
         const myJSON = JSON.stringify(_data);
-        myGameInstance.SendMessage('SaveManager', 'LoadDataCloud', myJSON);
+        myGameInstance.SendMessage('---DATA---', 'LoadDataCloud', myJSON);
       });
     }
   },

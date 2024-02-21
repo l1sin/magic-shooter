@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SprintKey: 304
   SpellMenuKey: 101
-  PauseKey: 27
+  PauseKey: 9
   InputOn: 1
 --- !u!114 &6848731970770756356
 MonoBehaviour:
