@@ -10,14 +10,9 @@ public class ButtonSound : MonoBehaviour
     [SerializeField] private AudioMixerGroup _group;
     [SerializeField][Range(0f, 1f)] private float _volume;
 
-    private void OnEnable()
+    private void Start()
     {
         _button.onClick.AddListener(PlaySoundOnClick);
-    }
-
-    private void OnDisable()
-    {
-        _button.onClick.RemoveAllListeners();
     }
 
     private void PlaySoundOnClick()
