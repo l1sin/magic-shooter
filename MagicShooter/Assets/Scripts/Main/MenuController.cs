@@ -92,6 +92,11 @@ public class MenuController : MonoBehaviour
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
 
+    public void URL()
+    {
+        Application.OpenURL($"https://yandex.{Yandex.Instance.Domen}/games/developer/66279");
+    }
+
     public void SetActiveWelcomeMenu(bool state)
     {
         _welcomeMenu.SetActive(state);
