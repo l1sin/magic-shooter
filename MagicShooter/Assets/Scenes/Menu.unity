@@ -5159,6 +5159,10 @@ MonoBehaviour:
   - {fileID: 1948851712}
   - {fileID: 1099124530}
   - {fileID: 1802271939}
+  _purchaseIds:
+  - noads
+  - x2coins
+  - x2exp
   _mapSelector: {fileID: 1660056630}
   _mapShop: {fileID: 1660056632}
   DefaultSpellLeftImage:
@@ -5186,6 +5190,10 @@ MonoBehaviour:
   - {fileID: 886454447}
   - {fileID: 1007338472}
   - {fileID: 489102445}
+  _yanPriceTexts:
+  - {fileID: 2055138099}
+  - {fileID: 1267547720}
+  - {fileID: 1147741874}
   _difficultyText: {fileID: 139661278}
   _premiumButtons:
   - {fileID: 2055138098}
@@ -20632,7 +20640,7 @@ PrefabInstance:
     - target: {fileID: 209213388852152979, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_Name
-      value: PriceText
+      value: DoubleExpPriceText
       objectReference: {fileID: 0}
     - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -20657,7 +20665,7 @@ PrefabInstance:
     - target: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -20777,7 +20785,7 @@ PrefabInstance:
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -20792,12 +20800,17 @@ PrefabInstance:
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyExpPremium
+      value: CallPurchaseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -20830,6 +20843,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1147741871}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1147741874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1147741871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1148627685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22347,7 +22372,7 @@ PrefabInstance:
     - target: {fileID: 209213388852152979, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_Name
-      value: PriceText
+      value: DoubleCoinPriceText
       objectReference: {fileID: 0}
     - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -22372,7 +22397,7 @@ PrefabInstance:
     - target: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -22492,7 +22517,7 @@ PrefabInstance:
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -22507,12 +22532,17 @@ PrefabInstance:
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyCoinPremium
+      value: CallPurchaseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -22545,6 +22575,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1267547717}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267547720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267547717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1283316598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36952,7 +36994,7 @@ PrefabInstance:
     - target: {fileID: 209213388852152979, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_Name
-      value: PriceText
+      value: NoAdsPriceText
       objectReference: {fileID: 0}
     - target: {fileID: 925946742676440403, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -36977,7 +37019,7 @@ PrefabInstance:
     - target: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -37097,7 +37139,7 @@ PrefabInstance:
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -37112,7 +37154,7 @@ PrefabInstance:
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyNoAds
+      value: CallPurchaseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6628675449449142199, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
         type: 3}
@@ -37150,6 +37192,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2055138096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2055138099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2500556462507696802, guid: 29d642288a22f2b4cba8d890a3b9b5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2055138096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2074880945
 PrefabInstance:
   m_ObjectHideFlags: 0

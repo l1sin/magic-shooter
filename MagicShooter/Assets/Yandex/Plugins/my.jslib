@@ -18,14 +18,6 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
-  Rate: function () 
-  {
-    ysdk.feedback.requestReview()
-    .then(({ feedbackSent }) => {
-      console.log(feedbackSent);
-    })
-  },
-
   WatchAdCoins: function () {
     ysdk.adv.showRewardedVideo({
       callbacks: {
@@ -109,19 +101,6 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-  CallPurchaseMenu: function (pID, name) {
-    var pIDstring = UTF8ToString(pID);
-    var namestring = UTF8ToString(name);
-    payments.purchase({ id: pIDstring }).then(purchase => {
-      myGameInstance.SendMessage(namestring, 'BuyFullItem', purchase.purchaseToken);
-      ConsumePurchase(pID);
-    }).catch(err => {
-        // Покупка не удалась: в консоли разработчика не добавлен товар с таким id,
-        // пользователь не авторизовался, передумал и закрыл окно оплаты,
-        // истекло отведенное на покупку время, не хватило денег и т. д.
-    })
-  },
-
   GetPrice: function (id) {
     var item = gameShop[id]
     var price = item.priceValue;
@@ -135,42 +114,35 @@ mergeInto(LibraryManager.library, {
     ready();
   },
 
-  ConsumePurchase: function (purchaseToken) {
-    var tokenString = UTF8ToString(purchaseToken);
-    payments.consumePurchase(tokenString);
-    console.log('Purchase consumed');
-  },
-
-  CheckPurchases: function () {
-    payments.getPurchases().then(purchases => purchases.forEach((purchase) =>{
-      var info = purchase.productID + ',' + purchase.purchaseToken;
-      console.log(info);
-      myGameInstance.SendMessage('MainMenuController', 'CheckPurchase', info); 
-    }));
-  },
-
-  CheckDevice: function () {
-    console.log(ysdk.deviceInfo.isMobile())
-    return ysdk.deviceInfo.isMobile();
-  },
-
   ReachGoal: function (goal) {
     var goalString = UTF8ToString(goal);
     ym(95785831,'reachGoal',goalString);
   },
 
-  CallRate: function()
-  {
-    ysdk.feedback.canReview()
-    .then(({ value, reason }) => {
-      if (value) 
-      {
-        myGameInstance.SendMessage('MainMenuController', 'howRateWindow');
-      } 
-      else 
-      {
-        console.log(reason)
-      }
+  BuyPurchase: function (purchaseID, purchaseIndex) {
+    var pIDstring = UTF8ToString(purchaseID);
+    payments.purchase({ id: pIDstring }).then(purchase => {
+      myGameInstance.SendMessage('MenuController', 'EnablePurchase', purchaseIndex);
+    }).catch(err => {
+        // Покупка не удалась: в консоли разработчика не добавлен товар с таким id,
+        // пользователь не авторизовался, передумал и закрыл окно оплаты,
+        // истекло отведенное на покупку время, не хватило денег и т. д.
     })
+  },
+
+  CheckPurchase: function (purchaseID) {
+    var pIDstring = UTF8ToString(purchaseID);
+    payments.getPurchases().then(purchases => {
+      if (purchases.some(purchase => purchase.productID === pIDstring)) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }).catch(err => {
+        // Выбрасывает исключение USER_NOT_AUTHORIZED для неавторизованных пользователей.
+      return false;
+    })
+    
   }
 });

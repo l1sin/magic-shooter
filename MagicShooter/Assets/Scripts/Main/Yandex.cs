@@ -18,9 +18,6 @@ public class Yandex : MonoBehaviour
     public static extern string GetLanguage();
 
     [DllImport("__Internal")]
-    public static extern void Rate();
-
-    [DllImport("__Internal")]
     public static extern void WatchAdCoins();
 
     [DllImport("__Internal")]
@@ -36,31 +33,22 @@ public class Yandex : MonoBehaviour
     public static extern void FullScreenAd();
 
     [DllImport("__Internal")]
-    public static extern void CallRate();
-
-    [DllImport("__Internal")]
-    public static extern void CallPurchaseMenu(string id, string name);
-
-    [DllImport("__Internal")]
     public static extern string GetPrice(int index);
 
     [DllImport("__Internal")]
     public static extern void GameReady();
 
     [DllImport("__Internal")]
-    public static extern void ConsumePurchase(string purchaseToken);
-
-    [DllImport("__Internal")]
-    public static extern void CheckPurchases();
-
-    [DllImport("__Internal")]
     public static extern void ReachGoal(string goal);
 
     [DllImport("__Internal")]
-    public static extern bool CheckDevice();
+    public static extern string GetDomen();
 
     [DllImport("__Internal")]
-    public static extern string GetDomen();
+    public static extern void BuyPurchase(string purchaseId, int purchaseIndex);
+
+    [DllImport("__Internal")]
+    public static extern bool CheckPurchase(string purchaseId);
 
     private void Awake()
     {

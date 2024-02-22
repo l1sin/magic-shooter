@@ -14,6 +14,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private int _upgradesPerLevel = 10;
     [SerializeField] private Texture _yanTexture;
     [SerializeField] private RawImage[] _yanIcons;
+    [SerializeField] private string[] _purchaseIds;
 
     [Header("Map")]
     [SerializeField] private MapSelector _mapSelector;
@@ -28,6 +29,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _characterLevelText;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI[] _moneyText;
+    [SerializeField] private TextMeshProUGUI[] _yanPriceTexts;
     [SerializeField] private TextMeshProUGUI _difficultyText;
     [SerializeField] private GameObject[] _premiumButtons;
     [SerializeField] private GameObject[] _checks;
@@ -88,19 +90,61 @@ public class MenuController : MonoBehaviour
         //Last
         UpdateAllProgressBars();
         CalculateStats();
-        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+        
         SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
 #if UNITY_EDITOR
         Debug.Log("FullscreenAd");
 #elif UNITY_WEBGL
-        Yandex.FullScreenAd();
+        SetYanPrice();
+        CheckPurchases();
+        Debug.Log("Ads");
+        if (!SaveManager.Instance.CurrentProgress.NoAds) Yandex.FullScreenAd();
         if (!Yandex.Instance.Init)
         {
             Yandex.Instance.Init = true;
             Yandex.GameReady();
-        }    
+        }
 #endif
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
+
+    public void SetYanPrice()
+    {
+        for (int i = 0; i < _yanPriceTexts.Length; i++)
+        {
+            _yanPriceTexts[i].text = Yandex.GetPrice(i);
+        }
+    }
+
+    public void CheckPurchases()
+    {
+        for (int i = 0; i < _purchaseIds.Length; i++)
+        {
+            bool purchaseEnabled;
+            purchaseEnabled = Yandex.CheckPurchase(_purchaseIds[i]);
+            if (purchaseEnabled) EnablePurchase(i);
+            Debug.Log($"Purchase {i} {purchaseEnabled}");
+        }
+    }
+
+    public void EnablePurchase(int purchaseIndex)
+    {
+        switch (purchaseIndex)
+        {
+            case 0:
+                BuyNoAds();
+                return;
+            case 1:
+                BuyCoinPremium();
+                return;
+            case 2:
+                BuyExpPremium();
+                return;
+            default: break;
+        }
+    }
+
+
 
     public void URL()
     {
@@ -147,6 +191,11 @@ public class MenuController : MonoBehaviour
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
         StartGame();
         SetActiveWelcomeMenu(false);
+    }
+
+    public void CallPurchaseMenu(int purchaseIndex)
+    {
+        Yandex.BuyPurchase(_purchaseIds[purchaseIndex], purchaseIndex);
     }
 
     public void BuyNoAds()
