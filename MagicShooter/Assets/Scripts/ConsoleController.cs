@@ -70,7 +70,6 @@ public class ConsoleController : MonoBehaviour
         maxProgress.MusicVolume = 1;
         maxProgress.MouseSensetivity = 1;
         maxProgress.CurrentStats = new StatsController.Stats();
-        maxProgress.NoAds = true;
         maxProgress.CoinPremium = true;
         maxProgress.ExpPremium = true;
         maxProgress.Difficulty = 2;

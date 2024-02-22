@@ -96,10 +96,10 @@ public class MenuController : MonoBehaviour
         Debug.Log("FullscreenAd");
 #elif UNITY_WEBGL
         SetYanPrice();
-        CheckPurchases();
+        //CheckPurchases();
         LoadPremium();
         Debug.Log("Ads");
-        if (!SaveManager.Instance.CurrentProgress.NoAds) Yandex.FullScreenAd();
+        Yandex.FullScreenAd();
         if (!Yandex.Instance.Init)
         {
             Yandex.Instance.Init = true;
@@ -117,28 +117,25 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void CheckPurchases()
-    {
-        for (int i = 0; i < _purchaseIds.Length; i++)
-        {
-            int purchaseEnabled;
-            purchaseEnabled = Yandex.CheckPurchase(_purchaseIds[i]);
-            if (purchaseEnabled == 1) EnablePurchase(i);
-            Debug.Log($"Purchase Index: {i} Purchase ID: {_purchaseIds[i]} State: {purchaseEnabled}");
-        }
-    }
+    //public void CheckPurchases()
+    //{
+    //    for (int i = 0; i < _purchaseIds.Length; i++)
+    //    {
+    //        int purchaseEnabled;
+    //        purchaseEnabled = Yandex.CheckPurchase(_purchaseIds[i]);
+    //        if (purchaseEnabled == 1) EnablePurchase(i);
+    //        Debug.Log($"Purchase Index: {i} Purchase ID: {_purchaseIds[i]} State: {purchaseEnabled}");
+    //    }
+    //}
 
     public void EnablePurchase(int purchaseIndex)
     {
         switch (purchaseIndex)
         {
             case 0:
-                BuyNoAds();
-                return;
-            case 1:
                 BuyCoinPremium();
                 return;
-            case 2:
+            case 1:
                 BuyExpPremium();
                 return;
             default: break;
@@ -198,22 +195,12 @@ public class MenuController : MonoBehaviour
         Yandex.BuyPurchase(_purchaseIds[purchaseIndex], purchaseIndex);
     }
 
-    public void BuyNoAds()
-    {
-        Debug.Log("BuyNoAds");
-        SaveManager.Instance.CurrentProgress.NoAds = true;
-        _premiumButtons[0].SetActive(false);
-        _checks[0].SetActive(true);
-        _thanksText.SetActive(true);
-        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
-    }
-
     public void BuyCoinPremium()
     {
         Debug.Log("BuyCoinPremium");
         SaveManager.Instance.CurrentProgress.CoinPremium = true;
-        _premiumButtons[1].SetActive(false);
-        _checks[1].SetActive(true);
+        _premiumButtons[0].SetActive(false);
+        _checks[0].SetActive(true);
         _thanksText.SetActive(true);
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
@@ -222,30 +209,24 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("BuyExpPremium");
         SaveManager.Instance.CurrentProgress.ExpPremium = true;
-        _premiumButtons[2].SetActive(false);
-        _checks[2].SetActive(true);
+        _premiumButtons[1].SetActive(false);
+        _checks[1].SetActive(true);
         _thanksText.SetActive(true);
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
 
     public void LoadPremium()
     {
-        if (SaveManager.Instance.CurrentProgress.NoAds)
+        if (SaveManager.Instance.CurrentProgress.CoinPremium)
         {
             _premiumButtons[0].SetActive(false);
             _checks[0].SetActive(true);
             _thanksText.SetActive(true);
         }
-        if (SaveManager.Instance.CurrentProgress.CoinPremium)
+        if (SaveManager.Instance.CurrentProgress.ExpPremium)
         {
             _premiumButtons[1].SetActive(false);
             _checks[1].SetActive(true);
-            _thanksText.SetActive(true);
-        }
-        if (SaveManager.Instance.CurrentProgress.ExpPremium)
-        {
-            _premiumButtons[2].SetActive(false);
-            _checks[2].SetActive(true);
             _thanksText.SetActive(true);
         }
     }

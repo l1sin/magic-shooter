@@ -19,7 +19,6 @@ public class Progress
     public float MusicVolume;
     public float MouseSensetivity;
     public StatsController.Stats CurrentStats;
-    public bool NoAds;
     public bool CoinPremium;
     public bool ExpPremium;
     public int Difficulty;
@@ -44,7 +43,6 @@ public class Progress
         MusicVolume = 1;
         MouseSensetivity = 1;
         CurrentStats = new StatsController.Stats();
-        NoAds = false;
         CoinPremium = false;
         ExpPremium = false;
         Difficulty = 1;
