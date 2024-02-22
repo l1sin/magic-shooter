@@ -97,6 +97,7 @@ public class MenuController : MonoBehaviour
 #elif UNITY_WEBGL
         SetYanPrice();
         CheckPurchases();
+        LoadPremium();
         Debug.Log("Ads");
         if (!SaveManager.Instance.CurrentProgress.NoAds) Yandex.FullScreenAd();
         if (!Yandex.Instance.Init)
@@ -120,10 +121,10 @@ public class MenuController : MonoBehaviour
     {
         for (int i = 0; i < _purchaseIds.Length; i++)
         {
-            bool purchaseEnabled;
+            int purchaseEnabled;
             purchaseEnabled = Yandex.CheckPurchase(_purchaseIds[i]);
-            if (purchaseEnabled) EnablePurchase(i);
-            Debug.Log($"Purchase {i} {purchaseEnabled}");
+            if (purchaseEnabled == 1) EnablePurchase(i);
+            Debug.Log($"Purchase Index: {i} Purchase ID: {_purchaseIds[i]} State: {purchaseEnabled}");
         }
     }
 
@@ -143,8 +144,6 @@ public class MenuController : MonoBehaviour
             default: break;
         }
     }
-
-
 
     public void URL()
     {
@@ -195,11 +194,13 @@ public class MenuController : MonoBehaviour
 
     public void CallPurchaseMenu(int purchaseIndex)
     {
+        Debug.Log($"Call purchase menu. Purchase Index: {purchaseIndex} Purchase ID: {_purchaseIds[purchaseIndex]}");
         Yandex.BuyPurchase(_purchaseIds[purchaseIndex], purchaseIndex);
     }
 
     public void BuyNoAds()
     {
+        Debug.Log("BuyNoAds");
         SaveManager.Instance.CurrentProgress.NoAds = true;
         _premiumButtons[0].SetActive(false);
         _checks[0].SetActive(true);
@@ -209,6 +210,7 @@ public class MenuController : MonoBehaviour
 
     public void BuyCoinPremium()
     {
+        Debug.Log("BuyCoinPremium");
         SaveManager.Instance.CurrentProgress.CoinPremium = true;
         _premiumButtons[1].SetActive(false);
         _checks[1].SetActive(true);
@@ -218,6 +220,7 @@ public class MenuController : MonoBehaviour
 
     public void BuyExpPremium()
     {
+        Debug.Log("BuyExpPremium");
         SaveManager.Instance.CurrentProgress.ExpPremium = true;
         _premiumButtons[2].SetActive(false);
         _checks[2].SetActive(true);

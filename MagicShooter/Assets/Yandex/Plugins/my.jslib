@@ -130,19 +130,21 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-  CheckPurchase: function (purchaseID) {
+  CheckPurchase: function (purchaseID, callback) {
     var pIDstring = UTF8ToString(purchaseID);
     payments.getPurchases().then(purchases => {
       if (purchases.some(purchase => purchase.productID === pIDstring)) {
-        return true;
+        console.log('found ' + pIDstring);
+        callback(1);
       }
       else {
-        return false;
+        console.log('not found ' + pIDstring);
+        callback(0);
       }
     }).catch(err => {
         // Выбрасывает исключение USER_NOT_AUTHORIZED для неавторизованных пользователей.
-      return false;
+      console.log('check purcase error');
+      callback(0);
     })
-    
   }
 });
