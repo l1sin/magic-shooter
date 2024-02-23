@@ -72,6 +72,11 @@ public class MenuController : MonoBehaviour
         CursorHelper.ShowCursor();
         if (SaveManager.Instance.CurrentProgress.Init) StartGame();
         else SetActiveWelcomeMenu(true);
+#if UNITY_EDITOR
+        Debug.Log("Ready");
+#elif UNITY_WEBGL
+        Yandex.GameReady();
+#endif
     }
 
     public void StartGame()
@@ -103,7 +108,6 @@ public class MenuController : MonoBehaviour
         if (!Yandex.Instance.Init)
         {
             Yandex.Instance.Init = true;
-            Yandex.GameReady();
         }
 #endif
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);

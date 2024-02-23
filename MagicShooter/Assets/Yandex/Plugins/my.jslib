@@ -116,7 +116,7 @@ mergeInto(LibraryManager.library, {
 
   ReachGoal: function (goal) {
     var goalString = UTF8ToString(goal);
-    ym(95785831,'reachGoal',goalString);
+    ym(96554425,'reachGoal',goalString);
   },
 
   BuyPurchase: function (purchaseID, purchaseIndex) {

@@ -16,6 +16,7 @@ public class AchievementController : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _description;
+    private const string achievementString = "achievement";
 
     private void OnEnable()
     {
@@ -71,15 +72,27 @@ public class AchievementController : MonoBehaviour
         switch (a.Type)
         {
             case AchievementType.Money:
-                if (SaveManager.Instance.CurrentProgress.AllMoney >= a.Goal) return true;
+                if (SaveManager.Instance.CurrentProgress.AllMoney >= a.Goal)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                } 
                 else return false;
 
             case AchievementType.Kills:
-                if (SaveManager.Instance.CurrentProgress.Kills >= a.Goal) return true;
+                if (SaveManager.Instance.CurrentProgress.Kills >= a.Goal)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                }
                 else return false;
 
             case AchievementType.Levels:
-                if (SaveManager.Instance.CurrentProgress.Level >= a.Goal) return true;
+                if (SaveManager.Instance.CurrentProgress.Level >= a.Goal)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                }
                 else return false;
 
             case AchievementType.Maps:
@@ -88,7 +101,11 @@ public class AchievementController : MonoBehaviour
                 {
                     if (SaveManager.Instance.CurrentProgress.Maps[i] == true) j++;
                 }
-                if (j >= a.Goal) return true;
+                if (j >= a.Goal)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                }
                 else return false;
 
             case AchievementType.Upgrades:
@@ -97,7 +114,11 @@ public class AchievementController : MonoBehaviour
                 {
                     k += SaveManager.Instance.CurrentProgress.Upgrades[i];
                 }
-                if (k >= a.Goal) return true;
+                if (k >= a.Goal)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                }
                 else return false;
 
             case AchievementType.Spells:
@@ -106,7 +127,11 @@ public class AchievementController : MonoBehaviour
                 {
                     if (SaveManager.Instance.CurrentProgress.Upgrades[i] > 0) l++;
                 }
-                if (l >= a.Goal) return true;
+                if (l >= a.Goal)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                }
                 else return false;
 
             case AchievementType.Archmage:
@@ -115,7 +140,8 @@ public class AchievementController : MonoBehaviour
                     if (SaveManager.Instance.CurrentProgress.Upgrades[a.SpellsIndices[i]] >= 10) continue;
                     else return false;
                 }
-                return true;
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
 
             case AchievementType.Champion:
                 int m = 0;
@@ -123,7 +149,11 @@ public class AchievementController : MonoBehaviour
                 {
                     if (s) m++;
                 }
-                if (m >= _achievementStates.Length - 1) return true;
+                if (m >= _achievementStates.Length - 1)
+                {
+                    Yandex.ReachGoal($"{achievementString}{index}");
+                    return true;
+                }
                 else return false;
 
             default:
