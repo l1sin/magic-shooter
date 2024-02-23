@@ -56,11 +56,6 @@ public class CharacterInput : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        Jump = false;
-    }
-
     private void GetInput()
     {
         GetMouseInput();
@@ -90,7 +85,7 @@ public class CharacterInput : MonoBehaviour
     {
         if (MoveInputAllowed && AllInputAllowed)
         {
-            if (Input.GetButtonDown(GlobalStrings.JumpInput)) Jump = true;
+            Jump = Input.GetButtonDown(GlobalStrings.JumpInput);
 
             MoveInputX = Input.GetAxisRaw(GlobalStrings.HorizontalInput);
             MoveInputY = Input.GetAxisRaw(GlobalStrings.VerticalInput);

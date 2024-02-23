@@ -74,7 +74,10 @@ public class AchievementController : MonoBehaviour
             case AchievementType.Money:
                 if (SaveManager.Instance.CurrentProgress.AllMoney >= a.Goal)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 } 
                 else return false;
@@ -82,7 +85,10 @@ public class AchievementController : MonoBehaviour
             case AchievementType.Kills:
                 if (SaveManager.Instance.CurrentProgress.Kills >= a.Goal)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 }
                 else return false;
@@ -90,7 +96,10 @@ public class AchievementController : MonoBehaviour
             case AchievementType.Levels:
                 if (SaveManager.Instance.CurrentProgress.Level >= a.Goal)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 }
                 else return false;
@@ -103,7 +112,10 @@ public class AchievementController : MonoBehaviour
                 }
                 if (j >= a.Goal)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 }
                 else return false;
@@ -116,7 +128,10 @@ public class AchievementController : MonoBehaviour
                 }
                 if (k >= a.Goal)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 }
                 else return false;
@@ -129,7 +144,10 @@ public class AchievementController : MonoBehaviour
                 }
                 if (l >= a.Goal)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 }
                 else return false;
@@ -140,8 +158,11 @@ public class AchievementController : MonoBehaviour
                     if (SaveManager.Instance.CurrentProgress.Upgrades[a.SpellsIndices[i]] >= 10) continue;
                     else return false;
                 }
-                    Yandex.ReachGoal($"{achievementString}{index}");
-                    return true;
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
+                return true;
 
             case AchievementType.Champion:
                 int m = 0;
@@ -151,7 +172,10 @@ public class AchievementController : MonoBehaviour
                 }
                 if (m >= _achievementStates.Length - 1)
                 {
-                    Yandex.ReachGoal($"{achievementString}{index}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+#elif UNITY_WEBGL
+                Yandex.ReachGoal($"{achievementString}{index}");
+#endif
                     return true;
                 }
                 else return false;
