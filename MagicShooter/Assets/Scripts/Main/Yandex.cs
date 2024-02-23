@@ -48,7 +48,7 @@ public class Yandex : MonoBehaviour
     public static extern void BuyPurchase(string purchaseId, int purchaseIndex);
 
     [DllImport("__Internal")]
-    public static extern int CheckPurchase(string purchaseId);
+    public static extern void CheckPurchase(string purchaseId, int purchaseIndex);
 
     private void Awake()
     {

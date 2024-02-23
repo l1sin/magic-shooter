@@ -96,7 +96,7 @@ public class MenuController : MonoBehaviour
         Debug.Log("FullscreenAd");
 #elif UNITY_WEBGL
         SetYanPrice();
-        //CheckPurchases();
+        CheckPurchases();
         LoadPremium();
         Debug.Log("Ads");
         Yandex.FullScreenAd();
@@ -117,16 +117,13 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    //public void CheckPurchases()
-    //{
-    //    for (int i = 0; i < _purchaseIds.Length; i++)
-    //    {
-    //        int purchaseEnabled;
-    //        purchaseEnabled = Yandex.CheckPurchase(_purchaseIds[i]);
-    //        if (purchaseEnabled == 1) EnablePurchase(i);
-    //        Debug.Log($"Purchase Index: {i} Purchase ID: {_purchaseIds[i]} State: {purchaseEnabled}");
-    //    }
-    //}
+    public void CheckPurchases()
+    {
+        for (int i = 0; i < _purchaseIds.Length; i++)
+        {
+            Yandex.CheckPurchase(_purchaseIds[i], i);
+        }
+    }
 
     public void EnablePurchase(int purchaseIndex)
     {
@@ -192,7 +189,11 @@ public class MenuController : MonoBehaviour
     public void CallPurchaseMenu(int purchaseIndex)
     {
         Debug.Log($"Call purchase menu. Purchase Index: {purchaseIndex} Purchase ID: {_purchaseIds[purchaseIndex]}");
+#if UNITY_EDITOR
+        EnablePurchase(purchaseIndex);
+#elif UNITY_WEBGL
         Yandex.BuyPurchase(_purchaseIds[purchaseIndex], purchaseIndex);
+#endif
     }
 
     public void BuyCoinPremium()

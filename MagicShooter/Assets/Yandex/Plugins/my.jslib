@@ -130,21 +130,16 @@ mergeInto(LibraryManager.library, {
     })
   },
 
-  CheckPurchase: function (purchaseID, callback) {
+  CheckPurchase: function (purchaseID, purchaseIndex) {
     var pIDstring = UTF8ToString(purchaseID);
     payments.getPurchases().then(purchases => {
       if (purchases.some(purchase => purchase.productID === pIDstring)) {
+        myGameInstance.SendMessage('MenuController', 'EnablePurchase', purchaseIndex);
         console.log('found ' + pIDstring);
-        callback(1);
-      }
-      else {
-        console.log('not found ' + pIDstring);
-        callback(0);
       }
     }).catch(err => {
         // Выбрасывает исключение USER_NOT_AUTHORIZED для неавторизованных пользователей.
       console.log('check purcase error');
-      callback(0);
     })
   }
 });
