@@ -72,7 +72,7 @@ public class MenuController : MonoBehaviour
         CursorHelper.ShowCursor();
         if (SaveManager.Instance.CurrentProgress.Init) StartGame();
         else SetActiveWelcomeMenu(true);
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         Debug.Log("Ready");
 #elif UNITY_WEBGL
         Yandex.GameReady();
@@ -97,18 +97,12 @@ public class MenuController : MonoBehaviour
         CalculateStats();
         
         SetYanTexture("https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-m.png");
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         Debug.Log("FullscreenAd");
 #elif UNITY_WEBGL
         SetYanPrice();
         CheckPurchases();
-        LoadPremium();
-        Debug.Log("Ads");
         Yandex.FullScreenAd();
-        if (!Yandex.Instance.Init)
-        {
-            Yandex.Instance.Init = true;
-        }
 #endif
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
@@ -193,7 +187,7 @@ public class MenuController : MonoBehaviour
     public void CallPurchaseMenu(int purchaseIndex)
     {
         Debug.Log($"Call purchase menu. Purchase Index: {purchaseIndex} Purchase ID: {_purchaseIds[purchaseIndex]}");
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         EnablePurchase(purchaseIndex);
 #elif UNITY_WEBGL
         Yandex.BuyPurchase(_purchaseIds[purchaseIndex], purchaseIndex);

@@ -7,7 +7,6 @@ public class Yandex : MonoBehaviour
     public const string Path = "idbfs/MagicShooterSaveDirectory";
     public Localization DefaultLanguage;
     public string Domen;
-    public bool Init = false;
     public enum Localization
     {
         en,

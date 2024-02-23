@@ -60,7 +60,7 @@ public class SaveManager : MonoBehaviour
     public void SaveData(Progress progress)
     {
         SaveDataLocal(progress);
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         Debug.Log("Fake CloudSave");
 #elif UNITY_WEBGL
         SaveDataCloud(progress);

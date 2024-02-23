@@ -89,7 +89,7 @@ public class Summary : MonoBehaviour
     public void CallWatchCoinAd()
     {
         SoundManager.Instance.OffSound();
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         Debug.Log("Rewarded double coins");
         DoubleCoin();
 #elif UNITY_WEBGL
@@ -100,7 +100,7 @@ public class Summary : MonoBehaviour
     public void CallWatchExpAd()
     {
         SoundManager.Instance.OffSound();
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         Debug.Log("Rewarded double exp");
         DoubleExp();
 #elif UNITY_WEBGL
