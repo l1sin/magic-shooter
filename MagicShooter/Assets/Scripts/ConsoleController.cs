@@ -30,6 +30,9 @@ public class ConsoleController : MonoBehaviour
                 case "money":
                     AddMoney();
                     break;
+                case "consume":
+                    ConsumeAll();
+                    break;
             }
             _console.SetActive(false);
         }
@@ -89,5 +92,10 @@ public class ConsoleController : MonoBehaviour
         SaveManager.Instance.CurrentProgress.Money += 10000;
         _menuController.UpdateMoneyTexts();
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+    }
+
+    private void ConsumeAll()
+    {
+        Yandex.FindAllPurchases();
     }
 }

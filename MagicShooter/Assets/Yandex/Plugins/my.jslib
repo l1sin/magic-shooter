@@ -141,5 +141,19 @@ mergeInto(LibraryManager.library, {
         // Выбрасывает исключение USER_NOT_AUTHORIZED для неавторизованных пользователей.
       console.log('check purcase error');
     })
-  }
+  },
+
+  ConsumePurchase: function (purchaseToken) {
+    var tokenString = UTF8ToString(purchaseToken);
+    payments.consumePurchase(tokenString);
+    console.log('Purchase consumed');
+  },
+
+  FindAllPurchases: function () {
+    payments.getPurchases().then(purchases => purchases.forEach((purchase) =>{
+      var info = purchase.productID + ',' + purchase.purchaseToken;
+      console.log(info);
+      myGameInstance.SendMessage('MenuController', 'Consume', info); 
+    }));
+  },
 });

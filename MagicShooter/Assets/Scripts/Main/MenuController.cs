@@ -107,6 +107,17 @@ public class MenuController : MonoBehaviour
         SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
 
+    public void Consume(string purchaseinfo)
+    {
+        string[] info = purchaseinfo.Split(',', System.StringSplitOptions.None);
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+#if UNITY_EDITOR || UNITY_STANDALONE
+        Debug.Log("All Purchases Consumed");
+#elif UNITY_WEBGL
+        Yandex.ConsumePurchase(info[1]);
+#endif
+    }
+
     public void SetYanPrice()
     {
         for (int i = 0; i < _yanPriceTexts.Length; i++)

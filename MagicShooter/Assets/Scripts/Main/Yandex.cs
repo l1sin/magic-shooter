@@ -44,6 +44,12 @@ public class Yandex : MonoBehaviour
     public static extern string GetDomen();
 
     [DllImport("__Internal")]
+    public static extern void ConsumePurchase(string token);
+
+    [DllImport("__Internal")]
+    public static extern void FindAllPurchases();
+
+    [DllImport("__Internal")]
     public static extern void BuyPurchase(string purchaseId, int purchaseIndex);
 
     [DllImport("__Internal")]
