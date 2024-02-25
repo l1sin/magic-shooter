@@ -1,7 +1,4 @@
 using Sounds;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,7 +13,7 @@ public class Summary : MonoBehaviour
     [SerializeField] private bool _expAdBonus = false;
     [SerializeField] private bool _expPremiumBonus = false;
     [SerializeField] private int _reward;
-    [SerializeField] private float[] _expGain; 
+    [SerializeField] private float[] _expGain;
 
     [Header("TMP")]
     [SerializeField] private TextMeshProUGUI _baseRewardText;
@@ -39,6 +36,7 @@ public class Summary : MonoBehaviour
         CheckPremium();
         ShowReward();
         ShowExperience();
+        Save();
     }
 
     private void CheckPremium()
@@ -52,7 +50,7 @@ public class Summary : MonoBehaviour
         {
             _expPremiumBonus = true;
             _expPremiumBonusObj.SetActive(true);
-        } 
+        }
     }
 
     private void ShowReward()
@@ -112,15 +110,23 @@ public class Summary : MonoBehaviour
     {
         _coinAdBonus = true;
         _coinAdBonusObj.SetActive(true);
-        ShowReward();
+        _rewardText.text = $"{DataController.Instance.Dictionary[211]}: {_reward * 2}";
+        SaveManager.Instance.CurrentProgress.Money += _reward;
+        SaveManager.Instance.CurrentProgress.AllMoney += _reward;
         HideAdButtons();
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
     public void DoubleExp()
     {
         _expAdBonus = true;
         _expAdBonusObj.SetActive(true);
-        ShowExperience();
+        for (int i = 0; i < 12; i++)
+        {
+            SaveManager.Instance.CurrentProgress.Experience[i] += _expGain[i];
+        }
+        ShowExperience(); 
         HideAdButtons();
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
     }
 
     public void HideAdButtons()
@@ -129,19 +135,21 @@ public class Summary : MonoBehaviour
         _expAdButton.SetActive(false);
     }
 
-    public void Continue()
+    public void Save()
     {
         SaveManager.Instance.CurrentProgress.Money += _reward;
         SaveManager.Instance.CurrentProgress.AllMoney += _reward;
         SaveManager.Instance.CurrentProgress.Kills += EnemySpawner.AllEnemiesCount;
         SaveManager.Instance.CurrentProgress.Level++;
-        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
-
         for (int i = 0; i < 12; i++)
         {
             SaveManager.Instance.CurrentProgress.Experience[i] += _expGain[i];
         }
+        SaveManager.Instance.SaveData(SaveManager.Instance.CurrentProgress);
+    }
 
+    public void Continue()
+    {
         LevelController.Instance.LoadMenu();
     }
 }
