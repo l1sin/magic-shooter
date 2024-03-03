@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7686595231390046373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070557989732705191}
+  - component: {fileID: 6480861791529303261}
+  - component: {fileID: 1124018327134895801}
+  - component: {fileID: 1993950517207449667}
+  - component: {fileID: 5669534904047929220}
+  m_Layer: 0
+  m_Name: ---DATA---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1070557989732705191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6480861791529303261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71fc99c0896c604c879374817bb468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentProgress:
+    Money: 0
+    Level: 0
+    CharacterLevel: 0
+    DefaultSpellIndexLeft: 0
+    DefaultSpellIndexRight: 0
+    SelectedMap: 0
+    Maps: 00000000
+    Upgrades: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    Experience:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Achievements: 000000000000000000000000000000000000000000000000000000
+    AllMoney: 0
+    Kills: 0
+    SFXVolume: 1
+    MusicVolume: 1
+    MouseSensetivity: 1
+    CurrentStats:
+      Damage: 0
+      Health: 0
+      Luck: 0
+      Speed: 0
+      FireMagic: 0
+      EarthMagic: 0
+      WaterMagic: 0
+      AirMagic: 0
+  MainMenuSceneIndex: 1
+  SaveKey: 270
+--- !u!114 &1124018327134895801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4747f0685c129444db197909544c6202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultLanguage: 0
+  Domen: 
+--- !u!114 &1993950517207449667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563ebaa55046e934da94483bd3facc57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundPrefab: {fileID: 3082421271153698346, guid: 5be4c79f3beea354e9ee824419b6002b,
+    type: 3}
+  _audioMixer: {fileID: 24100000, guid: c99f098306b88594b98111629e50f3ad, type: 2}
+--- !u!114 &5669534904047929220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686595231390046373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0eaa98a316299f43a72f0d9beb8b43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Localization: []

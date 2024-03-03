@@ -6,5 +6,6 @@ public class GlobalStrings
     public static string JumpInput = "Jump";
     public static string VerticalInput = "Vertical";
     public static string HorizontalInput = "Horizontal";
+    public static string MouseScrollWheel = "MouseScrollWheel";
     #endregion
 }
