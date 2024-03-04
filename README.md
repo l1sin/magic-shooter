@@ -16,3 +16,5 @@
 - 5 типов монстров
 
 - Боссы
+
+- Ссылка на билд: https://drive.google.com/drive/folders/176aQgPrn1a8b0Y1MsSqZ8WY_po_J6rdS?usp=drive_link
